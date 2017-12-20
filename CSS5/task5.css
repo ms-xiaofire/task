@@ -61,31 +61,49 @@ main {
 .text3 {
     border-left: 0.2rem solid #5fc0cd;
     padding-left: 0.5rem;
-    margin-left: 1rem;
+    margin: 1rem 0 1rem 1rem;
 }
-.div2 {
-    height: 2.7rem;
-    margin: 0 1rem;
+ul {
+    list-style: none;
+    margin: 0.9rem 1rem 0 1rem;
+    padding: 0 0 0.9rem 1rem;
     border-bottom: 1px solid #e1e5e7;
 }
 .image5 {
-    width: 1rem;
-    height: 1rem;
-    margin: 0.7rem 0 0 1.2rem;
-}
-.text4 {
-    margin: -1.2rem 0 0 2.5rem;
+    background: url("image/5-task5.png") no-repeat left center;
+    background-size: 1rem;
+    display: inline-block;
+    padding: 0.1rem 1rem;
 }
 .image6 {
-    width: 1rem;
-    height: 1rem;
-    float: left;
-    margin: -1rem 0 0 6rem;
+    background: url("image/5-task5.png") no-repeat left center;
+    background-size: 1rem;
+    display: inline-block;
+    padding: 0.1rem 1rem;
 }
-.text5 {
-    float: left;
-    margin: -1rem 0 0 7.2rem;
-}
+/*.div2 {*/
+    /*height: 2.7rem;*/
+    /*margin: 0 1rem;*/
+    /*border-bottom: 1px solid #e1e5e7;*/
+/*}*/
+/*.image5 {*/
+    /*width: 1rem;*/
+    /*height: 1rem;*/
+    /*margin: 0.7rem 0 0 1.2rem;*/
+/*}*/
+/*.text4 {*/
+    /*margin: -1.2rem 0 0 2.5rem;*/
+/*}*/
+/*.image6 {*/
+    /*width: 1rem;*/
+    /*height: 1rem;*/
+    /*float: left;*/
+    /*margin: -1rem 0 0 6rem;*/
+/*}*/
+/*.text5 {*/
+    /*float: left;*/
+    /*margin: -1rem 0 0 7.2rem;*/
+/*}*/
 .div3 {
     margin: 1rem 1rem;
     border-bottom: 1px solid #e1e5e7;
