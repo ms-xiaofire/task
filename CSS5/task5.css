@@ -3,6 +3,7 @@ body {
     margin: 0;
 }
 header {
+    /*固定到顶部*/
     position:fixed;
     left: 0;
     top: 0;
@@ -19,6 +20,7 @@ a {
     font-size: 1.2rem;
     margin-left: 0.5rem;
     color: white;
+    /*用于去除下划线*/
     text-decoration: none;
 }
 main {
@@ -26,18 +28,20 @@ main {
 }
 .image1 {
     background: url("image/1-task5.png") no-repeat center;
+    /*铺满背景*/
     background-size: cover;
+    /*高斯模糊*/
     /*filter: blur(2px);*/
     height: 12rem;
     color: white;
 }
 .image2 {
     background: white;
-    /*background-size: 5rem 5rem;*/
     width: 5rem;
     height: 5rem;
     margin-top: 3rem;
     margin-left: 1rem;
+    /*50%的圆角是一个圆*/
     border-radius: 50%;
 }
 .image4 {
@@ -65,6 +69,7 @@ main {
     margin: 1rem 0 1rem 1rem;
 }
 ul {
+    /*用于去除ul前面的点*/
     list-style: none;
     margin: 0.9rem 1rem 3rem 1rem;
     padding: 0 0 0.9rem 0;
@@ -73,13 +78,14 @@ ul {
     padding: 0 0 0.9rem 1rem;
     border-bottom: 1px solid #e1e5e7;
 }
-.image5 {
+.text4 {
     background: url("image/5-task5.png") no-repeat left center;
     background-size: 1rem;
+    /*让块元素并排显示*/
     display: inline-block;
     padding: 0.1rem 1rem;
 }
-.image6 {
+.text5 {
     background: url("image/5-task5.png") no-repeat left center;
     background-size: 1rem;
     display: inline-block;
@@ -91,22 +97,22 @@ ul {
     display: flex;
     align-items: center;
 }
-.test6 {
+.text6 {
     color: #999999;
     display: inline-block;
     padding-right: 1rem;
     border-right: 1px solid #cccccc;
 }
-.test7 {
+.text7 {
     display: inline-block;
     padding-left: 1rem;
 }
-.test8 {
+.text8 {
     display: inline-block;
     padding-left: 1rem;
     color: #e26163;
 }
-.test9 {
+.text9 {
     color: #999999;
     display: inline-block;
     padding-right: 1rem;
@@ -116,9 +122,9 @@ ul {
 p {
     margin: 0;
 }
-.test10 {
+.text10 {
     display: inline-block;
-    margin: 0 0 0 5.5rem;
+    margin: 0 0 0 5.2rem;
 }
 footer {
     background: white;
