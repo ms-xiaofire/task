@@ -110,6 +110,7 @@ ul {
     color: #999999;
     padding-right: 1rem;
     border-right: 1px solid #cccccc;
+    /*规定段落中的文本不进行换行*/
     white-space: nowrap;
 }
 .text10 {
