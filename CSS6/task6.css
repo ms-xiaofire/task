@@ -107,3 +107,7 @@ button {
     color: #e63b0e;
     line-height: 8rem;
 }
+.image1 {
+    background: url("image/css_sprites.png");
+}
+
