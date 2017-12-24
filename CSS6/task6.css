@@ -96,18 +96,48 @@ button {
     cursor: pointer;
 }
 .div6 {
-    display: flex;
     height: 8rem;
     border-bottom: 1px solid #cccccc;
 }
 .text3 {
-    line-height: 8rem;
+    font-size: 2rem;
+    margin-left: 2.7rem;
+    position: relative;
+    bottom: 10%;
 }
 .text4 {
     color: #e63b0e;
-    line-height: 8rem;
+    float: right;
 }
-.image1 {
-    background: url("image/css_sprites.png");
+.span1 {
+    color: #999999;
+    width: 15rem;
+    height: 2rem;
+    margin-left: 3rem;
+    font-size: 2rem;
+    display: block;
 }
-
+.bg-2 {
+    width: 2rem; height: 2rem;
+    background: url('image/css_sprites.png') -76px -71px no-repeat;
+    transform: scale(0.8);
+}
+.bg-3 {
+    width: 1.5rem; height: 2rem;
+    background: url('image/css_sprites.png') -136px -10px;
+    transform: scale(0.8);
+    position: relative;
+    top: 4rem;
+}
+.bg-4 {
+    width: 46px; height: 40px;
+    background: url('image/css_sprites.png') -10px -10px;
+}
+.bg-5 {
+    width: 40px; height: 41px;
+    background: url('image/css_sprites.png') -76px -10px;
+}
+.bg-6 {
+    width: 42px; height: 41px;
+    background: url('image/css_sprites.png') -10px -70px;
+}
