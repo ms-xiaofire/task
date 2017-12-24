@@ -24,12 +24,14 @@ header {
 }
 .text1 {
     margin: 0 0.5rem;
+    cursor: pointer;
 }
 .text2 {
     padding: 0 0.5rem;
     color: #5fc0cd;
     background: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 input {
     width: 1.5rem;
@@ -56,7 +58,7 @@ input {
 .div3 {
     width: 33.33%;
     height: 2rem;
-    position: relative;
+    /*position: relative;*/
 }
 .div4 {
     width: 33.33%;
@@ -67,4 +69,41 @@ input {
 .div5 {
     width: 33.33%;
     height: 2rem;
+}
+.btn {
+    padding: 0;
+    font-size: 0.5rem;
+    color: #999999;
+    border: 0;
+    vertical-align: 0;
+    line-height: 2rem;
+    background: white;
+}
+.dropdown-toggle::after {
+    margin-left: 45%;
+}
+.dropdown-menu {
+    position: relative;
+    top: 0;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+    float: none;
+    min-width: 0;
+    font-size: 1rem;
+}
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+.div6 {
+    display: flex;
+    height: 8rem;
+    border-bottom: 1px solid #cccccc;
+}
+.text3 {
+    line-height: 8rem;
+}
+.text4 {
+    color: #e63b0e;
+    line-height: 8rem;
 }

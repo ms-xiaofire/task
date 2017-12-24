@@ -3,8 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>CSS-task6</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="task6.css">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="task6.css">
 </head>
 <body>
 <header>
@@ -26,10 +26,54 @@
                 <li role="presentation">
                     <a role="menuitem" tabindex="-1" href="#">中国</a>
                 </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">美国</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">英国</a>
+                </li>
             </ul>
         </div>
-        <div class="div4">食宿</div>
-        <div class="div5">病人情况</div>
+        <div class="div4">
+            <button type="button" class="btn dropdown-toggle" id="dropdownMenu2"
+                    data-toggle="dropdown">
+                食宿
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">需提供食宿</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">需提供午饭</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">需提供住宿</a>
+                </li>
+            </ul>
+        </div>
+        <div class="div5">
+            <button type="button" class="btn dropdown-toggle" id="dropdownMenu3"
+                    data-toggle="dropdown">
+                病人情况
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">能走动</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">常年躺卧</a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="#">身强体健</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="div6">
+        <div class="text3">2017-12-24 至 2017-12-31</div>
+        <div class="text4">25元/小时 ></div>
     </div>
 </main>
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
