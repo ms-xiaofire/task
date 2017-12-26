@@ -83,6 +83,9 @@ input {
     line-height: 2rem;
     background: white;
 }
+.btn .caret {
+    margin-left: 2rem;
+}
 .dropdown-toggle::after {
     margin-left: 45%;
 }
@@ -105,12 +108,12 @@ button {
     z-index: -1;
 }
 .div61 {
+    margin-left: 1rem;
     display: flex;
     justify-content: space-between;
     white-space: nowrap;
 }
 .div7 {
-    height: 6rem;
     border-bottom: 1px solid #cccccc;
     position:relative;
     margin-bottom: 6.3rem;
@@ -149,6 +152,9 @@ footer {
 }
 .div {
     display: flex;
+    align-items: center;
+    margin: auto;
+    height: 6rem;
 }
 .div8 {
     width: 46px;
@@ -177,13 +183,13 @@ footer {
     width: 2rem; height: 2rem;
     background: url('image/css_sprites.png') -76px -71px no-repeat;
     transform: scale(0.8);
-    margin-top: 1rem;
+    margin: 1rem 0 0 1rem;
 }
 .bg-3 {
     width: 1.5rem; height: 2rem;
     background: url('image/css_sprites.png') -136px -10px;
     transform: scale(0.8);
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 1rem;
 }
 .bg-4 {
     width: 46px; height: 40px;
