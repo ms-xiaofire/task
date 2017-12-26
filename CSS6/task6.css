@@ -95,7 +95,6 @@ button {
     cursor: pointer;
 }
 .div6 {
-    height: 6rem;
     border-bottom: 1px solid #cccccc;
     position:relative;
     z-index: -1;
@@ -114,12 +113,11 @@ button {
     font-size: 2rem;
     color: #e63b0e;
     float: right;
+    position: relative;
 }
 a {
-    text-decoration: none;
     margin: 0 1rem;
     color: #5fc0cd;
-    cursor: pointer;
 }
 .span1 {
     color: #999999;
