@@ -33,9 +33,20 @@ main {
     font-size: 1.2rem;
     margin: 0 1rem 1rem 1rem;
     border: 1px solid #c9c9c9;
+}
+.div2-1 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    line-height: 5rem;
+}
+a {
+    margin-top: -5rem;
+    color: #e7e7e7;
+    font-size: 2rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    line-height: 5rem;
 }
 .div3 {
     margin: 0 1rem;
