@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-size: 62.5%;
     background: #29bde0;
 }
 header {
@@ -11,28 +12,25 @@ header {
     color: white;
     font-size: 1.2rem;
     background: #29bde0;
+    display: flex;
+    align-items: center;
 }
 .header-1 {;
     width: 2rem;
     height: 2rem;
+    margin-left: 1rem;
     background: url("image/2-task7.png") no-repeat;
     background-size: 2rem 2rem;
     transform: scale(0.8);
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 0.5rem;
+    cursor: pointer;
 }
 .header-2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -2rem;
+    margin: auto;
 }
 .header-3 {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -1.5rem;
+    margin-right: 1rem;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 main {
     margin-top: 3rem;
@@ -44,6 +42,15 @@ main {
     align-items: center;
     color: #464646;
 }
+.div1-1 {
+    margin-left: 5.5%;
+}
+.div1-2 {
+    width: 2rem;
+    height: 2rem;
+    background: url("image/3-task7.png") no-repeat;
+    background-size: 2rem 2rem;
+}
 /*audio {*/
     /*!*width: 2rem;*!*/
     /*!*height: 2rem;*!*/
@@ -53,11 +60,10 @@ main {
 .div2 {
     width: 0;
     height: 0;
-    margin: 0 0 0 2rem;
+    margin: 0 0 0 10%;
     border-top: 0.8rem solid #b9e9f5;
     border-left: 0.4rem solid transparent;
     border-right: 0.4rem solid transparent;
-    cursor: pointer;
 }
 p {
     margin: 0.5rem 0 2rem 2rem;
@@ -70,6 +76,10 @@ p {
     margin: 0 0 10% 5.5%;
     border: 2px solid white;
     cursor: pointer;
+}
+.box:hover {
+    background: url("image/4-task7.png") no-repeat;
+    background-size: 1rem 1rem;
 }
 .box-1 {
     height: 20vw;
