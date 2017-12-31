@@ -13,6 +13,7 @@ header {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-bottom: 1px solid #74d4eb;
     background: #29bde0;
 }
@@ -23,9 +24,6 @@ header {
     background: url("image/8-task7.png") no-repeat;
     background-size: 1.8rem 1.5rem;
     cursor: pointer;
-}
-.header-2 {
-    margin: auto;
 }
 .header-3 {
     width: 1.2rem;
