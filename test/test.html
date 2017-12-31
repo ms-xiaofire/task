@@ -1,21 +1,31 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>TEST</title>
+    <meta charset="UTF-8">
+    <title>Test</title>
     <style>
-        .border2 {
-            width: 0;
-            height: 0;
-            margin: 0 0.5rem;
-            border-top: 0.8rem solid #b9e9f5;
-            border-left: 0.4rem solid transparent;
-            border-right: 0.4rem solid transparent;
-            cursor: pointer;
+        #volumeSlider .slider-selection {
+            background:#bababa;
         }
     </style>
 </head>
 <body>
-<div class="border2"></div>
+<div class="container">
+    <p>image/财富自由.mp3</p>
+    <button class="btn btn-primary" id="playBtn">
+        <i class="glyphicon glyphicon-play"></i>
+    </button>
+    <button class="btn btn-info" id="mutedBtn">
+        <i class="glyphicon glyphicon-volume-down"></i>
+    </button>
+    <button class="btn btn-danger" id="changeBtn">切换歌曲</button>
+    <div class="form-group">
+        <label class="control-label">音量：</label>
+        <input class="form-control" id="volume" data-slider-id="volumeSlider"
+               data-slider-min="0" data-slider-max="100" data-slider-step="1"
+        />
+    </div>
+</div>
+<audio id="myAudio"></audio>
+</div>
 </body>
 </html>
