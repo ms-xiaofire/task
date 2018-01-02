@@ -1,5 +1,4 @@
 body {
-    color: white;
     margin: 0;
     font-size: 62.5%;
 }
@@ -77,12 +76,69 @@ li:hover {
     background: url("image/24-task8.png") no-repeat center;
     background-size: cover;
 }
+main {
+    background: #fafafa;
+    padding: 0 5%;
+}
 .div4 {
+    width: 100%;
+    height: 20rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .div4-1 {
-    background: url("image/4-task8.png") no-repeat;
-    background-size: 2rem 4rem;
+    width: 20%;
+    height: 70%;
+    padding: 0 2.5%;
+}
+.div4-1-1 {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img1 {
+    padding: 0;
+    transform: scale(0.6);
+}
+p {
+    margin: 0;
+}
+.p1 {
+    height: 10%;
+    line-height: 10%;
+    text-align: center;
+}
+.p2 {
+    color: #999999;
+    text-align: center;
+}
+.div4-2 {
+    width: 20%;
+    height: 70%;
+    padding: 0 2.5%;
+    border-left: 1px dashed #999999;
+    display: flex;
+    align-items: center;
+}
+.div4-2-1 {
+    padding: 5% 0;
+}
+.div4-2-2 {
+    font-weight: bold;
+    color: #26a26f;
+}
+.img2 {
+    padding: 0;
+    transform: scale(0.8);
+}
+.p3 {
+    color: #999999;
+}
+.p4 {
+    margin: 2rem 0;
+    text-align: center;
+    font-weight: bold;
 }
