@@ -1,31 +1,42 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-    <style>
-        #volumeSlider .slider-selection {
-            background:#bababa;
-        }
-    </style>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 默认的导航栏</title>
+    <link rel="stylesheet" href="js/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
-    <p>image/财富自由.mp3</p>
-    <button class="btn btn-primary" id="playBtn">
-        <i class="glyphicon glyphicon-play"></i>
-    </button>
-    <button class="btn btn-info" id="mutedBtn">
-        <i class="glyphicon glyphicon-volume-down"></i>
-    </button>
-    <button class="btn btn-danger" id="changeBtn">切换歌曲</button>
-    <div class="form-group">
-        <label class="control-label">音量：</label>
-        <input class="form-control" id="volume" data-slider-id="volumeSlider"
-               data-slider-min="0" data-slider-max="100" data-slider-step="1"
-        />
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">菜鸟教程</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">iOS</a></li>
+                <li><a href="#">SVN</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Java
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-<audio id="myAudio"></audio>
-</div>
+</nav>
+
 </body>
 </html>

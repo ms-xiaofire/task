@@ -69,3 +69,20 @@ li:hover {
     padding: 0;
     line-height: 6rem;
 }
+.navbar-default .navbar-nav>li>a:focus {
+    color: white;
+}
+.div3 {
+    height: 30rem;
+    background: url("image/24-task8.png") no-repeat center;
+    background-size: cover;
+}
+.div4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div4-1 {
+    background: url("image/4-task8.png") no-repeat;
+    background-size: 2rem 4rem;
+}
