@@ -104,13 +104,15 @@ p {
 }
 .p1 {
     text-align: center;
+    margin: 1rem 0;
 }
 .p2 {
     color: #999999;
     text-align: center;
+    padding: 1rem 1.5rem;
 }
 .div4-2 {
-    padding: 0 30px;
+    padding: 25px 30px;
     margin: 5rem 0;
     border-left: 1px dashed #999999;
     display: flex;
@@ -134,11 +136,16 @@ p {
     white-space: nowrap;
 }
 .p4 {
-    margin: 2rem 0;
+    margin: 4rem 0;
     text-align: center;
     font-weight: bold;
 }
 .div5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.div5-3 {
     display: flex;
     align-items: center;
 }
@@ -152,8 +159,104 @@ p {
     background: white;
     border-radius: 50%;
     box-shadow: 1px 1px 1px 1px #999999;
-    flex-shrink: 0;
 }
 .div5-2 {
     margin-bottom: 8rem;
+}
+.p5 {
+    color: #999999;
+    width: 50%;
+}
+.div6 {
+    text-align: center;
+    background: white;
+}
+.img3 {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transform: scale(0.8);
+}
+.div7 {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 6rem 0;
+}
+.div7-1 {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 0 0.5rem 0.5rem;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+.div7-1:hover {
+    background: #29b078;
+}
+.col-md-5 {
+    width: 20%;
+    padding: 0;
+}
+.div8 {
+    width: auto;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+    background: white;
+}
+@media screen and (min-width: 1201px) {
+    .div8 {width: auto;}
+}
+@media screen and (max-width: 1200px) {
+    .div8 {width: auto;}
+}
+@media screen and (max-width: 900px) {
+    .div8 {width: 187px;}
+}
+@media screen and (max-width: 500px) {
+    .div8 {width: 187px;}
+}
+.div8:hover {
+    box-shadow: 0 0 5px #999999;
+}
+.div8-1 {
+    width: auto;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 5rem 15px;
+    background: white;
+}
+.div8-1:hover {
+    box-shadow: 0 0 5px #999999;
+}
+.div8-2 {
+    width: auto;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-bottom: 5rem;
+    background: white;
+}
+.div8-2:hover {
+    box-shadow: 0 0 5px #999999;
+}
+.img4 {
+    transform: scale(0.8);
+}
+.p6 {
+    margin: 2rem 0;
+    text-align: center;
+    font-weight: bold;
+}
+ul {
+    color: #999999;
+}
+ul:hover {
+    border-bottom: 1px solid #26a26f;
 }
