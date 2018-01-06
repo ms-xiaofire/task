@@ -73,12 +73,6 @@ header{
     color: white;
 }
 .div3 {
-    height: 30rem;
-    background: url("image/24-task8.png") no-repeat center;
-    background-size: cover;
-}
-/*-------------------------------------------------------------------------*/
-.div3 {
     height: 15rem;
     background: url("image/20-task8.png") no-repeat center;
     background-size: cover;
