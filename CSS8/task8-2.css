@@ -142,7 +142,10 @@ main {
     color: #29b078;
     text-decoration: none;
 }
-.a5:hover {
+.div4-1:hover .div4-2 {
+    background: #f1a750;
+}
+.div4-1:hover .a5 {
     color: #f1a750;
     text-decoration: none;
 }
