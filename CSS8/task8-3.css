@@ -5,9 +5,6 @@ body {
 .div1 {
     margin: 0.5rem 0;
 }
-.col-md-8 {
-
-}
 .service {
     color: #42b683;
 }
@@ -132,6 +129,30 @@ main {
     font-weight: bold;
     padding: 2rem 0;
     border-bottom: 1px solid #d0d6d9;
+}
+.animation {
+    margin: 3rem 15px;
+    opacity: 0;
+    background: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: white;
+}
+.animation:hover {
+    opacity: 0.5;
+    transition: All 1s ease-in-out;
+    transform: rotate(360deg);
+}
+.p01 {
+    margin: 2rem 0;
+}
+.p02 {
+    margin: 4rem 2rem;
 }
 .div6 {
     margin: 3rem 0;

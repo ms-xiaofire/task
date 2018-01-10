@@ -88,6 +88,10 @@ p {
     display: none;
     text-align: center;
 }
+.box:hover .div3 {
+    position: absolute;
+    display: block;
+}
 .img1 {
     width: 15%;
     height: 75%;
@@ -115,10 +119,6 @@ p {
     margin: 5% 2% 0 2%;
     padding: 3.5%;
     background: white;
-}
-.box:hover .div3 {
-    position: absolute;
-    display: block;
 }
 .box-1 {
     height: 20vw;

@@ -1,7 +1,11 @@
-.div1 {
-    width: 10rem;
-    height: 10rem;
-    margin: 10rem 10rem;
-    background: #5fc0cd;
-    box-shadow:0 10px 5px #000;
+body {
+    background: none;
+}
+.grid {
+    padding: 0;
+    max-width: 0;
+}
+.grid figure {
+    float: none;
+    margin: 0;
 }
