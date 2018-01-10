@@ -281,14 +281,12 @@ p {
 }
 .ul1 {
     margin: 0 0 1rem 0;
-    padding: 0 0 0 15px;
+    padding: 0 0 1px 15px;
     color: #999999;
     cursor: pointer;
 }
-.li3 {
-    height: 18px;
-}
 .ul1:hover {
+    padding-bottom: 0;
     border-bottom: 1px solid #26a26f;
 }
 footer {
