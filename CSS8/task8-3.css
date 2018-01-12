@@ -30,15 +30,9 @@ header{
 }
 .li1 {
     height: 6rem;
-    margin: 0 1.5rem;
-}
-.li2 {
-    margin: 0 0 0 1.5rem;
+    padding: 0 1.5rem;
 }
 .li1:hover {
-    border-bottom: 2px solid white;
-}
-.li2:hover {
     border-bottom: 2px solid white;
 }
 .navbar {

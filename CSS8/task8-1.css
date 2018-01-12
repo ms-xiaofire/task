@@ -39,9 +39,6 @@ header{
 .li1:hover {
     border-bottom: 2px solid white;
 }
-.li2:hover {
-    border-bottom: 2px solid white;
-}
 .carousel-control {
     font-size: 100px;
     padding-top: 10%;
