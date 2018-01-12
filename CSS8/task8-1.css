@@ -203,14 +203,19 @@ p {
     width: 20%;
     padding: 0;
 }
+.div01 {
+    height: 160px;
+    background: white;
+    margin: 0 15px 5rem 15px;
+}
 .div8 {
     width: auto;
     height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
     background: white;
+    margin: 0 2px;
 }
 @media screen and (min-width: 1201px) {
     .div8 {width: auto;}
@@ -225,7 +230,7 @@ p {
     .div8 {width: 187px;}
 }
 .div8:hover {
-    box-shadow: 0 0 15px #999999;
+    box-shadow: 0 0 4px #999999;
 }
 .div8-1 {
     width: auto;
@@ -233,11 +238,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 5rem 15px;
     background: white;
 }
 .div8-1:hover {
-    box-shadow: 0 0 15px #999999;
+    box-shadow: 0 0 4px #999999;
 }
 .div8-2 {
     width: auto;
@@ -245,13 +249,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    margin-bottom: 5rem;
     background: white;
-    z-index: 1;
 }
 .div8-2:hover {
-    box-shadow: 0 0 15px #999999;
+    box-shadow: 0 0 4px #999999;
 }
 .img4 {
     transform: scale(0.8);
@@ -279,15 +280,21 @@ p {
 @media screen and (max-width: 500px) {
     .col-md-10 {width: 117px;}
 }
-.ul1 {
+div>ul>li>a {
     margin: 0 0 1rem 0;
-    padding: 0 0 1px 15px;
     color: #999999;
+    text-decoration: none;
     cursor: pointer;
 }
-.ul1:hover {
-    padding-bottom: 0;
+div>ul>li>a:hover {
+    margin: 0 0 1rem 0;
+    color: #999999;
+    text-decoration: none;
     border-bottom: 1px solid #26a26f;
+}
+ul {
+    color: #999999;
+    padding-left: 15px;
 }
 footer {
     width: 100%;
@@ -299,11 +306,11 @@ footer {
     font-size: 1rem;
     margin: 1rem 0;
 }
-a:focus {
+.a1:focus {
     color: white;
     text-decoration: none;
 }
-a:hover {
+.a1:hover {
     color: white;
     text-decoration: none;
 }
@@ -317,13 +324,19 @@ a:hover {
 .span1 {
     margin: 1rem 0;
 }
+.a2:focus {
+    color: white;
+    text-decoration: none;
+}
+.a2:hover {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
 .a2 {
     margin-right: 2rem;
     text-decoration: none;
     color: white;
-}
-.a2:hover {
-    border-bottom: 1px solid white;
 }
 .div10 {
     margin-top: 0.5rem;
