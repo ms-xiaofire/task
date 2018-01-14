@@ -5,8 +5,10 @@ body {
 .div1 {
     margin: 0.5rem 0;
 }
-.col-md-8 {
-
+@media screen and (max-width: 992px) {
+    .service-none {
+        display: none;
+    }
 }
 .service {
     font-size: 1.8rem;
@@ -21,6 +23,18 @@ header{
     height: 6rem;
     background: #29b078;
 }
+@media screen and (max-width: 992px) {
+    .header-display {
+        display: flex;
+        /*justify-content: space-between;*/
+    }
+}
+@media screen and (max-width: 992px) {
+    .header-div2 {
+        left: 0;
+        width: 10rem;
+    }
+}
 .div2 {
     width: 100%;
     line-height: 6rem;
@@ -31,6 +45,11 @@ header{
     margin: 1rem 0;
     background: url("image/25-task8.png") no-repeat;
     background-size: 8rem 4rem;
+}
+@media screen and (max-width: 992px) {
+    .header-nav {
+        float: right;
+    }
 }
 .li1 {
     height: 6rem;
@@ -83,6 +102,16 @@ main {
     background: #fafafa;
     padding: 0 5%;
 }
+@media screen and (max-width: 992px){
+    .col-sm-6 {
+        width: 50% !important;
+    }
+}
+@media screen and (max-width: 768px){
+    .col-xs-12 {
+        width: 100% !important;
+    }
+}
 .div4-1 {
     margin: 3rem 0;
 }
@@ -120,6 +149,12 @@ p {
     display: flex;
     align-items: center;
 }
+@media screen and (max-width: 992px) {
+    .div4-2 {
+        border: none;
+        justify-content: center;
+    }
+}
 .div4-2-1 {
     padding: 5% 0;
 }
@@ -127,6 +162,16 @@ p {
     display: flex;
     font-weight: bold;
     color: #26a26f;
+}
+@media screen and (max-width: 992px) {
+    .div4-2-2 {
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 992px) {
+    .div4-2-1 {
+        text-align: center;
+    }
 }
 .img2 {
     height: 15px;
@@ -147,9 +192,19 @@ p {
     align-items: center;
     justify-content: space-between;
 }
+@media screen and (max-width: 992px){
+    .div5 {
+        margin: 2rem 0;
+    }
+}
 .div5-3 {
     display: flex;
     align-items: center;
+}
+@media screen and (max-width: 992px){
+    .div5-3 {
+        justify-content: space-between;
+    }
 }
 .div5-1 {
     width: 4rem;
@@ -162,6 +217,11 @@ p {
     border-radius: 50%;
     box-shadow: 1px 1px 1px 1px #999999;
 }
+@media screen and (min-width: 992px) {
+    .display-none {
+        display: none;
+    }
+}
 .div5-2 {
     margin-bottom: 8rem;
 }
@@ -173,6 +233,11 @@ p {
     text-align: center;
     background: white;
     box-shadow: 0 0 8px #999999;
+}
+@media screen and (max-width: 992px) {
+    .div6 {
+        margin: 2rem 0;
+    }
 }
 .img3 {
     width: 5rem;
@@ -200,10 +265,22 @@ p {
     width: 20%;
     padding: 0;
 }
+@media screen and (max-width: 992px){
+    .col-sm-05 {
+        margin: 2rem 0;
+        width: 100%;
+    }
+}
 .div01 {
     height: 160px;
     background: white;
     margin: 0 15px 5rem 15px;
+}
+@media screen and (max-width: 992px){
+    .div01 {
+        height: auto;
+        background: none;
+    }
 }
 .div8 {
     width: auto;
@@ -213,18 +290,6 @@ p {
     justify-content: center;
     background: white;
     margin: 0 2px;
-}
-@media screen and (min-width: 1201px) {
-    .div8 {width: auto;}
-}
-@media screen and (max-width: 1200px) {
-    .div8 {width: auto;}
-}
-@media screen and (max-width: 900px) {
-    .div8 {width: 187px;}
-}
-@media screen and (max-width: 500px) {
-    .div8 {width: 187px;}
 }
 .div8:hover {
     box-shadow: 0 0 4px #999999;
@@ -265,17 +330,15 @@ p {
 .col-md-10 {
     width: 10%;
 }
-@media screen and (min-width: 1201px) {
-    .col-md-10 {width: 10%;}
+@media screen and (max-width: 992px) {
+    .col-sm-10 {
+        width: 20%;
+    }
 }
-@media screen and (max-width: 1200px) {
-    .col-md-10 {width: 117px;}
-}
-@media screen and (max-width: 900px) {
-    .col-md-10 {width: 117px;}
-}
-@media screen and (max-width: 500px) {
-    .col-md-10 {width: 117px;}
+@media screen and (max-width: 768px) {
+    .col-xs-10 {
+        width: 50%;
+    }
 }
 div>ul>li>a {
     margin: 0 0 1rem 0;
@@ -289,7 +352,7 @@ div>ul>li>a:hover {
     text-decoration: none;
     border-bottom: 1px solid #26a26f;
 }
-ul {
+.ul1 {
     color: #999999;
     padding-left: 15px;
 }
@@ -334,6 +397,11 @@ footer {
     margin-right: 2rem;
     text-decoration: none;
     color: white;
+}
+@media screen and (max-width: 992px) {
+    .footer-left {
+        float: left;
+    }
 }
 .div10 {
     margin-top: 0.5rem;
