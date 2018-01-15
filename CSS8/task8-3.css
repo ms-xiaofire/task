@@ -75,26 +75,26 @@ main {
     padding: 2rem 0;
     border-bottom: 1px solid #cccccc;
 }
-.a1:hover {
+.a01:hover {
     color: black;
     text-decoration: none;
 }
-.a2:hover {
+.a02:hover {
     color: #29b078;
     text-decoration: none;
 }
-.a1:focus {
+.a01:focus {
     color: black;
     text-decoration: none;
 }
-.a2:focus {
+.a02:focus {
     color: #29b078;
     text-decoration: none;
 }
-.a1 {
+.a01 {
     color: black;
 }
-.a2 {
+.a02 {
     color: #29b078;
 }
 .div4 {
@@ -137,6 +137,13 @@ main {
     text-align: center;
     color: white;
 }
+@media screen and (max-width: 768px){
+    .animation {
+        margin: 0 0 0 15px;
+        width: 345px;
+        height: 384px;
+    }
+}
 .animation:hover {
     opacity: 0.5;
     transition: All 1s ease-in-out;
@@ -152,6 +159,12 @@ main {
     margin: 3rem 0;
     border-radius: 0.5rem;
     background: white;
+}
+@media screen and (max-width: 768px){
+    .div6 {
+        width: 345px;
+        height: 384px;
+    }
 }
 .div6-1 {
     padding: 1rem 0;
