@@ -46,77 +46,34 @@ header{
     background: url("image/25-task8.png") no-repeat;
     background-size: 8rem 4rem;
 }
-@media screen and (max-width: 992px) {
-    .header-nav {
-        float: right;
-    }
+.navbar-default {
+    background-color: #29b078;
+    border: none;
+    float: right;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-nav>li>a {
+    color: white !important;
+    padding: 0 1.5rem;
+    line-height: 6rem;
 }
 .li1 {
     height: 6rem;
-    padding: 0 1.5rem;
 }
 .li1:hover {
     border-bottom: 2px solid white;
 }
-.nav-text {
-    height: 40px;
-    margin: 0;
-    padding: 0 !important;
-    line-height: 40px !important;
-    color: #fff !important;
-    background: #29b078;
-    filter: alpha(opacity:90);
-    opacity: 0.9;
-    z-index: 9999;
+.navbar-nav>.active>a {
+    background-color: #29b078 !important;
 }
-.carousel-control {
-    font-size: 100px;
-    padding-top: 10%;
-}
-.carousel-control.left {
-    float: right;
-}
-.navbar {
-    float: right;
-    margin: 0;
-}
-.navbar-default {
-    background: none;
-    border: none;
-}
-.container-fluid {
-    margin: 0;
+.navbar-collapse {
     padding: 0;
 }
-.navbar-nav {
-    width: 100%;
-    height: 203px;
-    background: #29b078;
-    border-top: 1px solid #999;
-    float: none;
+.container-fluid {
+    padding: 0;
     margin: 0;
-}
-@media only screen and (max-width: 767px) {
-    .navbar-collapse {
-        width: 100%;
-        padding: 0;
-        border: 0;
-        box-shadow: none;
-    }
-}
-.navbar-toggle {
-    border: none;
-}
-.navbar-toggle:hover{
-    background-color: #218d60 !important;
-}
-.navbar-toggle:focus{
-    background-color: #218d60 !important;
-}
-.div3 {
-    height: 30rem;
-    background: url("image/24-task8.png") no-repeat center;
-    background-size: cover;
 }
 main {
     background: #fafafa;
@@ -360,13 +317,13 @@ p {
         width: 50%;
     }
 }
-div>ul>li>a {
+.li3 {
     margin: 0 0 1rem 0;
     color: #999999;
     text-decoration: none;
     cursor: pointer;
 }
-div>ul>li>a:hover {
+.li3:hover {
     margin: 0 0 1rem 0;
     color: #999999;
     text-decoration: none;
