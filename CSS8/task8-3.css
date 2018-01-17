@@ -200,15 +200,15 @@ main {
 }
 @media screen and (max-width: 768px){
     .animation {
-        margin: 0 0 0 15px;
+        margin: 0 15px 0 15px;
         width: 345px;
         height: 384px;
     }
 }
 @media screen and (max-width: 400px){
     .animation {
-        width: 273px;
-        height: 506px;
+        width: auto;
+        height: auto;
     }
 }
 .animation:hover {
@@ -235,8 +235,8 @@ main {
 }
 @media screen and (max-width: 400px){
     .div6 {
-        width: 273px;
-        height: 506px;
+        width: 100%;
+        height: auto;
     }
 }
 .div6-1 {
@@ -246,7 +246,7 @@ main {
     border-bottom: 1px solid #edf1f2;
 }
 .img1 {
-    width: 40%;
+    width: 100px;
     height: 9rem;
     padding: 0 0.5rem;
 }
