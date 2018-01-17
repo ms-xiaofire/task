@@ -116,6 +116,13 @@ header{
 .img-nav {
     transform: scale(0.8);
 }
+
+.carousel-control {
+    font-size: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 main {
     background: #fafafa;
     padding: 0 5%;
