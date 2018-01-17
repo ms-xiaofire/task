@@ -118,7 +118,7 @@ header{
 }
 
 .carousel-control {
-    font-size: 10rem;
+    font-size: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -362,6 +362,11 @@ p {
 }
 @media screen and (max-width: 768px) {
     .col-xs-10 {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 420px) {
+    .col-xxs-10 {
         width: 50%;
     }
 }

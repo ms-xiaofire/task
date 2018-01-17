@@ -205,6 +205,11 @@ main {
     align-items: center;
     border-bottom: 1px solid #cccccc;
 }
+@media screen and (max-width: 786px){
+    .div6 {
+        flex-direction: column;
+    }
+}
 .p2 {
     font-size: 1rem;
     color: #999999;
