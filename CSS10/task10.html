@@ -123,20 +123,16 @@
     <div class="container">
         <div class="background">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-10  col-sm-10">
                     <div class="div9">
-                        <div class="div9-1">
-                            <div class="div9-1-1"></div>
+                        <form>
+                            <input type="radio" checked="checked" name="box" value="对口箱">
                             <span class="span2">对口箱</span>
-                        </div>
-                        <div class="div9-1">
-                            <div class="div9-1-1"></div>
+                            <input type="radio" value="飞机盒" name="box">
                             <span class="span2">飞机盒</span>
-                        </div>
-                        <div class="div9-1">
-                            <div class="div9-1-1"></div>
+                            <input type="radio" value="天地盖" name="box">
                             <span class="span2">天地盖</span>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -185,48 +181,56 @@
                 <div class="col-md-10">
                     <div class="div19">
                         <div>
-                            <div class="div9-1">
-                                <div class="div9-1-1"></div>
-                                <span class="span2">外径</span>
-                            </div>
-                            <div class="div9-1">
-                                <div class="div9-1-1"></div>
-                                <span class="span2">内径</span>
-                            </div>
+                            <form>
+                                <div class="div9-1">
+                                    <input type="radio" name="size" checked="checked">
+                                    <span class="span2">外径</span>
+                                </div>
+                                <div class="div9-1">
+                                    <input type="radio" name="size">
+                                    <span class="span2">内径</span>
+                                </div>
+                            </form>
                         </div>
                         <div>
                             <div class="div9-1">
                                 <p class="p6">长</p>
-                                <div></div>
+                                <input type="number" maxlength="5" min="1" oninput="if(value.length>5)value=value.slice(0,5)"
+                                       class="input1" />
                                 <p class="p6">mm</p>
                             </div>
                             <div class="div9-1">
                                 <p class="p6">长</p>
-                                <div></div>
+                                <input type="number" maxlength="5" min="1" oninput="if(value.length>5)value=value.slice(0,5)"
+                                       class="input1" />
                                 <p class="p6">mm</p>
                             </div>
                         </div>
                         <div>
                             <div class="div9-1">
                                 <p class="p6">宽</p>
-                                <div></div>
+                                <input type="number" maxlength="5" min="1" oninput="if(value.length>5)value=value.slice(0,5)"
+                                       class="input1" />
                                 <p class="p6">mm</p>
                             </div>
                             <div class="div9-1">
                                 <p class="p6">宽</p>
-                                <div></div>
+                                <input type="number" maxlength="5" min="1" oninput="if(value.length>5)value=value.slice(0,5)"
+                                       class="input1" />
                                 <p class="p6">mm</p>
                             </div>
                         </div>
                         <div>
                             <div class="div9-1">
                                 <p class="p6">高</p>
-                                <div></div>
+                                <input type="number" maxlength="5" min="1" oninput="if(value.length>5)value=value.slice(0,5)"
+                                       class="input1" />
                                 <p class="p6">mm</p>
                             </div>
                             <div class="div9-1">
                                 <p class="p6">高</p>
-                                <div></div>
+                                <input type="number" maxlength="5" min="1" oninput="if(value.length>5)value=value.slice(0,5)"
+                                       class="input1" />
                                 <p class="p6">mm</p>
                             </div>
                         </div>
@@ -277,26 +281,18 @@
             <div class="row">
                 <div class="col-md-10">
                     <div class="div09">
-                        <div class="div9-2">
-                            <div class="div9-1-1"></div>
+                        <form>
+                            <input type="radio" name="rank" checked="checked">
                             <span class="span2">三层A瓦优质</span>
-                        </div>
-                        <div class="div9-2">
-                            <div class="div9-1-1"></div>
+                            <input type="radio" name="rank">
                             <span class="span2">三层A瓦优质</span>
-                        </div>
-                        <div class="div9-2">
-                            <div class="div9-1-1"></div>
+                            <input type="radio" name="rank">
                             <span class="span2">三层A瓦优质</span>
-                        </div>
-                        <div class="div9-2">
-                            <div class="div9-1-1"></div>
+                            <input type="radio" name="rank">
                             <span class="span2">三层A瓦优质</span>
-                        </div>
-                        <div class="div9-2">
-                            <div class="div9-1-1"></div>
+                            <input type="radio" name="rank">
                             <span class="span2">三层A瓦优质</span>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-2">

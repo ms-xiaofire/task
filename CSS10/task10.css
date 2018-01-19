@@ -190,11 +190,24 @@ header {
 }
 .div9-1 {
     display: flex;
-    margin: 2rem 3rem;
+    margin: 2rem 3rem 2rem 0;
 }
 .p6 {
     color: #999999;
     margin: 0;
+    line-height: 25px;
+}
+input[type=radio] {
+    margin-left: 3rem;
+}
+.input1 {
+    width: 50px;
+    margin-left: 0.5rem;
+    background: #fbfcff;
+    border: 1px solid #999999;
+}
+.input1:focus {
+    border: 1px solid #999999;
 }
 .div9-1-1 {
     width: 15px;
@@ -220,6 +233,11 @@ header {
     display: flex;
     align-items: center;
     border-right: 1px solid #f3f3f3;
+}
+@media screen and (max-width: 992px){
+    .col-md-2 {
+        float: right;
+    }
 }
 .div010 {
     height: 8rem;
