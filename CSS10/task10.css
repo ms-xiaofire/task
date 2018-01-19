@@ -149,6 +149,7 @@ header {
 .div3 {
     height: 1.5rem;
     line-height: 1.5rem;
+    margin-bottom: 1rem;
     padding-left: 0.5rem;
     float: left;
     border-left: 2px solid #1d7ad9;
@@ -165,23 +166,46 @@ header {
     background: #f3f3f3;
 }
 .background {
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
     background: #fbfcff;
 }
 .div9 {
-    padding: 2rem 0;
+    height: 6rem;
     display: flex;
+    align-items: center;
+    border-left: 1px solid #f3f3f3;
+}
+.div09 {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #f3f3f3;
+}
+.div19 {
+    height: 10rem;
+    display: flex;
+    align-items: center;
     border-left: 1px solid #f3f3f3;
 }
 .div9-1 {
     display: flex;
-    margin: 0 3rem;
+    margin: 2rem 3rem;
+}
+.p6 {
+    color: #999999;
+    margin: 0;
 }
 .div9-1-1 {
     width: 15px;
     height: 15px;
-    margin: 0 1rem;
-    background: #cccccc;
+    background: #f8f9fb;
+    border: 1px solid #cccccc;
     border-radius: 50%;
+}
+.div9-2 {
+    display: flex;
+    margin: 0 1rem;
 }
 .span1 {
     width: 15rem;
@@ -192,22 +216,68 @@ header {
     display: block;
 }
 .div10 {
-    padding: 2rem 0;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #f3f3f3;
+}
+.div010 {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #f3f3f3;
+}
+.div110 {
+    height: 10rem;
+    display: flex;
+    align-items: center;
     border-right: 1px solid #f3f3f3;
 }
 .div10-1 {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin-right: 1.5rem;
+    padding: 0.3rem 0.5rem 0.3rem 0;
     background: white;
+    border: 1px solid #cccccc;
+}
+.span2 {
+    color: #999999;
+    margin: 0 0.8rem;
+}
+.li3 {
+    width: 108px;
+}
+.dropdown {
+    color: white;
+}
+.btn {
+    background: #1d7ad9;
+    padding: 4px 6px;
+}
+.btn:hover {
+    color: white;
+}
+.btn:focus {
+    color: white;
+}
+.caret {
+    border-top: 6px dashed;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+.dropdown-menu {
+    left: -10rem;
+    margin-left: 56px;
+}
+.dropdown-menu>li>a {
+    padding: 3px 5px;
 }
 /*main*/
 
 .div4 {
     padding: 8rem 0;
-    border-bottom: 1px solid #f3f3f3;
-    border-left: 1px solid #f3f3f3;
-    border-right: 1px solid #f3f3f3;
+    border: 1px solid #f4f4f4;
     display: flex;
     justify-content: center;
 }
@@ -307,10 +377,12 @@ footer {
 }
 .bg-4_task10 {
     width: 22px; height: 20px;
+    line-height: 24px;
     background: url('image/css_sprites.png') -54px -10px;
 }
 .bg-5_task10 {
     width: 15px; height: 20px;
+    line-height: 24px;
     background: url('image/css_sprites.png') -96px -10px;
 }
 .bg-6_task10 {
