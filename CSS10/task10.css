@@ -95,9 +95,6 @@ header {
         box-shadow: none;
     }
 }
-.a4 {
-    margin-right: 0;
-}
 .a3:hover {
     color: white !important;
     background: #1d7ad9 !important;
@@ -190,15 +187,39 @@ header {
 }
 .div9-1 {
     display: flex;
-    margin: 2rem 3rem 2rem 0;
+    margin: 1rem 3rem 1rem 0;
+}
+.div9-01 {
+    display: flex;
+}
+@media screen and (max-width: 992px){
+    .div9-01 {
+        display: block;
+    }
 }
 .p6 {
     color: #999999;
     margin: 0;
     line-height: 25px;
 }
+@media screen and (max-width: 992px) and (min-width: 768px){
+    .p7 {
+        margin-left: 2rem;
+    }
+}
 input[type=radio] {
     margin-left: 3rem;
+}
+@media screen and (max-width: 992px){
+    input[type=radio] {
+        margin-top: 15px;
+    }
+}
+@media screen and (max-width: 768px){
+    input[type=radio] {
+        margin-left: 1rem;
+        margin-top: 15px;
+    }
 }
 .input1 {
     width: 50px;
@@ -237,6 +258,7 @@ input[type=radio] {
 @media screen and (max-width: 992px){
     .col-md-2 {
         float: right;
+        padding-left: 0;
     }
 }
 .div010 {
@@ -251,6 +273,46 @@ input[type=radio] {
     align-items: center;
     border-right: 1px solid #f3f3f3;
 }
+@media screen and (max-width: 992px){
+    .div9 {
+        height: 10rem;
+    }
+    .div10 {
+        height: 10rem;
+    }
+    .div09 {
+        height: 15rem;
+    }
+    .div010 {
+        height: 15rem;
+    }
+    .div19 {
+        height: 25rem;
+    }
+    .div110 {
+        height: 25rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .div9 {
+        height: 10rem;
+    }
+    .div10 {
+        height: 10rem;
+    }
+    .div09 {
+        height: 15rem;
+    }
+    .div010 {
+        height: 15rem;
+    }
+    .div19 {
+        height: 25rem;
+    }
+    .div110 {
+        height: 25rem;
+    }
+}
 .div10-1 {
     display: flex;
     align-items: center;
@@ -259,9 +321,28 @@ input[type=radio] {
     background: white;
     border: 1px solid #cccccc;
 }
+@media screen and (max-width: 768px){
+    .div10-1 {
+        margin-right: 1rem;
+    }
+    .col-xs-3 {
+        width: 147px;
+    }
+    .col-xs-4 {
+        width: 156px;
+    }
+}
 .span2 {
     color: #999999;
     margin: 0 0.8rem;
+}
+.span2-1 {
+    margin-top: 4px;
+}
+@media screen and (max-width: 992px){
+    .span2-1 {
+        margin-top: 15px;
+    }
 }
 .li3 {
     width: 108px;
@@ -287,6 +368,11 @@ input[type=radio] {
 .dropdown-menu {
     left: -10rem;
     margin-left: 56px;
+}
+@media screen and (max-width: 768px){
+    .dropdown-menu {
+        left: -13rem;
+    }
 }
 .dropdown-menu>li>a {
     padding: 3px 5px;
@@ -346,6 +432,12 @@ footer {
     margin: 0 1rem;
     color: #999999;
     text-decoration: none;
+}
+@media screen and (max-width: 992px){
+    .a6 {
+        margin-left: 0;
+        margin-right: 2rem;
+    }
 }
 .a6:hover {
     color: #1d7ad9;
