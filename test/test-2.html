@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        input:checked
-        {
-            background:#ff0000;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-
-<form action="">
-    <input type="radio" checked="checked" value="male" name="gender" /> Male<br>
-    <input type="radio" value="female" name="gender" /> Female<br>
+<form>
+    <div>
+        <input id="item1" type="radio" name="item" value="选项一" checked>
+        <label for="item1"></label>
+        <span>选项一</span>
+    </div>
+    <div>
+        <input id="item2" type="radio" name="item" value="选项二">
+        <label for="item2"></label>
+        <span>选项二</span>
+    </div>
 </form>
-
-
 </body>
 </html>
