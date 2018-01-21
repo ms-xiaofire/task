@@ -296,21 +296,27 @@ input[type=radio] {
 @media screen and (max-width: 768px){
     .div9 {
         height: 10rem;
+        margin: 1rem 0;
     }
     .div10 {
         height: 10rem;
+        margin: 1rem 0;
     }
     .div09 {
         height: 15rem;
+        margin: 2rem 0;
     }
     .div010 {
         height: 15rem;
+        margin: 2rem 0;
     }
     .div19 {
         height: 25rem;
+        margin: 2rem 0;
     }
     .div110 {
         height: 25rem;
+        margin: 2rem 0;
     }
 }
 .div10-1 {
