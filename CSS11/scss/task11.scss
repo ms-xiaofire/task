@@ -48,15 +48,14 @@ span {
 }
 //header
 
-.header-input {
-  height: 10px;
-}
 .div1 {
   display: flex;
   align-items: center;
   background: white;
+  margin-top: 10px;
 }
 .img1 {
+  width: 29px;
   margin: 0 2rem;
   transform: scale(0.5);
 }
@@ -67,14 +66,13 @@ span {
   border-left: 2px solid #eaedee;
 }
 
-.input-footer {
-  height: 2rem;
-}
+
 footer {
   height: 4rem;
   line-height: 4rem;
   text-align: center;
   background: $background-color;
+  margin-top: 2rem;
 }
 .login {
   color: $text-color;
