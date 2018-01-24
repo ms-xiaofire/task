@@ -29,7 +29,7 @@ a:focus {
   text-decoration: none; }
 
 span {
-  font-size: 2rem; }
+  font-size: 1rem; }
 
 .header-left {
   float: left;
@@ -68,7 +68,7 @@ footer {
 
 .login {
   color: #ffffff;
-  font-size: 2rem; }
+  font-size: 1.5rem; }
 
 .div2 {
   padding: 0.5rem 0.5rem 10rem 0.5rem;
