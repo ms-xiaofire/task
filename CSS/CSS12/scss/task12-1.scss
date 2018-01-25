@@ -36,7 +36,7 @@ header {
   text-decoration: $a-decoration;
 }
 
-.div1 {
+.background {
   display: flex;
   align-items: center;
   height: 16rem;
@@ -44,11 +44,11 @@ header {
   background: url("../images/1-task12.png") no-repeat;
   background-size: cover;
 }
-.img1 {
+.head {
   margin-left: 2%;
   transform: scale(0.6);
 }
-.div1-1 {
+.personal {
   color: $a-color;
   display: flex;
   align-items: center;
@@ -57,14 +57,14 @@ header {
 p {
   margin: 0;
 }
-.p1 {
+.name {
   font-size: 1.5rem;
 }
-.p2 {
+.age {
   font-size: 1.3rem;
   margin-left: 1rem;
 }
-.img2 {
+.address {
   transform: scale(0.6);
   margin-right: 0.5rem;
 }
@@ -81,7 +81,7 @@ main {
   border-left: 2px solid #5fc0cd;
   padding-left: 1rem;
 }
-.div2 {
+.list {
   color: #cccccc;
   font-size: 1rem;
   margin-left: 1rem;
@@ -90,22 +90,22 @@ main {
   padding: 1rem 1rem;
   border-bottom: 1px solid #f3f3f3;
 }
-.img3 {
+.star {
   transform: scale(0.6);
   margin: 0 0.3rem 0 0;
 }
-.p3 {
+.data {
   color: black;
   margin-right: 0.5rem;
 }
-.p4 {
+.data-right {
   color: black;
   padding-left: 1rem;
 }
-.p5 {
+.data-red {
   color: #e26163;
 }
-.p6 {
+.data-left {
   white-space: nowrap;
   padding-right: 1rem;
   border-right: 1px solid #cccccc;
