@@ -8,6 +8,9 @@ body {
   margin: 0 auto;
 }
 header {
+  min-width: 320px;
+  max-width: 780px;
+  margin: 0 auto;
   width: 100%;
   font-size: 1.5rem;
   color: white;
@@ -16,7 +19,6 @@ header {
   text-align: center;
   position: fixed;
   top: 0;
-  left: 0;
   background: #5fc0cd;
   z-index: 999;
 }
@@ -52,7 +54,7 @@ header {
   color: $a-color;
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 p {
   margin: 0;
@@ -111,6 +113,10 @@ main {
   border-right: 1px solid #cccccc;
 }
 footer {
+  min-width: 320px;
+  max-width: 780px;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -120,6 +126,7 @@ footer {
   background: white;
 }
 .footer-text {
+  width: 50%;
   font-size: 1.5rem;
   border-radius: 5px;
   padding: 0.5rem 0;
