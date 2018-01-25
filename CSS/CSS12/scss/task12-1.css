@@ -125,35 +125,11 @@ footer {
 
 .footer-left {
   color: #5fc0cd;
-  border: 1px solid #5fc0cd; }
+  background: #ffffff;
+  border: 2px solid #5fc0cd; }
 
 .footer-right {
   color: white;
   background: #5fc0cd; }
-
-.bg-2 {
-  width: 24px;
-  height: 24px;
-  background: url("../images/css_sprites.png") -76px -71px; }
-
-.bg-3 {
-  width: 19px;
-  height: 23px;
-  background: url("../images/css_sprites.png") -136px -10px; }
-
-.bg-4 {
-  width: 46px;
-  height: 40px;
-  background: url("../images/css_sprites.png") -10px -10px; }
-
-.bg-5 {
-  width: 40px;
-  height: 41px;
-  background: url("../images/css_sprites.png") -76px -10px; }
-
-.bg-6 {
-  width: 42px;
-  height: 41px;
-  background: url("../images/css_sprites.png") -10px -70px; }
 
 /*# sourceMappingURL=task12-1.css.map */
