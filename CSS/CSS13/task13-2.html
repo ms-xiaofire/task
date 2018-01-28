@@ -7,6 +7,41 @@
     <link rel="stylesheet" href="scss/task13-2.css">
 </head>
 <body>
+<header>
+    <div class="header-left"></div>
+    <div class="header-center">投票</div>
+    <div class="header-right"></div>
+</header>
+<main>
+    <div class="nav">
+        <div class="nav-left">发言讨论结束,请大家投票</div>
+        <img src="images/3-task7.png" class="nav-right" id="play">
+        <audio src="images/财富自由.mp3" id="music"></audio>
+    </div>
+    <div class="triangle"></div>
+    <p class="hint">点击的票数最多人的头像</p>
+</main>
 
+
+
+
+
+
+<button id="a" class="botton" onclick="a();"></button>
+<script>
+    var play=document.getElementById('play');
+    play.onclick=function (ev) {
+        a()
+    };
+    function a(){
+        var audio = document.getElementById('music');
+        if(audio.paused){
+            audio.play();//audio.play();// 播放
+        }
+        else{
+            audio.pause();// 暂停
+        }
+    }
+</script>
 </body>
 </html>

@@ -3,9 +3,10 @@ $a-decoration: none;
 
 body {
   font-size: 62.5%;
-  min-width: 300px;
+  min-width: 320px;
   max-width: 780px;
   margin: 0 auto;
+  overflow:hidden
 }
 header {
   min-width: 320px;

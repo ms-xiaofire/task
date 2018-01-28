@@ -52,9 +52,6 @@ main {
     height: 2rem;
     margin-right: 5%;
 }
-audio {
-    display: none;
-}
 .div2 {
     width: 0;
     height: 0;
