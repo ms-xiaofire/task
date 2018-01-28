@@ -3,7 +3,7 @@ $a-decoration: none;
 
 body {
   font-size: 62.5%;
-  min-width: 320px;
+  min-width: 300px;
   max-width: 780px;
   margin: 0 auto;
 }
@@ -71,6 +71,9 @@ select {
   font-size: 1rem;
   color: #999;
 }
+select:focus {
+  outline: none;
+}
 .label-left {
   border-right: 1px solid #ccc;
 }
@@ -91,8 +94,6 @@ select {
   display: block;
 }
 .date {
-  height: 1rem;
-  line-height: 1rem;
   margin: 0.5rem 0 0.5rem 2rem;
   font-size: 1rem;
   display: flex;
