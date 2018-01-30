@@ -107,32 +107,11 @@ main {
   position: absolute;
   display: block;
 }
-.kill {
+.kill, .check, .killed, .easter {
   width: 15%;
   height: 75%;
   margin: 5% 2% 0 2%;
   padding: 1%;
-  background: white;
-}
-.check {
-  width: 15%;
-  height: 75%;
-  margin: 5% 2% 0 2%;
-  padding: 1%;
-  background: white;
-}
-.killed {
-  width: 15%;
-  height: 75%;
-  margin: 5% 2% 0 2%;
-  padding: 1%;
-  background: white;
-}
-.easter {
-  width: 10%;
-  height: 50%;
-  margin: 5% 2% 0 2%;
-  padding: 3.5%;
   background: white;
 }
 
