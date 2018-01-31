@@ -1,17 +1,8 @@
-* {
-    margin:0; padding:0;
-}
 html {
     height:100%;
 }
-p {
-    padding:10px 0;
-}
 body {
-    min-height:100%; font-family:arial; position:relative;
-}
-body .sideMenu {
-    margin:0; -webkit-transform:none; transform:none;
+    min-height:100%;
 }
 #sideToggle {
     display:none;
@@ -21,21 +12,13 @@ body .sideMenu {
 }
 #sideToggle:checked ~ #wrap{ padding-left:220px; }
 body > aside{ position:absolute; top:0; bottom:0; left:-200px; width:200px; background:#f1103a; transition:0.2s ease-out; -webkit-transition:0.2s ease-out; }
-body > aside > h2{ color:#FFF; text-align:center; font-weight:normal; padding:10px; }
-#wrap{ margin-left:20px; padding:10px; transition:0.25s ease-out; -webkit-transition:0.25s ease-out; }
+#wrap{ background: #f1a750}
 #wrap > label{ display:inline-block; }
 #wrap > label{
-    background:#f1103a;
-    border-radius:50px;
-    color: #FFF;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("images/1-task7.png") no-repeat;
+    background-size: 1.5rem 1.5rem;
     cursor: pointer;
     display: block;
-    font-size: 25px;
-    font-weight: bold;
-    width: 30px;
-    height: 30px;
-    line-height: 35px;
-    text-align: center;
-    text-shadow: 0 -4px;
 }
-#wrap > label:hover{ background:#000; }
