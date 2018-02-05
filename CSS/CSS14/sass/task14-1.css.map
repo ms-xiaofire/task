@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA,oCAAoC;EAClC,aAAc;IACZ,OAAO,EAAE,IAAI;AAGjB,kBAAmB;EACjB,MAAM,EAAE,MAAM;EACd,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,QAAQ;;AAElB,QAAS;EACP,KAAK,EAAE,OAAO;EACd,SAAS,EAAE,MAAM;;AAEnB,oCAAoC;EAClC,QAAS;IACP,KAAK,EAAE,KAAK",
+"sources": ["task14-1.scss"],
 "names": [],
 "file": "task14-1.css"
 }
