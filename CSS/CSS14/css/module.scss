@@ -5,6 +5,11 @@ header {
   height: auto;
   background: #29b078;
 }
+.header-left {
+  margin: 15px;
+}
+
+
 
 /*容器*/
 .box {
@@ -31,7 +36,7 @@ header {
 .four-row, .eight-row{
   padding: 0 15px;
 }
-@media screen and (min-width: 992px){
+@media screen and (min-width: 768px){
   .four-row {
     float: left;
     width: 33.333333%;
@@ -50,83 +55,88 @@ header {
 /*容器*/
 
 /*响应式导航栏*/
-.navbar{
+.navbar-right{
   background-color: #29b078;
-  height: 50px;
+  height: 80px;
   display: block;
+  padding: 0 15px;
 }
-.navbar .nav-list{
+.navbar-right .nav-list{
   z-index: 0;
   display: block;
   float: right;
   margin-right: -15px;
 }
-.navbar .nav-list li{
+.navbar-right .nav-list li{
   list-style: none;
   float: left;
-  padding: 0 15px 2px;
+  height: 78px;
+  line-height: 78px;
+  padding: 0 15px;
 }
-.navbar .nav-list li:hover {
+.navbar-right .nav-list li:hover {
   border-bottom: 2px solid white;
   padding-bottom: 0;
 }
-.navbar .nav-list a{
+.navbar-right .nav-list a{
   color: white;
   line-height: 50px;
   text-decoration-line: none;
 }
-.navbar input:checked~.nav-list {
+.navbar-right input:checked~.nav-list {
   position: absolute;
   padding-bottom: 5px;
   display: block;
   background-color: #29b078;
   z-index: 0;
-  margin-top: 50px;
-
+  margin-top: 80px;
 }
-.navbar input:checked~.nav-list li{
+.navbar-right input:checked~.nav-list li{
   clear: both;
   background-color: #29b078;
   width: 100%;
   text-align: center;
 }
-.navbar label{
+.navbar-right label{
   display: none;
 }
-.navbar .nav-toggle{
+.navbar-right .nav-toggle{
   display: none;
+}
+.nav-pack {
+  margin: 0 -15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  .navbar .nav-toggle{
+  .navbar-right .nav-toggle{
     display: none;
   }
-  .navbar label{
+  .navbar-right label{
     display: block;
     z-index: 4;
     float: right;
   }
-  .navbar .nav-list{
+  .navbar-right .nav-list{
     display: none;
     margin-left: 0;
     width: 100%;
   }
-  .navbar .nav-list li{
+  .navbar-right .nav-list li{
     margin-left: 0;
   }
-  .navbar  .menu-icon{
+  .navbar-right  .menu-icon{
     display: block;
-    float: left;
-    width: 36px;
-    height: 26px;
-    line-height: 0;
-    padding-top: 10px;
+    float: right;
+    padding-top: 27px;
+    padding-bottom: 27px;
     text-align: center;
-
   }
-  .navbar  .menu-icon>svg path{
+  .navbar-right  .menu-icon>svg path{
     fill: white;
   }
-  .navbar  label[for="nav-toggler"] {
+  .navbar-right  label[for="nav-toggler"] {
     display: block;
     float: left;
     width: 36px;
@@ -134,5 +144,21 @@ header {
     z-index: 2;
     cursor: pointer;
   }
+  .header-left {
+    display: none;
+  }
+  .nav-pack {
+    display: block;
+  }
+  .navbar-right {
+    padding-left: 0;
+  }
 }
 /*响应式导航栏*/
+
+.carousel-control {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
