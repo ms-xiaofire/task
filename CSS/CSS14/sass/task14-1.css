@@ -32,9 +32,6 @@ main {
   padding: 4px 4px;
   transform: scale(0.6); }
 
-p {
-  margin: 0; }
-
 .name {
   text-align: center;
   margin: 1rem 0; }
