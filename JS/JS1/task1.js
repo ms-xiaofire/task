@@ -1,5 +1,6 @@
 var a;
 function go() {
+    clearInterval(a);
     function GetRandomNum(Min,Max) {
         var Range = Max - Min;
         var Rand = Math.random();
@@ -27,7 +28,7 @@ function go() {
     node[num2].style.background = bg1();
     node[num3].style.background = bg1();
 
-    a = setTimeout("go()",1000);
+    a = setInterval("go()",1000);
 }
 
 function stop() {
