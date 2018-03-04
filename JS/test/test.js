@@ -1,22 +1,37 @@
-// var obj = {
-//     toString: function () {
-//         return 1;
-//     }
-// };
-// var obj = new Date();
-// obj.valueOf = function () { return 1 };
-// obj.toString = function () { return "hello" };
-// var age = obj + 2;
-// alert(age);
-// if(1>2) {
-//     alert("1>2");
-// }else {
-//     alert("条件不足");
-// }
-var test = document.getElementById('test');
-test.addEventListener('mouseenter',function (event) {
-    event.target.style.color = 'purple';
-    setTimeout(function () {
-        event.target.style.color = '';
-    },500);
-},false);
+//获取表单中的表单域 
+var txt=document.forms[0].elements["txt1"];
+var btnStart=document.forms[0].elements["btnStart"];
+var btnReset=document.forms[0].elements["btnReset"]
+//定义定时器的id 
+var id;
+//每10毫秒该值增加1 
+var seed=0;
+
+btnStart.onclick=function(){
+    //根据按钮文本来判断当前操作
+    if(this.value=="开始"){
+        //使按钮文本变为停止
+        this.value="停止";
+        //使重置按钮不可用
+        btnReset.disabled=true;
+        //设置定时器，每0.01s跳一次
+        id=window.setInterval(tip,10);
+    }else{
+        //使按钮文本变为开始
+        this.value="开始";
+        //使重置按钮可用
+        btnReset.disabled=false;
+        //取消定时
+        window.clearInterval(id);
+    }
+}
+
+//重置按钮 
+btnReset.onclick=function(){
+    seed=0;
+}
+//让秒表跳一格 
+function tip(){
+    seed++;
+    txt.value=seed/100;
+} 
