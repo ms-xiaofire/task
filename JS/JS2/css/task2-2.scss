@@ -78,6 +78,16 @@ body {
           line-height: 3rem;
           text-align: center;
           border-top: 1px solid #d9d9d9;
+          input {
+            border: none;
+            background: #fbfbfb;
+            color: #29bbdd;
+            font-size: 1rem;
+            cursor: pointer;
+          }
+          input:focus {
+            outline: none;
+          }
         }
       }
     }

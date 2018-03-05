@@ -68,6 +68,14 @@ body {
           line-height: 3rem;
           text-align: center;
           border-top: 1px solid #d9d9d9; }
+          body main .role .role-right .setting input {
+            border: none;
+            background: #fbfbfb;
+            color: #29bbdd;
+            font-size: 1rem;
+            cursor: pointer; }
+          body main .role .role-right .setting input:focus {
+            outline: none; }
     body main .keyword {
       margin-top: 0.5rem;
       padding: 0 1rem 1rem;

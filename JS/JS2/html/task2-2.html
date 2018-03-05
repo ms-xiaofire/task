@@ -18,7 +18,10 @@
         </div>
         <div class="role-right">
             <div class="view"></div>
-            <div class="setting"></div>
+            <div class="setting">
+                <input type="button" value="点击设置" onclick="set()">
+                <img src="../images/set.png">
+            </div>
         </div>
     </div>
     <div class="keyword">
@@ -29,7 +32,7 @@
         <div>
             <p>玩家人数</p>
             <form>
-                <input type="number" value="" oninput="if(value.length>2)value=value.slice(0,2)">
+                <input type="number" id="num">
             </form>
             <p>人</p>
         </div>
