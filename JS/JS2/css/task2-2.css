@@ -1,0 +1,72 @@
+body {
+  font-size: 62.5%;
+  max-width: 780px;
+  min-width: 320px;
+  margin: 0 auto;
+  overflow: hidden; }
+  body header {
+    max-width: 780px;
+    min-width: 320px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    line-height: 3rem;
+    background: #29bde0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    body header input {
+      border: 0;
+      width: 32px;
+      height: 32px;
+      cursor: pointer; }
+    body header input:focus {
+      outline: none; }
+    body header .header-left {
+      background: url("../images/header-left .png") no-repeat;
+      background-size: 32px;
+      margin-left: 1rem; }
+    body header .header-right {
+      background: url("../images/header-right.png") no-repeat;
+      background-size: 32px;
+      margin-right: 1rem; }
+    body header p {
+      height: 3rem;
+      margin: 0;
+      color: white;
+      font-size: 1.2rem; }
+  body main {
+    background: #fbfbfb;
+    margin-top: 3rem;
+    padding: 1rem 1rem; }
+    body main .keyword {
+      padding: 0 1rem 1rem;
+      background: white; }
+      body main .keyword input {
+        width: 100%;
+        padding: 1rem 0 0.5rem;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #f0f0f0;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0; }
+      body main .keyword input::-webkit-input-placeholder {
+        color: #f0f0f0; }
+      body main .keyword input:focus {
+        outline: none; }
+    body main .footer {
+      margin-top: 1rem; }
+      body main .footer input {
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 1.5rem;
+        background: #fab344;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px; }
+      body main .footer input:focus {
+        outline: none; }
+
+/*# sourceMappingURL=task2-2.css.map */

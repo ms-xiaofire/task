@@ -39,7 +39,7 @@ body {
       justify-content: center;
       align-items: center;
       background: white;
-      padding: 0.5rem 0;
+      padding: 1rem 0;
       a {
         color: #999999;
         font-size: 1.2rem;
@@ -58,21 +58,34 @@ body {
     }
     .content {
       background: white;
-      padding: 1rem 2.5rem;
-      div {
-        width: 100%;
+      padding: 1rem 0;
+      input {
+        width: 80%;
         height: 5rem;
-        line-height: 5rem;
-        text-align: center;
+        margin: 0 10%;
+        border: none;
         background: #69d1e9;
-        a {
-          color: white;
-          font-size: 1rem;
-        }
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      input:focus {
+        outline: none;
       }
       p {
         color: #8c8c8c;
         text-align: center;
+      }
+      .police {
+        display: flex;
+        align-items: center;
+        div {
+          border-top: 1rem solid transparent;
+          border-left: 1rem solid #fbb435;
+          border-bottom: 1rem solid transparent;
+          cursor: pointer;
+          margin-left: -8%;
+        }
       }
     }
     .choose {
