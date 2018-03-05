@@ -7,19 +7,37 @@
 </head>
 <body>
 <header>
-    <input type="button" class="header-left">
+    <input type="button" class="header-left" onclick="back()">
     <p>参数设置</p>
     <input type="button" class="header-right">
 </header>
 <main>
+    <div class="role">
+        <div class="role-left">
+            <p>玩家配比</p>
+        </div>
+        <div class="role-right">
+            <div class="view"></div>
+            <div class="setting"></div>
+        </div>
+    </div>
     <div class="keyword">
         <input type="text" placeholder="水民词组">
         <input type="text" placeholder="幽灵词组">
     </div>
-    <div class="people"></div>
+    <div class="people">
+        <div>
+            <p>玩家人数</p>
+            <form>
+                <input type="number" value="" oninput="if(value.length>2)value=value.slice(0,2)">
+            </form>
+            <p>人</p>
+        </div>
+    </div>
     <div class="footer">
         <input type="button" value="去发牌">
     </div>
 </main>
+<script src="../js/task2-2.js"></script>
 </body>
 </html>
