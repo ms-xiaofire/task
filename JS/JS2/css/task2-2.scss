@@ -117,7 +117,7 @@ body {
       background: white;
       padding: 0.5rem 1rem;
       margin-top: 0.5rem;
-      div {
+      .in {
         display: flex;
         p {
           margin: 0.15rem 0;
@@ -138,6 +138,54 @@ body {
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
           -webkit-appearance: none !important;
+        }
+      }
+      .progress {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        button {
+          width: 20px;
+          height: 20px;
+          border: 1px solid #d9d9d9;
+        }
+        button:focus {
+          outline: none;
+        }
+        .minus {
+          background: url("../images/minus.png");
+          background-size: 18px;
+        }
+        input {
+          width: 60%;
+          margin: 0 1rem;
+        }
+        input:focus {
+          outline: none;
+        }
+        //隐藏滑动条
+        input[type=range] {
+          -webkit-appearance: none;
+        }
+        input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+        }
+        //自定义滑动轨道
+        input[type=range]::-webkit-slider-runnable-track {
+          height: 2px;
+          background-color: orange;
+        }
+        //自定义滑块
+        input[type=range]::-webkit-slider-thumb {
+          width: 30px;
+          height: 30px;
+          margin-top: -15px;
+          background: url("../images/columns.png");
+          background-size: 30px 30px;
+        }
+        .add {
+          background: url("../images/add.png");
+          background-size: 18px;
         }
       }
     }

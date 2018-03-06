@@ -1,37 +1,30 @@
-//获取表单中的表单域 
-var txt=document.forms[0].elements["txt1"];
-var btnStart=document.forms[0].elements["btnStart"];
-var btnReset=document.forms[0].elements["btnReset"]
-//定义定时器的id 
-var id;
-//每10毫秒该值增加1 
-var seed=0;
-
-btnStart.onclick=function(){
-    //根据按钮文本来判断当前操作
-    if(this.value=="开始"){
-        //使按钮文本变为停止
-        this.value="停止";
-        //使重置按钮不可用
-        btnReset.disabled=true;
-        //设置定时器，每0.01s跳一次
-        id=window.setInterval(tip,10);
-    }else{
-        //使按钮文本变为开始
-        this.value="开始";
-        //使重置按钮可用
-        btnReset.disabled=false;
-        //取消定时
-        window.clearInterval(id);
+(function(){
+    var range = document.getElementById("range"),
+        volume = document.forms[0]["volume"];//第一次使用这种方式获取document.forms[index][formName];
+    //设置初值
+    cachedRangeValue = localStorage.rangeValue ? localStorage.rangeValue : 5;
+    range.value = volume.value =  cachedRangeValue;
+    //判断浏览器是否支持range滑动条
+    if(range.type == "text"){
+        document.forms[0].innerHTML = "抱歉，您的浏览器不支持range滑动条，请使用高版本浏览器";
     }
-}
-
-//重置按钮 
-btnReset.onclick=function(){
-    seed=0;
-}
-//让秒表跳一格 
-function tip(){
-    seed++;
-    txt.value=seed/100;
-} 
+    //默认"false"，事件句柄在冒泡阶段支持；若为"true"，则事件在句柄捕获阶段执行
+    range.addEventListener("mouseup",function(){
+        localStorage ? (localStorage.rangeValue = range.value) : (console.log("不支持本地存储"));
+    },"false");
+    if(range.addEventListener){
+        range.addEventListener("mouseup",function(){
+            localStorage ? (localStorage.rangeValue = range.value) : (console.log("不支持本地存储"));
+        },"false");
+        range.addEventListener("change",function(){
+            volume.value = range.value;
+        });
+    }else{
+        range.attachEvent("onmouseup",function(){
+            localStorage ? (localStorage.rangeValue = range.value) : (console.log("不支持本地存储"));
+        });
+        range.attachEvent("change",function(){
+            volume.value = range.value;
+        })
+    }
+})();

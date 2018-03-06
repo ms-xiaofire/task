@@ -98,12 +98,12 @@ body {
       background: white;
       padding: 0.5rem 1rem;
       margin-top: 0.5rem; }
-      body main .people div {
+      body main .people .in {
         display: flex; }
-        body main .people div p {
+        body main .people .in p {
           margin: 0.15rem 0;
           font-size: 1.2rem; }
-        body main .people div input {
+        body main .people .in input {
           margin: 0 1rem;
           width: 2.5rem;
           background: #f4f5f5;
@@ -111,11 +111,45 @@ body {
           color: #fab344;
           font-size: 1.5rem;
           text-align: center; }
-        body main .people div input:focus {
+        body main .people .in input:focus {
           outline: none; }
-        body main .people div input::-webkit-outer-spin-button,
-        body main .people div input::-webkit-inner-spin-button {
+        body main .people .in input::-webkit-outer-spin-button,
+        body main .people .in input::-webkit-inner-spin-button {
           -webkit-appearance: none !important; }
+      body main .people .progress {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center; }
+        body main .people .progress button {
+          width: 20px;
+          height: 20px;
+          border: 1px solid #d9d9d9; }
+        body main .people .progress button:focus {
+          outline: none; }
+        body main .people .progress .minus {
+          background: url("../images/minus.png");
+          background-size: 18px; }
+        body main .people .progress input {
+          width: 60%;
+          margin: 0 1rem; }
+        body main .people .progress input:focus {
+          outline: none; }
+        body main .people .progress input[type=range] {
+          -webkit-appearance: none; }
+        body main .people .progress input[type=range]::-webkit-slider-thumb {
+          -webkit-appearance: none; }
+        body main .people .progress input[type=range]::-webkit-slider-runnable-track {
+          height: 2px;
+          background-color: orange; }
+        body main .people .progress input[type=range]::-webkit-slider-thumb {
+          width: 30px;
+          height: 30px;
+          margin-top: -15px;
+          background: url("../images/columns.png");
+          background-size: 30px 30px; }
+        body main .people .progress .add {
+          background: url("../images/add.png");
+          background-size: 18px; }
     body main .footer {
       margin-top: 1rem; }
       body main .footer input {

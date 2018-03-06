@@ -29,16 +29,19 @@
         <input type="text" placeholder="幽灵词组">
     </div>
     <div class="people">
-        <div>
+        <div class="in">
             <p>玩家人数</p>
-            <form>
-                <input type="number" id="num">
-            </form>
+            <input type="number" id="num">
             <p>人</p>
+        </div>
+        <div class="progress">
+            <button type="button" class="minus" id="minus"></button>
+            <input type="range" min="4" max="18" id="progress">
+            <button type="button" class="add" id="add"></button>
         </div>
     </div>
     <div class="footer">
-        <input type="button" value="去发牌">
+        <input type="button" value="去发牌" onclick="aaa()">
     </div>
 </main>
 <script src="../js/task2-2.js"></script>
