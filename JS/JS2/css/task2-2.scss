@@ -117,75 +117,56 @@ body {
       background: white;
       padding: 0.5rem 1rem;
       margin-top: 0.5rem;
-      .in {
-        display: flex;
-        p {
-          margin: 0.15rem 0;
-          font-size: 1.2rem;
+      table {
+        margin: 0;
+        div {
+          display: flex;
+          align-items: center;
+          p {
+            margin: 0.15rem 0;
+            font-size: 1.2rem;
+          }
+          .in-num {
+            margin: 0 1rem;
+            width: 2.5rem;
+            background: #f4f5f5;
+            border: none;
+            color: #fab344;
+            font-size: 1.5rem;
+            text-align: center;
+          }
         }
-        input {
-          margin: 0 1rem;
-          width: 2.5rem;
-          background: #f4f5f5;
-          border: none;
-          color: #fab344;
-          font-size: 1.5rem;
-          text-align: center;
-        }
-        input:focus {
-          outline: none;
-        }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-          -webkit-appearance: none !important;
-        }
-      }
-      .progress {
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
-        button {
-          width: 20px;
-          height: 20px;
-          border: 1px solid #d9d9d9;
-        }
-        button:focus {
-          outline: none;
-        }
-        .minus {
-          background: url("../images/minus.png");
-          background-size: 18px;
-        }
-        input {
-          width: 60%;
-          margin: 0 1rem;
-        }
-        input:focus {
-          outline: none;
-        }
-        //隐藏滑动条
-        input[type=range] {
-          -webkit-appearance: none;
-        }
-        input[type=range]::-webkit-slider-thumb {
-          -webkit-appearance: none;
-        }
-        //自定义滑动轨道
-        input[type=range]::-webkit-slider-runnable-track {
-          height: 2px;
-          background-color: orange;
-        }
-        //自定义滑块
-        input[type=range]::-webkit-slider-thumb {
-          width: 30px;
-          height: 30px;
-          margin-top: -15px;
-          background: url("../images/columns.png");
-          background-size: 30px 30px;
-        }
-        .add {
-          background: url("../images/add.png");
-          background-size: 18px;
+        .progress {
+          margin-top: 2rem;
+          justify-content: center;
+          input {
+            border: 1px solid #d9d9d9;
+            background: white;
+            color: orange;
+            font-size: 1.2rem;
+            width: 25px;
+            height: 25px;
+            padding: 0;
+          }
+          #slider2 {
+            width:60%;
+            height: 2px;
+            display:inline-block;
+            margin:0 2rem;
+            border: none;
+            background: #fab344;
+            a {
+              width: 30px;
+              height: 30px;
+              background: url("../images/columns.png");
+              background-size: 30px;
+              border: none;
+              margin-top: -10px;
+            }
+            a:focus {
+              outline: none;
+            }
+          }
         }
       }
     }

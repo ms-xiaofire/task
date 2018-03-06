@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>JS-Task2-2</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/task2-2.css">
 </head>
 <body>
@@ -29,21 +30,29 @@
         <input type="text" placeholder="幽灵词组">
     </div>
     <div class="people">
-        <div class="in">
-            <p>玩家人数</p>
-            <input type="number" id="num">
-            <p>人</p>
-        </div>
-        <div class="progress">
-            <button type="button" class="minus" id="minus"></button>
-            <input type="range" min="4" max="18" id="progress">
-            <button type="button" class="add" id="add"></button>
-        </div>
+        <table width="90%" border="0" align="center" cellpadding="1">
+            <tr>
+                <td width="672" valign="middle">
+                    <div>
+                        <p>玩家人数</p>
+                        <input name="C_Rejection" id="C_Rejection" type="text" class="in-num"/>
+                        <p>人</p>
+                    </div>
+                    <div class="progress">
+                        <input type="button" value="-" class="minus"/>
+                        <div id="slider2"></div>
+                        <input type="button" value="+" class="add"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
     <div class="footer">
-        <input type="button" value="去发牌" onclick="aaa()">
+        <input type="button" value="去发牌">
     </div>
 </main>
+<script src="../js/jquery-1.10.2.js"></script>
+<script src="../js/jquery-ui.js"></script>
 <script src="../js/task2-2.js"></script>
 </body>
 </html>
