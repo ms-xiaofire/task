@@ -71,6 +71,12 @@ body {
         .view {
           width: 100%;
           height: 12rem;
+          display: flex;
+          div {
+            width: 50%;
+            margin: 1rem;
+            font-size: 1rem;
+          }
         }
         .setting {
           width: 100%;
@@ -136,8 +142,12 @@ body {
             text-align: center;
           }
         }
+        .set-num {
+          margin: 0.5rem 0 0;
+          color: #fab344;
+        }
         .progress {
-          margin-top: 2rem;
+          margin-top: 1rem;
           justify-content: center;
           input {
             border: 1px solid #d9d9d9;

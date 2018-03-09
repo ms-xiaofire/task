@@ -15,10 +15,24 @@
 <main>
     <div class="role">
         <div class="role-left">
-            <p>玩家配比</p>
+            <p>玩 家 配 比</p>
         </div>
         <div class="role-right">
-            <div class="view"></div>
+            <div class="view">
+                <div>
+                    <div>
+                        杀 手
+                        <span id="kill"></span>
+                         人
+                    </div>
+                    <div>
+                        平 民
+                        <span id="civilian"></span>
+                         人
+                    </div>
+                </div>
+                <div></div>
+            </div>
             <div class="setting">
                 <input type="button" value="点击设置" onclick="set()">
                 <img src="../images/set.png">
@@ -34,10 +48,11 @@
             <tr>
                 <td width="672" valign="middle">
                     <div>
-                        <p>玩家人数</p>
-                        <input name="C_Rejection" id="C_Rejection" type="text" class="in-num" onkeyup="value=value.replace(/[^\d]/g,'')"/>
-                        <p>人</p>
+                        <p>玩 家 人 数</p>
+                        <input name="C_Rejection" id="C_Rejection" type="text" class="in-num"/>
+                        <p> 人</p>
                     </div>
+                    <p class="set-num">(玩家人数为4-18人)</p>
                     <div class="progress">
                         <input type="button" value="-" class="minus"/>
                         <div id="slider2"></div>
