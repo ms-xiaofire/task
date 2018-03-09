@@ -20,12 +20,31 @@ function set() {
     var a = document.getElementById("C_Rejection").value;
     var k = document.getElementById("kill");
     var c = document.getElementById("civilian");
+    var l = "";
     console.log(a);
     if(a>3&&a<19) {
         k.innerHTML = Math.floor(a/4);
         c.innerHTML = a-k.innerHTML;
-        var killA =k.innerHTML;
-        var Num = [];
+        var killA = Math.floor(a/4);
+        var totalArr = [];
+
+        for(var n=0;n<killA;n++){
+            totalArr[n] = "杀手";
+        }
+        for(n=killA;n<a;n++){
+            totalArr[n] = "平民";
+        }
+        totalArr.sort(function () {
+            return 0.5 - Math.random()
+        });
+
+        for(var i=0;i<a;i++){
+            var m = i + 1;
+            l += m + '号' + totalArr[i] + "</br>";
+        }
+        document.getElementById("per").innerHTML = l;
+
+
     }else alert("请输入正确的玩家数量!");
 }
 

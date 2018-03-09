@@ -67,6 +67,8 @@ body {
             width: 50%;
             margin: 1rem;
             font-size: 1rem; }
+          body main .role .role-right .view .view-right {
+            overflow: auto; }
         body main .role .role-right .setting {
           width: 100%;
           height: 3rem;
