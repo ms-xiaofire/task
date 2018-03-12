@@ -65,12 +65,12 @@
     <div class="footer">
         <input type="button" value="去发牌" onclick="star()">
     </div>
-    <div class="shadow"></div>
-    <div class="dialog">
+    <div class="shadow" id="shade"></div>
+    <div class="dialog" id="circle">
         <p>请输入正确的玩家数量</p>
         <div>
-            <button>确认</button>
-            <button>取消</button>
+            <button onclick="enter()">确认</button>
+            <button onclick="cancel()">取消</button>
         </div>
     </div>
 </main>
