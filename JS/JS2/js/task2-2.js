@@ -59,5 +59,8 @@ function set() {
     } else alert("请输入正确的玩家数量!");
 }
 function star() {
-    window.location.href = "task2-3.html";
+    var n = document.getElementById("civilian").innerHTML;
+    if (n === "") {
+        alert("请输入正确的玩家数量!");
+    } else window.location.href = "task2-3.html";
 }
