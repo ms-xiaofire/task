@@ -62,6 +62,7 @@ function set() {
         s.style.display = "block";
         r.style.display = "block";
 }
+//点击去发牌,先验证是否设置了玩家人数
 function star() {
     var n = document.getElementById("civilian").innerHTML;
     if (n === "") {
@@ -69,6 +70,7 @@ function star() {
         r.style.display = "block";
     } else window.location.href = "task2-3.html";
 }
+//模态框
 function enter() {
     s.style.display = "none";
     r.style.display = "none";
