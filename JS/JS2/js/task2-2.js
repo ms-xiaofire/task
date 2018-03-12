@@ -1,3 +1,5 @@
+var s = document.getElementById("shade");
+var r = document.getElementById("circle");
 //返回首页
 function back() {
     window.location.href = "task2-1.html";
@@ -57,29 +59,21 @@ function set() {
 
 
     } else
-        var s = document.getElementById("shade");
-        var r = document.getElementById("circle");
         s.style.display = "block";
         r.style.display = "block";
 }
 function star() {
     var n = document.getElementById("civilian").innerHTML;
     if (n === "") {
-        var s = document.getElementById("shade");
-        var r = document.getElementById("circle");
         s.style.display = "block";
         r.style.display = "block";
     } else window.location.href = "task2-3.html";
 }
 function enter() {
-    var s = document.getElementById("shade");
-    var r = document.getElementById("circle");
     s.style.display = "none";
     r.style.display = "none";
 }
 function cancel() {
-    var s = document.getElementById("shade");
-    var r = document.getElementById("circle");
     s.style.display = "none";
     r.style.display = "none";
 }
