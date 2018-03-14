@@ -6,22 +6,8 @@ a:focus {
   outline: none;
 }
 body {
-  font-size: 62.5%;
-  max-width: 780px;
-  min-width: 320px;
-  margin: 0 auto;
-  overflow: hidden;
   header {
-    max-width: 780px;
-    min-width: 320px;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    line-height: 3rem;
-    background: #29bde0;
     div {
-      height: 3rem;
       display: flex;
       align-items: center;
       img {

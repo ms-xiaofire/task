@@ -3,43 +3,27 @@
   box-sizing: border-box;
 }
 body {
-  font-size: 62.5%;
-  max-width: 780px;
-  min-width: 320px;
-  margin: 0 auto;
   header {
-    max-width: 780px;
-    min-width: 320px;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    line-height: 3rem;
-    background: #29bde0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     input {
       border: 0;
-      width: 32px;
-      height: 32px;
+      width: 25px;
+      height: 25px;
       cursor: pointer;
     }
     input:focus {
       outline: none;
     }
     .header-left {
-      background: url("../images/header-left .png") no-repeat;
-      background-size: 32px;
-      margin-left: 1rem;
+      background: url("../images/header-left.png") no-repeat;
+      background-size: 25px;
+      margin-left: 0.5rem;
     }
     .header-right {
       background: url("../images/header-right.png") no-repeat;
-      background-size: 32px;
-      margin-right: 1rem;
+      background-size: 25px;
+      margin-right: 0.5rem;
     }
     p {
-      height: 3rem;
       margin: 0;
       color: white;
       font-size: 1.2rem;

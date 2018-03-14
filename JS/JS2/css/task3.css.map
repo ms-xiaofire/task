@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,YAAa;EACX,UAAU,EAAE,0CAA0C;EACtD,eAAe,EAAE,IAAI;;AAEvB,aAAc;EACZ,UAAU,EAAE,yCAAyC;EACrD,eAAe,EAAE,IAAI;;AAEvB,IAAK;EACH,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,OAAO;EACnB,UAAU,EAAE,iBAAiB",
+"sources": ["task3.scss"],
+"names": [],
+"file": "task3.css"
+}

@@ -69,7 +69,7 @@ function star() {
         var r = document.getElementById("circle");
         s.style.display = "block";
         r.style.display = "block";
-    } else window.location.href = "task2-3.html";
+    } else window.location.href = "task3-1.html";
 }
 function enter() {
     var s = document.getElementById("shade");
