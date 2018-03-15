@@ -1,5 +1,5 @@
 //返回首页
-function back() {
+function home() {
     window.location.href = "task2-1.html";
 }
 
