@@ -1,7 +1,3 @@
-//返回首页
-function home() {
-    window.location.href = "task2-1.html";
-}
 
 //同步输入框和滑动条
 $(function s1() {
