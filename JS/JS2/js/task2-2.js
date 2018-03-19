@@ -1,4 +1,9 @@
 
+var k = document.getElementById("kill");
+var p = document.getElementById("civilian");
+var s = document.getElementById("shade");
+var r = document.getElementById("circle");
+var l = "";
 //同步输入框和滑动条
 $(function s1() {
     $("#slider2").slider({
@@ -23,21 +28,18 @@ $(function s1() {
 //分析杀手人数和平民人数
 function set() {
     var a = document.getElementById("C_Rejection").value;
-    var k = document.getElementById("kill");
-    var c = document.getElementById("civilian");
-    var l = "";
     //验证玩家数量
     if (a > 3 && a < 19) {
         k.innerHTML = Math.floor(a / 4);
-        c.innerHTML = a - k.innerHTML;
+        p.innerHTML = a - k.innerHTML;
         var killA = Math.floor(a / 4);
         var totalArr = [];
         //遍历杀手数量
-        for (var n = 0; n < killA; n++) {
-            totalArr[n] = "杀手";
+        for (var z = 0; z < killA; z++) {
+            totalArr[z] = "杀手";
         }
         //遍历平民数量
-        for (n = killA; n < a; n++) {
+        for (var n = killA; n < a; n++) {
             totalArr[n] = "平民";
         }
         //数组乱序,把平民和杀手的顺序打乱
@@ -49,33 +51,38 @@ function set() {
             var m = i + 1;
             l += m + '号' + totalArr[i] + "</br>";
         }
+
+        s = JSON.stringify(totalArr);
+        console.log(totalArr);
+
+        sessionStorage.totalArr = s;
+
         document.getElementById("per").innerHTML = l;
 
 
-    } else
-        var s = document.getElementById("shade");
-        var r = document.getElementById("circle");
+    } else {
         s.style.display = "block";
         r.style.display = "block";
+    }
+
 }
 function star() {
     var n = document.getElementById("civilian").innerHTML;
-    if (n === "") {
-        var s = document.getElementById("shade");
-        var r = document.getElementById("circle");
+    if (n !== "") {
+        window.location.href = "task3-1.html";
+
+        sessionStorage.setItem("killNum",k.innerHTML);
+        sessionStorage.setItem('peopleNum',p.innerHTML);
+    } else {
         s.style.display = "block";
         r.style.display = "block";
-    } else window.location.href = "task3-1.html";
+    }
 }
 function enter() {
-    var s = document.getElementById("shade");
-    var r = document.getElementById("circle");
     s.style.display = "none";
     r.style.display = "none";
 }
 function cancel() {
-    var s = document.getElementById("shade");
-    var r = document.getElementById("circle");
     s.style.display = "none";
     r.style.display = "none";
 }
