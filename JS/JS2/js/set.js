@@ -27,6 +27,7 @@ $(function s1() {
 
 //分析杀手人数和平民人数
 function set() {
+    l = "";
     var a = document.getElementById("C_Rejection").value;
     //验证玩家数量
     if (a > 3 && a < 19) {
@@ -69,7 +70,7 @@ function set() {
 function star() {
     var n = document.getElementById("civilian").innerHTML;
     if (n !== "") {
-        window.location.href = "task3-1.html";
+        window.location.href = "view.html";
 
         sessionStorage.setItem("killNum",k.innerHTML);
         sessionStorage.setItem('peopleNum',p.innerHTML);

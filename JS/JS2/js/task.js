@@ -1,6 +1,6 @@
 function back() {
-    window.location.href = "task2-2.html"
+    window.location.href = "set.html"
 }
 function home() {
-    window.location.href = "task2-1.html"
+    window.location.href = "home.html"
 }
