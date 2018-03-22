@@ -8,9 +8,11 @@
   background: url("../images/head-right.png") no-repeat;
   background-size: 25px;
 }
+header {
+  border-bottom: 1px solid #74d4eb;
+}
 main {
   margin-top: 3rem;
   background: #29bde0;
-  border-top: 1px solid #74d4eb;
   overflow: hidden;
 }

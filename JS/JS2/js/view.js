@@ -1,13 +1,10 @@
 
 var k = sessionStorage.getItem('killNum');
 var p = sessionStorage.getItem('peopleNum');
-console.log(k);
-console.log(p);
 
 s = sessionStorage.totalArr;
 totalArr = JSON.parse(s);
 console.log(totalArr);
-console.log(totalArr.length);
 
 var checkNum = 1;
 var n = 0;
@@ -15,7 +12,7 @@ var n = 0;
 check();
 function check() {
     if (checkNum >= (2 * totalArr.length + 1)){
-        location.herf = "god.html";
+        location.href="god.html";
     }else {
         if (checkNum %2 !== 0){
             reveal();

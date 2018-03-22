@@ -1,19 +1,27 @@
-// var quickSort=function(arr){
-//     //如果数组长度小于等于1无需判断直接返回即可
-//     if(arr.length<=1){
-//         return arr;
-//     }
-//     var midIndex=Math.floor(arr.length/2);//取基准点
-//     var midIndexVal=arr.splice(midIndex,1);//取基准点的值,splice(index,1)函数可以返回数组中被删除的那个数arr[index+1]
-//     var left=[];//存放比基准点小的数组
-//     var right=[];//存放比基准点大的数组
-//     //遍历数组，进行判断分配
-//     for(var i=0;i<arr.length;i++){<br>
-//         if(arr[i]<midindexval){ left.push(arr[i]);="" 比基准点小的放在左边数组="" }="" else{="" right.push(arr[i]);="" 比基准点大的放在右边数组="" document.write("第"+(++times)+"次排序后："+arr+"<br="">");
-//         }
-//         //递归执行以上操作,对左右两个数组进行操作，直到数组长度为<=1；
-//         return quickSort(left).concat(midIndexVal,quickSort(right));
-//     };
-//     document.write("未排序:  "+arr+"<br>");
-//     document.write(quickSort(arr));
-// </midindexval){></arr.length;i++){<br>
+// var array = new Array("aaaa", "bbbb", "cccc", "eeee");
+function init(){
+    createNewNode();
+}
+window.onload = init;
+function createNewNode(){
+    for(var i=0; i<5; i++){
+        var newDivNode = document.createElement("div");
+        document.body.appendChild(newDivNode);
+
+        newDivNode.setAttribute("id", "newId"+i);
+
+        var idd = newDivNode.getAttribute("id");
+
+        newDivNode.style.width = "50px";
+        newDivNode.style.height = "50px";
+        newDivNode.style.background = "rgba(150,50,32,1)";
+        newDivNode.style.float = "left";
+        newDivNode.style.position = "absolute";
+        newDivNode.style.left = (60 * i) + "px";
+        newDivNode.style.color = "white";
+
+        newDivNode.addEventListener("click", function(){
+
+        }, false);
+    }
+}
