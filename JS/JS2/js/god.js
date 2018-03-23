@@ -32,17 +32,21 @@ function createNewNode() {
         var newId = document.getElementById("newId"+i);
         var a = document.createElement("div");
         newId.appendChild(a);
-        a.setAttribute("id", "casting");
+        a.setAttribute("id", "casting"+i);
         var ibb = a.getAttribute("id");
         a.style.padding = "23% 20%";
         a.style.background = "#f5c97b";
 
         var b = document.createElement("div");
         newId.appendChild(b);
-        b.setAttribute("id", "num");
+        b.setAttribute("id", "num"+i);
         var icc = b.getAttribute("id");
         b.style.padding = "0 20%";
         b.style.background = "#83b09a";
+
+        document.getElementById("casting"+i).innerHTML = totalArr[n];
+        document.getElementById("num"+i).innerHTML = n+1+"号";
+        n++;
 
         // for(k=0; k<totalArr.length; k++) {
         //     var casting = document.getElementById("casting");
@@ -53,4 +57,6 @@ function createNewNode() {
         // }
         // n++;
     }
+    // for(j=0; j<totalArr.length; j++){
+    // }
 }
