@@ -48,15 +48,5 @@ function createNewNode() {
         document.getElementById("num"+i).innerHTML = n+1+"号";
         n++;
 
-        // for(k=0; k<totalArr.length; k++) {
-        //     var casting = document.getElementById("casting");
-        //     casting.innerHTML = totalArr[n];
-        //
-        //     var num = document.getElementById("num");
-        //     num.innerHTML = totalArr[n];
-        // }
-        // n++;
     }
-    // for(j=0; j<totalArr.length; j++){
-    // }
 }
