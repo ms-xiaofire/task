@@ -1,0 +1,10 @@
+html body header {
+  border-bottom: 1px solid #74d4eb; }
+  html body header .header-left {
+    background: url("../images/8-task7.png") no-repeat;
+    background-size: 25px; }
+  html body header .header-right {
+    background: url("../images/9-task7.png") no-repeat;
+    background-size: 25px; }
+
+/*# sourceMappingURL=end.css.map */
