@@ -12,7 +12,7 @@ var n = 0;
 check();
 function check() {
     if (checkNum >= (2 * totalArr.length + 1)){
-        location.href="god.html";
+        location.href="kill.html";
     }else {
         if (checkNum %2 !== 0){
             reveal();
