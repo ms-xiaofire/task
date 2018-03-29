@@ -2,6 +2,8 @@
 var s = document.getElementById("shade");
 var r = document.getElementById("circle");
 var d = document.getElementById("dialog");
+var e = document.getElementById("enter");
+var n = document.getElementById("end");
 
 function judge() {
     window.location.href = "kill.html";
@@ -24,6 +26,13 @@ function player() {
     r.style.display = "block";
     d.innerHTML = "请玩家依次发言";
 }
+function finish() {
+    s.style.display = "block";
+    r.style.display = "block";
+    e.style.display = "none";
+    n.style.display = "block";
+    d.innerHTML = "确定要结束游戏?";
+}
 function enter() {
     s.style.display = "none";
     r.style.display = "none";
@@ -31,8 +40,12 @@ function enter() {
 function cancel() {
     s.style.display = "none";
     r.style.display = "none";
+    e.style.display = "block";
+    n.style.display = "none";
 }
-
+function end() {
+    window.location.href = "home.html";
+}
 function vote() {
     window.location.href = "kill.html";
     sessionStorage.setItem('killer',"发言讨论结束,大家请投票");

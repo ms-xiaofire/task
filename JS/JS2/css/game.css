@@ -83,6 +83,8 @@ html {
             padding: 0.7rem 1.2rem;
             border-radius: 5px;
             cursor: pointer; }
+          html body main .dialog div #end {
+            display: none; }
           html body main .dialog div button:focus {
             outline: none; }
     html body footer {
