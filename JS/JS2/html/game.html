@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>JS-Task4-1</title>
+    <title>Game</title>
     <link rel="stylesheet" href="../css/task.css">
     <link rel="stylesheet" href="../css/game.css">
 </head>
@@ -19,15 +19,35 @@
         <div class="step">
             <img src="../images/night.png">
             <div class="trigon"></div>
-            <div class="proceed">杀手杀人</div>
+            <div class="proceed" id="kill" onclick="kill()">杀手杀人</div>
         </div>
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
+        <div class="step">
+            <img src="../images/day.png">
+            <div class="trigon"></div>
+            <div class="proceed" onclick="ghost()">亡灵发表遗言</div>
+        </div>
+        <div class="step">
+            <img src="../images/day.png">
+            <div class="trigon"></div>
+            <div class="proceed" onclick="player()">玩家依次发言</div>
+        </div>
+        <div class="step">
+            <img src="../images/day.png">
+            <div class="trigon"></div>
+            <div class="proceed" onclick="vote()">全民投票</div>
+        </div>
+    </div>
+    <div class="shadow" id="shade"></div>
+    <div class="dialog" id="circle">
+        <p id="dialog"></p>
+        <div>
+            <button onclick="enter()">确认</button>
+            <button onclick="cancel()">取消</button>
+        </div>
     </div>
 </main>
 <footer>
-    <button class="footer-left">结束游戏</button>
+    <button class="footer-left" onclick="finish()">结束游戏</button>
     <button class="footer-right" onclick="judge()">法官日志</button>
 </footer>
 <script src="../js/task.js"></script>

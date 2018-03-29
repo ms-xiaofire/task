@@ -1,7 +1,12 @@
 var k = sessionStorage.getItem('killNum');
 var p = sessionStorage.getItem('peopleNum');
+var killMan = sessionStorage.getItem('killer');
 console.log(k);
 console.log(p);
+console.log(killMan);
+
+var x = document.getElementById('killMan');
+x.innerHTML = killMan;
 
 s = sessionStorage.totalArr;
 totalArr = JSON.parse(s);
@@ -50,6 +55,13 @@ function createNewNode() {
     }
 }
 
+
+
+
+function finish() {
+    alert("");
+    window.location.href = "home.html";
+}
 function startGame() {
     window.location.href = "game.html";
 }
