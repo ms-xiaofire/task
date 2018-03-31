@@ -6,13 +6,17 @@ var e = document.getElementById("enter");
 var n = document.getElementById("end");
 
 function judge() {
-    window.location.href = "kill.html";
+    window.location.href = "god.html";
 }
+
+//设置变量,存放游戏进行到第几天
+var dayNum = sessionStorage.setItem('dayNum',JSON.stringify());
 
 function kill() {
     window.location.href = "kill.html";
     // var kill = document.getElementById('kill');
     // kill.style.background = "rgb(24, 117, 141)";
+    sessionStorage.setItem('title', "杀手杀人");
     sessionStorage.setItem('killer',"杀手请睁眼,杀手请选择要杀的对象");
 }
 
@@ -48,5 +52,6 @@ function end() {
 }
 function vote() {
     window.location.href = "kill.html";
+    sessionStorage.setItem('title', "玩家投票");
     sessionStorage.setItem('killer',"发言讨论结束,大家请投票");
 }

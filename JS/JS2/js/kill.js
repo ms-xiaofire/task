@@ -1,10 +1,13 @@
 var k = sessionStorage.getItem('killNum');
 var p = sessionStorage.getItem('peopleNum');
+var title = sessionStorage.getItem('title');
 var killMan = sessionStorage.getItem('killer');
 console.log(k);
 console.log(p);
 console.log(killMan);
 
+var kill = document.getElementById('kill');
+kill.innerHTML = title;
 var x = document.getElementById('killMan');
 x.innerHTML = killMan;
 
