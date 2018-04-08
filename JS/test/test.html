@@ -1,100 +1,79 @@
 <!DOCTYPE html>
-<!--suppress ALL -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <title>九宫格</title>
+    <title>Title</title>
     <style>
-        .swag{
-            padding-left:31%;
-            padding-bottom: 31%;
-            margin:1%;
-            border-radius: 20%;
-            background: orange;
-            float:left;
-        }
-        #mainDiv{
-            width:600px;
-            height:600px;
-        }
-        .btn1{
-            width:600px;
-            height:35px;
-            margin-top: 15px;
-            background: white;
-            border: 2px yellow solid;
-        }
-        .btn2{
-            width:600px;
-            height:35px;
-            margin-top: 15px;
-            background: white;
-            border: 2px yellow solid;
+        div {
+            width: 400px;
+            height: 150px;
+            border: 1px solid #000;
         }
     </style>
 </head>
 <body>
-<div id="mainDiv">
-    <div class="swag"></div>
-    <div class="swag"></div>
-    <div class="swag"></div>
-    <div class="swag"></div>
-    <div class="swag"></div>
-    <div class="swag"></div>
-    <div class="swag"></div>
-    <div class="swag"></div>
-    <div class="swag"></div>
+<p>定义第一个添加按钮</p>
+
+<input type="button" value="第一个按钮" id="oneAdd"/>
+</br>
+</br>
+</br>
+<p>定义一个DIV</p>
+<div id="div">
 </div>
-<div>
-    <input id="btnStart" class='btn1' type="button" value="开始闪"><br>
-    <input id="btnEnd" class='btn2' type="button" value="结束闪">
-</div>
-<script>
-window.onload=function(){
-    var btns = document.getElementsByTagName('input');    //两个控制按钮
-    var timer = null;   //定时器的返回值
-    btns[0].onclick = function (){//点击'开始闪',启动定时器,改变两个按钮的样式
-        timer = setInterval(changeColor,1000);
-        btns[0].style.background='orange';
-        btns[1].style.background='white';
-        changeColor();
-    }
-    btns[1].onclick = function(){//点击'结束闪',关闭定时器,改变两个按钮的样式
-        clearInterval(timer);
-        btns[1].style.background='orange';
-        btns[0].style.background='white';
-    };
-    btns[1].onmouseout = function(){
-        btns[1].style.background = 'white';
-    };
-}
-function changeColor (){//控制颜色的改变
-    var aDivSet = document.getElementsByClassName('swag'); //显示颜色的div
-    var mRandom = getRandom();//map的key为div的下标,value为颜色
-    mRandom.forEach(function (value, key, map){
-        aDivSet[key].style.background = value;
-        setTimeout(function (){//500毫秒之后把变色的div还原
-            for(var i=0; i<aDivSet.length;i++){
-                aDivSet[i].style.background='orange';
-            }
-        },500);
-    });
-};
-function getRandom(){//随机
-    var numArray = [];
-    var stack = [0,1,2,3,4,5,6,7,8];
-    for(var i =0; i<3; i++) {//随机数组,存放div的下标,取三个
-        numArray.push(stack.splice(parseInt(Math.random() * stack.length), 1)[0]);
-    }
-    var numMap = new Map();
-    for (var j=0; j<numArray.length;  j++) {//map 存放下标和颜色
-        var getRandomColor = '#'+('00000'+(Math.random()*0x1000000<<0).toString(16)).substr(-6);
-        numMap.set(numArray[j],getRandomColor);
-    }
-    return numMap;
-}
+<script src="jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+
+    $(function(){
+
+//给添加按钮，首先使用click的方式
+
+        $("#oneAdd").click(function(){
+
+//在div里面添加第二个按钮
+
+            console.log("点击了第一个按钮")
+
+            $("#div").html("<input type='button' value='第二个按钮' id='twoAdd' />");
+
+        })
+
+
+//给第二个按钮一个添加事件，同样是使用click的方式
+
+//第一个方法
+
+        /*$("#twoAdd").click(function(){
+
+        console.log("点击了第二个按钮")
+
+        })
+
+
+        //第二个方法
+
+        $("#twoAdd").on("click",function(){
+
+        console.log("点击了第二个按钮")
+
+        })*/
+
+
+//第三个方法
+
+        $("#div").on("click","#twoAdd",function(){
+
+            console.log($(this).attr("type"))
+
+//取消按钮一的点击事件
+
+            $("#oneAdd").off("click");
+
+        })
+
+    })
+
 </script>
 </body>
-
 </html>

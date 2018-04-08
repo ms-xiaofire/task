@@ -1,27 +1,38 @@
-// var array = new Array("aaaa", "bbbb", "cccc", "eeee");
-function init(){
-    createNewNode();
-}
-window.onload = init;
-function createNewNode(){
-    for(var i=0; i<5; i++){
-        var newDivNode = document.createElement("div");
-        document.body.appendChild(newDivNode);
-
-        newDivNode.setAttribute("id", "newId"+i);
-
-        var idd = newDivNode.getAttribute("id");
-
-        newDivNode.style.width = "50px";
-        newDivNode.style.height = "50px";
-        newDivNode.style.background = "rgba(150,50,32,1)";
-        newDivNode.style.float = "left";
-        newDivNode.style.position = "absolute";
-        newDivNode.style.left = (60 * i) + "px";
-        newDivNode.style.color = "white";
-
-        newDivNode.addEventListener("click", function(){
-
-        }, false);
+var fsm = new StateMachine({
+    init: 'solid',
+    transitions: [
+        {name: 'Melt', from: 'solid', to: 'liquid'},
+        {name: 'Vaporize', from: 'liquid', to: 'gas'},
+        {name: 'Condense', from: 'gas', to: 'liquid'},
+        {name: 'Freeze', from: 'liquid', to: 'solid'}
+    ],
+    methods: {
+        onBeforeMelt:         function() { /* ... */ },
+        onBeforeVaporize:     function() { /* ... */ },
+        onBeforeCondense:     function() { /* ... */ },
+        onBeforeFreeze:       function() { /* ... */ },
+        onLeaveSolid:         function() { /* ... */ },
+        onLeaveLiquid:        function() { /* ... */ },
+        onLeaveGas:           function() { /* ... */ },
+        onEnterLiquid:        function() { /* ... */ },
+        onEnterGas:           function() { /* ... */ },
+        onEnterSolid:         function() { /* ... */ },
+        onAfterMelt:          function() { /* ... */ },
+        onAfterVaporise:      function() { /* ... */ },
+        onAfterCondense:      function() { /* ... */ }
+        onAfterFreeze:        function() { /* ... */ }
     }
-}
+
+});
+//方法调用
+//1，自执行方法：
+fsm.onMelt();
+fsm.onVaporize();
+fsm.onCondense();
+fsm.onFreeze();
+
+//1、触发调用方式：
+fsm.Melt();
+fsm.Vaporize();
+fsm.Condense();
+fsm.Freeze();

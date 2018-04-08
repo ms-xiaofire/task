@@ -18,6 +18,7 @@ function kill() {
     // kill.style.background = "rgb(24, 117, 141)";
     sessionStorage.setItem('title', "杀手杀人");
     sessionStorage.setItem('killer',"杀手请睁眼,杀手请选择要杀的对象");
+    sessionStorage.setItem('isKill','1');
 }
 
 function ghost() {
@@ -48,6 +49,8 @@ function cancel() {
     n.style.display = "none";
 }
 function end() {
+    sessionStorage.removeItem('dieNum');
+    sessionStorage.removeItem('dieList');
     window.location.href = "home.html";
 }
 function vote() {
