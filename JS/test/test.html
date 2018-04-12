@@ -3,77 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="state-machine.js"></script>
     <style>
-        div {
-            width: 400px;
-            height: 150px;
-            border: 1px solid #000;
+        button {
+            display: block;
+            margin: 30px 0;
+            width: 50px;
+            height: 20px;
         }
     </style>
 </head>
 <body>
-<p>定义第一个添加按钮</p>
-
-<input type="button" value="第一个按钮" id="oneAdd"/>
-</br>
-</br>
-</br>
-<p>定义一个DIV</p>
-<div id="div">
-</div>
-<script src="jquery-3.3.1.js"></script>
-
-<script type="text/javascript">
-
-    $(function(){
-
-//给添加按钮，首先使用click的方式
-
-        $("#oneAdd").click(function(){
-
-//在div里面添加第二个按钮
-
-            console.log("点击了第一个按钮")
-
-            $("#div").html("<input type='button' value='第二个按钮' id='twoAdd' />");
-
-        })
-
-
-//给第二个按钮一个添加事件，同样是使用click的方式
-
-//第一个方法
-
-        /*$("#twoAdd").click(function(){
-
-        console.log("点击了第二个按钮")
-
-        })
-
-
-        //第二个方法
-
-        $("#twoAdd").on("click",function(){
-
-        console.log("点击了第二个按钮")
-
-        })*/
-
-
-//第三个方法
-
-        $("#div").on("click","#twoAdd",function(){
-
-            console.log($(this).attr("type"))
-
-//取消按钮一的点击事件
-
-            $("#oneAdd").off("click");
-
-        })
-
+<button id="one">one</button>
+<button id="two">two</button>
+<button id="three">three</button>
+<button id="four">four</button>
+<script>
+    $(document).ready(function () {
+        var fsm = new StateMachine({
+            init: 'test1',
+            transitions: [
+                {name: 'kill', from: 'test1', to: 'test2'},
+                {name: 'ghost', from: 'test2', to: 'test3'},
+                {name: 'speak', from: 'test3', to: 'test4'},
+                {name: 'vote', from: 'test4', to: 'test1'}
+            ],
+            methods: {
+                onAfterKill: function (lifecycle) {
+                    console.log("状态: "+ fsm.state);
+                    sessionStorage.setItem('stateOne',fsm.state);
+                },
+                onGhost: function (lifecycle) {
+                    console.log("状态: "+ fsm.state);
+                    sessionStorage.setItem('stateTwo',fsm.state);
+                },
+                onSpeak: function (lifecycle) {
+                    console.log("状态: "+ fsm.state);
+                    sessionStorage.setItem('stateThree',fsm.state);
+                },
+                onAfterVote: function (lifecycle) {
+                    console.log("状态: "+ fsm.state);
+                    sessionStorage.setItem('stateFour',fsm.state);
+                    sessionStorage.removeItem('stateOne');
+                    sessionStorage.removeItem('stateTwo');
+                    sessionStorage.removeItem('stateThree');
+                }
+            }
+        });
+        var One = sessionStorage.getItem('stateOne');
+        var Two = sessionStorage.getItem('stateTwo');
+        var Three = sessionStorage.getItem('stateThree');
+        if(One === "test2"){
+            $('#one').css('background-color', 'orange');
+        }
+        if(Two === "test3"){
+            $('#two').css('background-color', 'orange');
+        }
+        if(Three === "test4"){
+            $('#three').css('background-color', 'orange');
+        }
+        $('#one').click(function () {
+            if(One === "test2"){
+                alert("请按步骤来!");
+            }else {
+                fsm.kill();
+                alert("点击了one按钮");
+            }
+        });
+        $('#two').click(function () {
+            if(One !== "test2"){
+                alert("请按步骤来!");
+            }else {
+                fsm.kill();
+                if(Two !== "test3"){
+                    fsm.ghost();
+                    alert("点击了two按钮");
+                }
+            }
+        });
+        $('#three').click(function () {
+            if(One !== "test2"){
+                alert("请按步骤来!");
+            }else {
+                if(Three === "test4"){
+                    alert("请按步骤来!");
+                }else {
+                    fsm.speak();
+                    alert("点击了three按钮");
+                }
+            }
+        });
+        $('#four').click(function () {
+            if(One !== "test2"){
+                alert("请按步骤来!");
+            }else {
+                fsm.vote();
+                alert("点击了four按钮");
+            }
+        });
     })
-
 </script>
 </body>
 </html>

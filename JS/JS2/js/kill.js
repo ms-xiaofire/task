@@ -68,6 +68,7 @@ $(document).ready(function () {
             if(isKill === 1){
                 if(people === "杀手"){
                     alert("队长!别开枪!!是我!!!");
+                    $('.casting').removeClass("down");
                     Index = null;
                 }else {
                     $(".casting").removeClass("down");

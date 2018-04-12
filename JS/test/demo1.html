@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
-    <script>
-        function add() {
-            var a = 1;
-            var b = 2;
-            return a+b;
-        }
-        function fun() {
-            console.log(add());
-        }
-        fun();
-    </script>
 </head>
 <body>
-
+<div id="div">
+    <p id="p">段落文本内容
+        <input type="button" value="点击" id="btn"/>
+    </p>
+</div>
+<script>
+    var div = document.getElementById("div");
+    var p = document.getElementById("p");
+    var btn = document.getElementById("btn");
+    div.onclick = function () {
+        alert("div");
+    };
+    p.onclick = function () {
+        alert("p");
+    };
+    btn.onclick = function () {
+        alert("btn");
+    }
+</script>
 </body>
 </html>
