@@ -201,5 +201,9 @@ function end() {
     sessionStorage.removeItem('dieList');
     sessionStorage.removeItem('K');
     sessionStorage.removeItem('P');
+    sessionStorage.removeItem('isKill');
+    sessionStorage.removeItem('A');
+    sessionStorage.removeItem('B');
+    sessionStorage.removeItem('C');
     window.location.href = "home.html";
 }
