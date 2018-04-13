@@ -143,7 +143,8 @@ function kill() {
 function ghost() {
     if(A === "rgb(24, 117, 141)"){
         if(B === "rgb(41, 189, 224)") {
-            alert("请按步骤来!");
+            s.style.display = "block";
+            r.style.display = "block";
             d.innerHTML = "请亡灵发表遗言";
             document.getElementById("ghost").style.background = "#18758D";
             sessionStorage.setItem('B', '1');
@@ -153,7 +154,8 @@ function ghost() {
 function player() {
     if(B === "rgb(24, 117, 141)"){
         if(C === "rgb(41, 189, 224)"){
-            alert("请按步骤来!");
+            s.style.display = "block";
+            r.style.display = "block";
             d.innerHTML = "请玩家依次发言";
             document.getElementById("player").style.background = "#18758D";
             sessionStorage.setItem('C', '1');
@@ -183,20 +185,16 @@ function finish() {
 }
 
 //法官日志
-function judge() {
-    window.location.href = "god.html";
-}
+// function judge() {
+//     window.location.href = "god.html";
+// }
 
 //模态框
 function enter() {
-    s.style.display = "none";
-    r.style.display = "none";
+    location.href = "game.html";
 }
 function cancel() {
-    s.style.display = "none";
-    r.style.display = "none";
-    e.style.display = "block";
-    n.style.display = "none";
+    location.href = "game.html";
 }
 function end() {
     sessionStorage.removeItem('dieNum');
