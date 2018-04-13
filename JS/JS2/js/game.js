@@ -103,10 +103,11 @@ var n = document.getElementById("end");
 
 //设置变量,存放游戏进行到第几天
 // var dayNum = sessionStorage.setItem('dayNum',JSON.stringify());
+
+var a = parseInt(sessionStorage.getItem('A'));
+var b = parseInt(sessionStorage.getItem('B'));
+var c = parseInt(sessionStorage.getItem('C'));
 function rendar() {
-    var a = parseInt(sessionStorage.getItem('A'));
-    var b = parseInt(sessionStorage.getItem('B'));
-    var c = parseInt(sessionStorage.getItem('C'));
     if(a === 1){
         document.getElementById("kill").style.background = "#18758D";
     }
@@ -119,16 +120,9 @@ function rendar() {
 }
 rendar();
 
-
-var A = $('#kill').css("background-color");
-console.log(A);
-var B = $('#ghost').css("background-color");
-console.log(B);
-var C = $('#player').css("background-color");
-console.log(C);
-
+//杀手杀人
 function kill() {
-    if(A === "rgb(24, 117, 141)"){
+    if(a === 1){
         alert("请按步骤来!");
     }else {
         window.location.href = "kill.html";
@@ -139,10 +133,10 @@ function kill() {
         sessionStorage.setItem('A', '1');
     }
 }
-
+//亡灵遗言
 function ghost() {
-    if(A === "rgb(24, 117, 141)"){
-        if(B === "rgb(41, 189, 224)") {
+    if(a === 1){
+        if(b !== 1) {
             s.style.display = "block";
             r.style.display = "block";
             d.innerHTML = "请亡灵发表遗言";
@@ -151,9 +145,10 @@ function ghost() {
         }else alert("请按步骤来!");
     }else alert("请按步骤来!");
 }
+//玩家发言
 function player() {
-    if(B === "rgb(24, 117, 141)"){
-        if(C === "rgb(41, 189, 224)"){
+    if(b === 1){
+        if(c !== 1){
             s.style.display = "block";
             r.style.display = "block";
             d.innerHTML = "请玩家依次发言";
@@ -162,8 +157,9 @@ function player() {
         }else alert("请按步骤来!");
     }else alert("请按步骤来!");
 }
+//玩家投票
 function vote() {
-    if(C === "rgb(24, 117, 141)"){
+    if(c === 1){
         window.location.href = "kill.html";
         sessionStorage.setItem('title', "玩家投票");
         sessionStorage.setItem('killer',"发言讨论结束,大家请投票");
