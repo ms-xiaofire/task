@@ -125,6 +125,8 @@ $("#startGame").click(function () {
 });
 console.log(k);
 console.log(p);
+sessionStorage.setItem('killer', k);
+sessionStorage.setItem('gamePlay', p);
 function finish() {
     alert("");
     window.location.href = "home.html";

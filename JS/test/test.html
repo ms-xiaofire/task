@@ -33,14 +33,17 @@
                 onAfterKill: function (lifecycle) {
                     console.log("状态: "+ fsm.state);
                     sessionStorage.setItem('stateOne',fsm.state);
+                    $('#one').css('background-color', 'orange');
                 },
                 onGhost: function (lifecycle) {
                     console.log("状态: "+ fsm.state);
                     sessionStorage.setItem('stateTwo',fsm.state);
+                    $('#two').css('background-color', 'orange');
                 },
                 onSpeak: function (lifecycle) {
                     console.log("状态: "+ fsm.state);
                     sessionStorage.setItem('stateThree',fsm.state);
+                    $('#three').css('background-color', 'orange');
                 },
                 onAfterVote: function (lifecycle) {
                     console.log("状态: "+ fsm.state);
@@ -54,15 +57,15 @@
         var One = sessionStorage.getItem('stateOne');
         var Two = sessionStorage.getItem('stateTwo');
         var Three = sessionStorage.getItem('stateThree');
-        if(One === "test2"){
-            $('#one').css('background-color', 'orange');
-        }
-        if(Two === "test3"){
-            $('#two').css('background-color', 'orange');
-        }
-        if(Three === "test4"){
-            $('#three').css('background-color', 'orange');
-        }
+            if(One === "test2"){
+                $('#one').css('background-color', 'orange');
+            }
+            if(Two === "test3"){
+                $('#two').css('background-color', 'orange');
+            }
+            if(Three === "test4"){
+                $('#three').css('background-color', 'orange');
+            }
         $('#one').click(function () {
             if(One === "test2"){
                 alert("请按步骤来!");

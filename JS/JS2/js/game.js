@@ -100,13 +100,15 @@ var n = document.getElementById("end");
 //         }
 //     })
 // });
-
-//设置变量,存放游戏进行到第几天
-// var dayNum = sessionStorage.setItem('dayNum',JSON.stringify());
-
-var a = parseInt(sessionStorage.getItem('A'));
-var b = parseInt(sessionStorage.getItem('B'));
-var c = parseInt(sessionStorage.getItem('C'));
+var a;
+var b;
+var c;
+function test() {
+    a = parseInt(sessionStorage.getItem('A'));
+    b = parseInt(sessionStorage.getItem('B'));
+    c = parseInt(sessionStorage.getItem('C'));
+}
+test();
 function rendar() {
     if(a === 1){
         document.getElementById("kill").style.background = "#18758D";
@@ -137,11 +139,13 @@ function kill() {
 function ghost() {
     if(a === 1){
         if(b !== 1) {
-            s.style.display = "block";
-            r.style.display = "block";
-            d.innerHTML = "请亡灵发表遗言";
+            alert("请亡灵发表遗言");
+            // s.style.display = "block";
+            // r.style.display = "block";
+            // d.innerHTML = "请亡灵发表遗言";
             document.getElementById("ghost").style.background = "#18758D";
             sessionStorage.setItem('B', '1');
+            test();
         }else alert("请按步骤来!");
     }else alert("请按步骤来!");
 }
@@ -149,11 +153,13 @@ function ghost() {
 function player() {
     if(b === 1){
         if(c !== 1){
-            s.style.display = "block";
-            r.style.display = "block";
-            d.innerHTML = "请玩家依次发言";
+            alert("请玩家依次发言");
+            // s.style.display = "block";
+            // r.style.display = "block";
+            // d.innerHTML = "请玩家依次发言";
             document.getElementById("player").style.background = "#18758D";
             sessionStorage.setItem('C', '1');
+            test();
         }else alert("请按步骤来!");
     }else alert("请按步骤来!");
 }
@@ -170,6 +176,49 @@ function vote() {
     }else alert("请按步骤来!");
 }
 
+// function test() {
+//     window.location.href = "game.html";
+// }
+//根据已死亡玩家数量来判断游戏进行到第几天
+var dieNum = sessionStorage.getItem('dieNum');
+var day;
+if(sessionStorage.getItem('dieNum')){
+    dieNum = JSON.parse(sessionStorage.getItem('dieNum'));
+}else {
+    dieNum = [];
+}
+if(dieNum<=2){
+    day = 1;
+}else {
+    day = Math.ceil((dieNum.length+1)/2);
+}
+$('#day').text("第"+day+"天");
+$('#days').text("第"+day+"天");
+
+var dieList = JSON.parse(sessionStorage.getItem("dieList"));
+console.log(dieList);
+var kong=[];
+for(var i=0;i<dieList.length;i+=2){
+    kong.push(dieList.slice(i,i+2));
+}
+console.log(kong);
+
+var block=[];
+var content;
+for (var m = 0; m < kong.length; m++) {
+    content = (!kong[m][1]?'':'<div class="day">' + "第"+(m+1)+"天"+ '</div>')  +'<div id="list">'+
+        '<p>' + "晚上:" +kong[m][0]+"被杀手杀死" +'</p>'+
+        (!kong[m][1]?'':'<p>' + "白天:" +kong[m][1]+"被全民投票投死" +'</p>' +'</div>');
+
+    block.push(content);
+}
+document.getElementById("record").innerHTML=block.join('');
+
+$(document).ready(function(){
+    $(".day").click(function(){
+        $(this).next("#list").toggle();
+    });
+});
 
 //结束游戏
 function finish() {
@@ -193,13 +242,6 @@ function cancel() {
     location.href = "game.html";
 }
 function end() {
-    sessionStorage.removeItem('dieNum');
-    sessionStorage.removeItem('dieList');
-    sessionStorage.removeItem('K');
-    sessionStorage.removeItem('P');
-    sessionStorage.removeItem('isKill');
-    sessionStorage.removeItem('A');
-    sessionStorage.removeItem('B');
-    sessionStorage.removeItem('C');
+    sessionStorage.clear();
     window.location.href = "home.html";
 }
