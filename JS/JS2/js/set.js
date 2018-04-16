@@ -29,9 +29,9 @@ $(function s1() {
 function set() {
     l = "";
     var a = document.getElementById("C_Rejection").value;
-    document.getElementById('view-left').style.display = 'block';
     //验证玩家数量
     if (a > 3 && a < 19) {
+        document.getElementById('view-left').style.display = 'block';
         k.innerHTML = Math.floor(a / 4);
         p.innerHTML = a - k.innerHTML;
         var killA = Math.floor(a / 4);

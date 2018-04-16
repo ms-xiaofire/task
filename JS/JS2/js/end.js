@@ -26,6 +26,7 @@ var content;
 for(i=0;i<kong.length;i++){
     content = '<div class="record">'+'<p class="today">'+"第"+(i+1)+"天"+'</p>'+'<p class="log">'+"晚上: "+kong[i][0]+"被杀手杀死"+'</p>'+'<p class="log">'+"白天: "+kong[i][1]+"被投票投死"+'</p>'+'</div>';
     block.push(content);
+    $('#day').text(i+1);
 }
 document.getElementById('list').innerHTML=block.join('');
 
