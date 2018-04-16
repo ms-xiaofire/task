@@ -64,6 +64,7 @@ $(document).ready(function () {
 
         if(D === "rgb(140, 140, 140)"){
             alert("亡者已逝,请杀活着的玩家");
+            $('.casting').removeClass("down");
         }else {
             if(isKill === 1){
                 if(people === "杀手"){

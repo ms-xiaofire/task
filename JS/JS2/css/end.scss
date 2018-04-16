@@ -31,7 +31,7 @@ html {
         p {
           margin: 0;
           color: white;
-          font-size: 1.5rem;
+          font-size: 2rem;
           line-height: 14.5rem;
         }
       }
@@ -49,9 +49,11 @@ html {
         }
       }
     }
+    #list {
     .record {
       padding: 0 10% 1rem;
       border-bottom: 2px solid #8c8c8c;
+      }
       p {
         margin: 0 0 5px;
       }

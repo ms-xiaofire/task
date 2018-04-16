@@ -117,4 +117,7 @@ html {
         margin-left: 5%;
         background: #fbb435; }
 
+#record #list {
+  display: none; }
+
 /*# sourceMappingURL=game.css.map */
