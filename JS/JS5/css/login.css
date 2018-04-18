@@ -26,7 +26,8 @@ body {
       body main div div img {
         margin: 0 0.5rem;
         padding-right: 0.5rem;
-        border-right: 1px solid #c7c7c7; }
+        border-right: 1px solid #c7c7c7;
+        transform: scale(0.8); }
       body main div div input {
         height: 2rem;
         margin-left: 0.5rem;
