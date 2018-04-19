@@ -1,9 +1,9 @@
 
-
+var none = document.getElementById('hint');
 function login() {
+    none.innerHTML = "";
     var name = document.getElementById('name');
     var password = document.getElementById('password');
-    var none = document.getElementById('hint');
     console.log(name.value);
     console.log(password.value);
     var xhr = new XMLHttpRequest();
@@ -14,9 +14,13 @@ function login() {
     xhr.onreadystatechange = function () {
         if(xhr.readyState === 4){
             if(xhr.status === 200){
-                console.log(xhr.responseText);
-            }else {
-                none.innerHTML = "用户名或密码错误!";
+                var josns = JSON.parse(xhr.responseText);
+                console.log(josns);
+                if(josns.code === 0){
+                    console.log("成功!")
+                }else {
+                    none.innerHTML = "用户名或密码错误!";
+                }
             }
         }
     };
