@@ -10,11 +10,14 @@ $(document).ready(function () {
             pwd: p
         },
             function (data, status) {
-            // alert("Data: "+data+"\nStatus: "+status);
-                var Date = JSON.stringify(data);
-                var Status = JSON.stringify(status);
-                console.log(Date);
-                console.log(Status);
+                console.log(status);
+                var j = JSON.parse(data);
+                console.log(j.message);
+                if(j.code === 0){
+                    window.location.href = "test.html";
+                }else {
+                    $('#hint').html(j.message);
+                }
             });
     });
 });
