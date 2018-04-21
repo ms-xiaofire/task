@@ -1,22 +1,22 @@
 
 $(document).ready(function () {
     $('#login').click(function () {
-        var n = $('#name').val();
-        var p = $('#password').val();
-        console.log(n);
-        console.log(p);
+        var name = $('#name').val();
+        var password = $('#password').val();
+        console.log(name);
+        console.log(password);
         $.post('/carrots-admin-ajax/a/login', {
-            name: n,
-            pwd: p
+            name: name,
+            pwd: password
         },
             function (data, status) {
                 console.log(status);
-                var j = JSON.parse(data);
-                console.log(j.message);
-                if(j.code === 0){
+                var jsons = JSON.parse(data);
+                console.log(jsons.message);
+                if(jsons.code === 0){
                     window.location.href = "test.html";
                 }else {
-                    $('#hint').html(j.message);
+                    $('#hint').html(jsons.message);
                 }
             });
     });
