@@ -1,10 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta charset="UTF-8">
     <title></title>
-    <script type="text/javascript" src="http://remoteserver.com/remote.js"></script>
 </head>
 <body>
-
+<div>用户: <input name="uname" id="uname"/></div>
+<div><span id="info"></span></div>
+<script type="text/javascript">
+    var uname = document.getElementById('uname');
+    var info = document.getElementById('info');
+    uname.onkeyup = function () {
+        info.innerHTML = uname.value;
+    }
+</script>
 </body>
 </html>

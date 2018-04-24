@@ -128,11 +128,11 @@
                         args    = [fsm.context];
 
                     if (additional)
-                        args = args.concat(additional);
+                        args = args.concat(additional)
 
                     for(n = 0, max = plugins.length ; n < max ; n++) {
-                        plugin = plugins[n];
-                        method = plugins[n][name];
+                        plugin = plugins[n]
+                        method = plugins[n][name]
                         if (method)
                             method.apply(plugin, args);
                     }
@@ -289,7 +289,7 @@
                     if (typeof data === 'function')
                         return data;
                     else if (typeof data === 'object')
-                        return function() { return data; };
+                        return function() { return data; }
                     else
                         return function() { return {};  }
                 },
@@ -304,7 +304,7 @@
                     for(n = 0, max = plugins.length ; n < max ; n++) {
                         plugin = plugins[n];
                         if (typeof plugin === 'function')
-                            plugins[n] = plugin = plugin();
+                            plugins[n] = plugin = plugin()
                         if (plugin.configure)
                             plugin.configure(this);
                     }
@@ -315,7 +315,7 @@
                     var i, n, transition, from, to, wildcard = this.defaults.wildcard;
                     for(n = 0 ; n < transitions.length ; n++) {
                         transition = transitions[n];
-                        from  = Array.isArray(transition.from) ? transition.from : [transition.from || wildcard];
+                        from  = Array.isArray(transition.from) ? transition.from : [transition.from || wildcard]
                         to    = transition.to || wildcard;
                         for(i = 0 ; i < from.length ; i++) {
                             this.mapTransition({ name: transition.name, from: from[i], to: to });
@@ -415,8 +415,8 @@
                         to       = entry && entry.to;
                     if (typeof to === 'function')
                         return to.apply(this.context, args);
-                    else if (to === wildcard){
-                        return this.state}
+                    else if (to === wildcard)
+                        return this.state
                     else
                         return to
                 },
@@ -523,7 +523,7 @@
                 },
 
                 onInvalidTransition: function(transition, from, to) {
-                    throw new Exception("transition is invalid in current state", transition, from, to, this.state)
+                    throw new Exception("transition is invalid in current state", transition, from, to, this.state);
                 },
 
                 onPendingTransition: function(transition, from, to) {
@@ -565,8 +565,8 @@
                 allTransitions:      function()            { return this._fsm.allTransitions()                              },
                 allStates:           function()            { return this._fsm.allStates()                                   },
                 onInvalidTransition: function(t, from, to) { return this._fsm.onInvalidTransition(t, from, to)              },
-                onPendingTransition: function(t, from, to) { return this._fsm.onPendingTransition(t, from, to)              }
-            };
+                onPendingTransition: function(t, from, to) { return this._fsm.onPendingTransition(t, from, to)              },
+            }
 
             var PublicProperties = {
                 state: {
@@ -579,7 +579,7 @@
                         throw Error('use transitions to change state')
                     }
                 }
-            };
+            }
 
 //-----------------------------------------------------------------------------------------------
 
@@ -641,7 +641,7 @@
                     name: 'init',
                     from: 'none'
                 }
-            };
+            }
 
 //===============================================================================================
 

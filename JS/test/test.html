@@ -30,22 +30,22 @@
                 {name: 'vote', from: 'test4', to: 'test1'}
             ],
             methods: {
-                onAfterKill: function (lifecycle) {
+                onAfterKill: function () {
                     console.log("状态: "+ fsm.state);
                     sessionStorage.setItem('stateOne',fsm.state);
                     $('#one').css('background-color', 'orange');
                 },
-                onGhost: function (lifecycle) {
+                onGhost: function () {
                     console.log("状态: "+ fsm.state);
                     sessionStorage.setItem('stateTwo',fsm.state);
                     $('#two').css('background-color', 'orange');
                 },
-                onSpeak: function (lifecycle) {
+                onSpeak: function () {
                     console.log("状态: "+ fsm.state);
                     sessionStorage.setItem('stateThree',fsm.state);
                     $('#three').css('background-color', 'orange');
                 },
-                onAfterVote: function (lifecycle) {
+                onAfterVote: function () {
                     console.log("状态: "+ fsm.state);
                     sessionStorage.setItem('stateFour',fsm.state);
                     sessionStorage.removeItem('stateOne');
