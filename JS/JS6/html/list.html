@@ -31,13 +31,13 @@
             <li class="nav-item">
                 <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>信息管理</span><i class="my-icon nav-more"></i></a>
                 <ul>
-                    <li><a href="javascript:;"><span>学员信息</span></a></li>
+                    <li><a ui-sref=".welcome" href="#!list/welcome"><span>学员信息</span></a></li>
                 </ul>
             </li>
             <li class="nav-item">
                 <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>Article</span><i class="my-icon nav-more"></i></a>
                 <ul>
-                    <li><a href="javascript:;"><span>Article信息</span></a></li>
+                    <li><a ui-sref=".article" href="#!list/article"><span>Article信息</span></a></li>
                 </ul>
             </li>
             <!--<li class="nav-item">-->
@@ -50,7 +50,9 @@
             <!--</li>-->
         </ul>
     </div>
-    <div class="test"></div>
+    <div ui-view="" class="test">
+        <!--<div ui-view=""></div>-->
+    </div>
 </div>
 
 <!--<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>-->
