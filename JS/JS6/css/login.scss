@@ -8,20 +8,21 @@ body {
   justify-content: center;
   overflow: hidden;
   main {
-    div {
+    .bgr {
       width: 20rem;
       background: #c7c7c7;
       padding: 1rem 2rem 0.5rem;
+      box-sizing: content-box;
       .head {
         text-align: center;
         margin: 0 0 2rem;
         font-size: 1.2rem;
         color: #29bde0;
       }
-      div {
+      .unames {
         width: 100%;
         height: 3rem;
-        margin: 1rem 0;
+        margin: 1rem 0 0;
         padding: 0.5rem 0;
         background: white;
         display: flex;
@@ -37,9 +38,18 @@ body {
           margin-left: 0.5rem;
           border: none;
           font-size: 1.2rem;
+          color: black;
         }
         input:focus {
           outline: none;
+        }
+      }
+      .error {
+        width: 100%;
+        height: 1rem;
+        margin-left: 3rem;
+        div {
+          color: red;
         }
       }
       #hint {

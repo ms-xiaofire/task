@@ -1,15 +1,15 @@
 
-
+//angular路由
 // angular.module("routeApp", ['ngRoute']).config(['$routeProvider', function ($routeProvider) {
 //     $routeProvider
 //         .when('/login', {templateUrl: 'login.html'})
 //         .when('/list', {templateUrl: 'list.html'})
 //         .otherwise({redirectTo: '/login'});
 // }]);
+//
 
-
-
-angular.module("App", ['ui.router'])
+//angular模块
+angular.module("App", ['ui.router', 'ngMessages'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/login');
         $stateProvider
@@ -32,5 +32,27 @@ angular.module("App", ['ui.router'])
                 url: '/article',
                 templateUrl: 'article.html'
             })
+    })
+    //login控制器
+    .controller('logCtrl', function ($scope, $state, $http) {
+        $scope.params = {};
+            $scope.myLogin = function () {
+                $http({
+                    method: 'POST',
+                    url: '/carrots-admin-ajax/a/login',
+                    params: $scope.params
+                }).then(function successCallback(response) {
+                    console.log(response);
+                    if (response.data.code===0){
+                        $state.go('list')
+                    }else {
+                        $('#hint').text(response.data.message);
+                    }
+                },
+                    function (response) {
+                        console.log(response);
+                    }
+                    )
+            }
     });
 

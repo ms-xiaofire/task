@@ -1,0 +1,38 @@
+
+main {
+  padding: 2rem;
+  .options {
+    width: 100%;
+    padding: 1rem 0;
+    border: 1px solid #c7c7c7;
+    border-radius: 3px;
+    select {
+      width: 100%;
+    }
+    .to {
+      position: relative;
+      top: 50%;
+      width: 2rem;
+      border: 1px solid black;
+    }
+    .type {
+      float: left;
+      margin: 1rem 0;
+    }
+    .operation {
+      float: right;
+    }
+  }
+  .article {
+    margin-top: 2rem;
+    border: 1px solid #c7c7c7;
+    border-radius: 3px;
+    .title {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #e8e8e8;
+    }
+  }
+}

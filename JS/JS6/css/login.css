@@ -7,40 +7,48 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden; }
-  body main div {
+  body main .bgr {
     width: 20rem;
     background: #c7c7c7;
-    padding: 1rem 2rem 0.5rem; }
-    body main div .head {
+    padding: 1rem 2rem 0.5rem;
+    box-sizing: content-box; }
+    body main .bgr .head {
       text-align: center;
       margin: 0 0 2rem;
       font-size: 1.2rem;
       color: #29bde0; }
-    body main div div {
+    body main .bgr .unames {
       width: 100%;
       height: 3rem;
-      margin: 1rem 0;
+      margin: 1rem 0 0;
       padding: 0.5rem 0;
       background: white;
       display: flex;
       align-items: center; }
-      body main div div img {
+      body main .bgr .unames img {
         margin: 0 0.5rem;
         padding-right: 0.5rem;
         border-right: 1px solid #c7c7c7;
         transform: scale(0.8); }
-      body main div div input {
+      body main .bgr .unames input {
         height: 2rem;
         margin-left: 0.5rem;
         border: none;
-        font-size: 1.2rem; }
-      body main div div input:focus {
+        font-size: 1.2rem;
+        color: black; }
+      body main .bgr .unames input:focus {
         outline: none; }
-    body main div #hint {
+    body main .bgr .error {
+      width: 100%;
+      height: 1rem;
+      margin-left: 3rem; }
+      body main .bgr .error div {
+        color: red; }
+    body main .bgr #hint {
       height: 1rem;
       color: red;
       margin: 0 0 0.3rem 3rem; }
-    body main div #login {
+    body main .bgr #login {
       width: 100%;
       height: 3rem;
       line-height: 3rem;
@@ -50,9 +58,9 @@ body {
       border: none;
       border-radius: 5px;
       cursor: pointer; }
-    body main div #login:hover {
+    body main .bgr #login:hover {
       color: black; }
-    body main div #login:focus {
+    body main .bgr #login:focus {
       outline: none; }
 
 /*# sourceMappingURL=login.css.map */
