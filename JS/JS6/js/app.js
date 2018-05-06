@@ -18,16 +18,17 @@ angular.module("App", ['ui.router', 'ngMessages'])
                 url: '/login',
                 templateUrl: 'login.html'
             })
-            //列表页面
+            //后台页面
             .state('list', {
                 url: '/list',
                 templateUrl: 'list.html'
             })
-            //列表欢迎页面
+            //后台欢迎页面
             .state('list.welcome', {
                 url: '/welcome',
                 templateUrl: 'welcome.html'
             })
+            //article列表页面
             .state('list.article', {
                 url: '/article',
                 templateUrl: 'article.html'
@@ -37,10 +38,12 @@ angular.module("App", ['ui.router', 'ngMessages'])
     .controller('logCtrl', function ($scope, $state, $http) {
         $scope.params = {};
             $scope.myLogin = function () {
+                //请求登录
                 $http({
                     method: 'POST',
                     url: '/carrots-admin-ajax/a/login',
                     params: $scope.params
+                // 登录成功后执行的代码
                 }).then(function successCallback(response) {
                     console.log(response);
                     if (response.data.code===0){
@@ -49,10 +52,27 @@ angular.module("App", ['ui.router', 'ngMessages'])
                         $('#hint').text(response.data.message);
                     }
                 },
+                    //登录失败执行的代码
                     function (response) {
                         console.log(response);
                     }
-                    )
+                    );
+
+                //请求article列表信息
+                $http({
+                    method: 'GET',
+                    url: '/carrots-admin-ajax/a/article/search'
+                    //请求成功执行的代码
+                }).then(function successCallback(response) {
+                    if(response.data.code===0){
+                        $scope.lists = response.data.data.articleList;
+                        console.log(response);
+                        // console.log(lists);
+                    }
+                    //请求失败执行的代码
+                },function errorCallback(response) {
+                    console.log(response);
+                });
             }
     });
 

@@ -4,28 +4,49 @@ main {
     width: 100%;
     padding: 1rem 0;
     border: 1px solid #c7c7c7;
-    border-radius: 3px; }
+    border-radius: 3px;
+    background: #fff; }
+    main .options input {
+      width: 100%; }
     main .options select {
       width: 100%; }
     main .options .to {
-      position: relative;
-      top: 50%;
-      width: 2rem;
-      border: 1px solid black; }
+      font-weight: bold; }
     main .options .type {
-      float: left;
-      margin: 1rem 0; }
+      margin: 2.5rem 0; }
     main .options .operation {
       float: right; }
+      main .options .operation button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        color: #fff; }
+      main .options .operation .clear {
+        background: #ac2925; }
+      main .options .operation .search {
+        background: #5cb85c; }
   main .article {
     margin-top: 2rem;
     border: 1px solid #c7c7c7;
-    border-radius: 3px; }
+    border-radius: 3px;
+    background: #fff; }
     main .article .title {
-      padding: 1rem;
+      padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #e8e8e8; }
+      background: #f8f8f8; }
+      main .article .title p {
+        margin: 0; }
+      main .article .title button {
+        padding: 0.5rem 1rem;
+        background: #5cb85c;
+        border: none;
+        border-radius: 5px;
+        color: #fff; }
+    main .article .tables {
+      width: auto;
+      margin: 1rem;
+      background: #fff; }
 
 /*# sourceMappingURL=article.css.map */

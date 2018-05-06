@@ -16,7 +16,7 @@ a{text-decoration:none;}
 .nav-item ul{display: none;background: rgba(0,0,0,.1);}
 .nav-item.nav-show ul{display: block;}
 .nav-item>a:before{content: "";position: absolute;left: 0px;width: 2px;height: 46px;background: #34A0CE;opacity:0;transition: all .3s;}
-.nav .nav-icon{position: absolute;margin-left:-1px;background: url(../images/brush.png) no-repeat center;width: 20px;height: 20px;background-size: 20px;margin-top: 10px;}
+.nav .nav-icon{position: absolute;margin-left:-1px;background: url(../../images/brush.png) no-repeat center;width: 20px;height: 20px;background-size: 20px;margin-top: 10px;}
 /* 此处修改导航图标 可自定义iconfont 替换*/
 /*.icon_1::after{content: "\e62b";}*/
 /*.icon_2::after{content: "\e669";}*/

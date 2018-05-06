@@ -6,33 +6,64 @@ main {
     padding: 1rem 0;
     border: 1px solid #c7c7c7;
     border-radius: 3px;
+    background: #fff;
+    input {
+      width: 100%;
+    }
     select {
       width: 100%;
     }
     .to {
-      position: relative;
-      top: 50%;
-      width: 2rem;
-      border: 1px solid black;
+      font-weight: bold;
     }
     .type {
-      float: left;
-      margin: 1rem 0;
+      margin: 2.5rem 0;
     }
     .operation {
       float: right;
+      button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+      }
+      .clear {
+        background: #ac2925;
+      }
+      .search {
+        background: #5cb85c;
+      }
     }
   }
   .article {
     margin-top: 2rem;
     border: 1px solid #c7c7c7;
     border-radius: 3px;
+    background: #fff;
     .title {
-      padding: 1rem;
+      padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #e8e8e8;
+      background: #f8f8f8;
+      p {
+        margin: 0;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        background: #5cb85c;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+      }
+    }
+    .tables {
+      width: auto;
+      margin: 1rem;
+      background: #fff;
+      table {
+        //border: 1px solid #eee;
+      }
     }
   }
 }
