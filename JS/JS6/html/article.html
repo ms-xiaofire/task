@@ -1,29 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../css/article.css">
-</head>
-<body>
-<main>
+
+
+
+
+
+<main ng-controller="artCtrl">
     <div class="options">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <span class="col-md-4">发布时间</span>
                     <div class="col-md-8">
-                        <input>
+                        <input type="text"
+                               class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="dat"
+                               is-open="popup1.opened"
+                               ng-required="true"
+                               close-text="关闭"
+                               clear-text="清空"
+                               current-text="今天"
+                               alt-input-formats="altInputFormats"
+                               ng-click = "open1()"
+                               ng-model = "startTime"
+                        />
                     </div>
                 </div>
                 <div class="col-md-4">
                     <span class="to col-md-4">——</span>
                     <div class="col-md-8">
-                        <input>
+                        <input type="text"
+                               class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="dat_"
+                               is-open="popup2.opened"
+                               ng-required="true"
+                               close-text="关闭"
+                               ng-click = "open2()"
+                               clear-text="清空"
+                               current-text="今天"
+                               alt-input-formats="altInputFormats"
+                               ng-model = "endTime"
+                        />
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
+                    <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
                     <div class="col-md-8">
                         <select>
                             <option>全部</option>
@@ -37,7 +58,7 @@
             </div>
             <div class="row">
                 <div class="type col-md-4">
-                    <span class="col-md-4">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</span>
+                    <span class="col-md-4">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</span>
                     <div class="col-md-8">
                         <select>
                             <option>全部</option>
@@ -63,6 +84,7 @@
             <button>+新增</button>
         </div>
         <div class="tables">
+            <!--table-striped隔行变色-->
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -78,21 +100,67 @@
                 </tr>
                 </thead>
                 <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                <tr ng-repeat="lis in lists">
+                    <td>{{$index+1}}</td>
+                    <td>{{lis.title}}</td>
+                    <td><img ng-src={{lis.img}} class="test1"></td>
+                    <td>{{lis.type|changeType}}</td>
+                    <td>{{lis.createAt|date:"yyyy-MM-dd"}}</td>
+                    <td>{{lis.updateAt|date:'yyyy-MM-dd'}}</td>
+                    <td>{{lis.author}}</td>
+                    <td>{{lis.status|changeStatus}}</td>
+                    <td>
+                        <div>
+                            <a>下线</a>
+                            <a>编辑</a>
+                            <a>删除</a>
+                        </div>
+                    </td>
                 </tr>
                 </thead>
             </table>
         </div>
     </div>
+    <div class="Pagination">
+        <uib-pagination
+                total-items="totalItems"
+                ng-model="currentPage"
+                ng-change="page(currentPage)"
+                max-size="maxSize"
+                first-text="首页"
+                previous-text="上一页"
+                next-text="下一页"
+                last-text="最后页"
+                boundary-links="true"
+                boundary-link-numbers="true"
+        >
+        </uib-pagination>
+    </div>
+    <!--<pagination class="pagination-sm pull-right"
+                ng-model="currentPage"
+                total-items="totalItems"
+                max-size="7"
+                ng-change="pageChanged()"
+                force-ellipses="true"
+                num-pages="numPages"
+                boundary-link-numbers="true"
+                boundary-links="false"
+                rotate="false"
+                previous-text="‹"
+                next-text="›">
+    </pagination>-->
+    <!--<ul class="pages">
+        <li>
+            每页显示
+            <input type="number" ng-model="size">
+            条
+        </li>
+        <li></li>
+        <li>
+            去第
+            <input type="number" ng-model="jumpPage">
+            页
+            <a class="pull-right">确定</a>
+        </li>
+    </ul>-->
 </main>
-</body>
-</html>

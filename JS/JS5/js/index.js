@@ -11,7 +11,7 @@ $(document).ready(function () {
         },
             function (data, status) {
                 console.log(status);
-                var jsons = JSON.parse(data);
+                var jsons = JSON.stringify();
                 console.log(jsons.message);
                 if(jsons.code === 0){
                     window.location.href = "test.html";

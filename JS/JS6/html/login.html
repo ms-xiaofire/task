@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <title>JS6-登录</title>
-    <link rel="stylesheet" href="../css/login.css">
-</head>
-<body>
+
 <main ng-controller="logCtrl">
     <div class="bgr">
         <form name="loginForm" novalidate ng-submit="myLogin()">
             <p class="head">后台登录</p>
             <div class="unames">
-                <img src="../images/name.png">
+                <img src="images/name.png">
                 <input type="text"
                        name="unames"
                        ng-model="params.name"
@@ -25,7 +18,7 @@
                 <div ng-message="maxlength">用户名长度不能超过10</div>
             </div>
             <div class="unames">
-                <img src="../images/password.png">
+                <img src="images/password.png">
                 <input type="password"
                        name="upwd"
                        ng-model="params.pwd"
@@ -38,11 +31,9 @@
                 <div ng-message="minlength">密码长度至少为6位</div>
                 <div ng-message="maxlength">密码长度不能超过16位</div>
             </div>
-            <p id="hint"></p>
+            <p id="hint">{{_test}}</p>
             <button id="login" type="submit" value="登录">登录</button>
         </form>
     </div>
 </main>
 
-</body>
-</html>
