@@ -1,46 +1,51 @@
 
 
 
-
-
 <main ng-controller="artCtrl">
     <div class="options">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="col-md-4">发布时间</span>
+                    <span class="col-md-4">修改时间</span>
                     <div class="col-md-8">
-                        <input type="text"
-                               class="form-control"
-                               uib-datepicker-popup="{{format}}"
-                               ng-model="dat"
-                               is-open="popup1.opened"
-                               ng-required="true"
-                               close-text="关闭"
-                               clear-text="清空"
-                               current-text="今天"
-                               alt-input-formats="altInputFormats"
-                               ng-click = "open1()"
-                               ng-model = "startTime"
-                        />
+                        <p class="input-group">
+                            <input type="text"
+                                   class="form-control"
+                                   uib-datepicker-popup="{{format}}"
+                                   ng-model="params.startAt"
+                                   is-open="popup1.opened"
+                                   datepicker-options="dateOptions"
+                                   ng-required="true"
+                                   close-text="Close"
+                                   alt-input-formats="altInputFormats"
+                            />
+                            <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open1()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </button>
+                            </span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <span class="to col-md-4">——</span>
                     <div class="col-md-8">
-                        <input type="text"
-                               class="form-control"
-                               uib-datepicker-popup="{{format}}"
-                               ng-model="dat_"
-                               is-open="popup2.opened"
-                               ng-required="true"
-                               close-text="关闭"
-                               ng-click = "open2()"
-                               clear-text="清空"
-                               current-text="今天"
-                               alt-input-formats="altInputFormats"
-                               ng-model = "endTime"
-                        />
+                        <p class="input-group">
+                            <input type="text"
+                                   class="form-control"
+                                   uib-datepicker-popup
+                                   ng-model="params.endAt"
+                                   is-open="popup2.opened"
+                                   datepicker-options="dateOptions"
+                                   ng-required="true"
+                                   close-text="Close"
+                            />
+                            <span class="input-group-btn">
+                                   <button type="button" class="btn btn-default" ng-click="open2()">
+                                       <i class="glyphicon glyphicon-calendar"></i>
+                                   </button>
+                            </span>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -71,8 +76,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="operation">
-                        <button class="clear">清空</button>
-                        <button class="search">搜索</button>
+                        <button class="clear" ng-click="clear()">清空</button>
+                        <button class="search" ng-click="search()">搜索</button>
                     </div>
                 </div>
             </div>
@@ -122,45 +127,13 @@
         </div>
     </div>
     <div class="Pagination">
-        <uib-pagination
-                total-items="totalItems"
-                ng-model="currentPage"
-                ng-change="page(currentPage)"
-                max-size="maxSize"
-                first-text="首页"
-                previous-text="上一页"
-                next-text="下一页"
-                last-text="最后页"
-                boundary-links="true"
-                boundary-link-numbers="true"
-        >
-        </uib-pagination>
+        <ul uib-pagination
+            total-items="bigTotalItems"
+            ng-model="bigCurrentPage"
+            max-size="maxSize"
+            class="pagination-sm"
+            boundary-links="true"
+            rotate="false"
+            ng-change="page(bigCurrentPage)"></ul>
     </div>
-    <!--<pagination class="pagination-sm pull-right"
-                ng-model="currentPage"
-                total-items="totalItems"
-                max-size="7"
-                ng-change="pageChanged()"
-                force-ellipses="true"
-                num-pages="numPages"
-                boundary-link-numbers="true"
-                boundary-links="false"
-                rotate="false"
-                previous-text="‹"
-                next-text="›">
-    </pagination>-->
-    <!--<ul class="pages">
-        <li>
-            每页显示
-            <input type="number" ng-model="size">
-            条
-        </li>
-        <li></li>
-        <li>
-            去第
-            <input type="number" ng-model="jumpPage">
-            页
-            <a class="pull-right">确定</a>
-        </li>
-    </ul>-->
 </main>
