@@ -70,19 +70,29 @@ angular.module('App')
         if($scope.params.endAt){
             $scope.params.endAt = $scope.params.endAt.valueOf();
         }
+
         $http({
             method: 'GET',
             url: '/carrots-admin-ajax/a/article/search',
-            params: $scope.params
+            params: {
+                type: $scope.params.type,
+                status: $scope.params.status,
+                startAt: $scope.params.startAt,
+                endAt: $scope.params.endAt
+            }
             //请求成功执行的代码
         }).then(function successCallback(response) {
             $scope.lists = response.data.data.articleList;
         })
     };
-
     //清空
     // $scope.clear = function () {
     //
     // };
+
+    //新增页面
+    $scope.add = function () {
+        $state.go('list.add');
+    }
 }]);
 

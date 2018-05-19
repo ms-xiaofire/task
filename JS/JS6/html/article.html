@@ -51,12 +51,12 @@
                 <div class="col-md-4">
                     <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
                     <div class="col-md-8">
-                        <select>
-                            <option>全部</option>
-                            <option>找首位banner</option>
-                            <option>找职位banner</option>
-                            <option>找精英banner</option>
-                            <option>行业大图</option>
+                        <select ng-model="params.type">
+                            <option value>全部</option>
+                            <option value="0">找首位banner</option>
+                            <option value="1">找职位banner</option>
+                            <option value="2">找精英banner</option>
+                            <option value="3">行业大图</option>
                         </select>
                     </div>
                 </div>
@@ -65,10 +65,10 @@
                 <div class="type col-md-4">
                     <span class="col-md-4">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</span>
                     <div class="col-md-8">
-                        <select>
-                            <option>全部</option>
-                            <option>草稿</option>
-                            <option>上线</option>
+                        <select ng-model="params.status">
+                            <option value>全部</option>
+                            <option value="1">草稿</option>
+                            <option value="2">上线</option>
                         </select>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
     <div class="article">
         <div class="title">
             <p>Article列表</p>
-            <button>+新增</button>
+            <button ng-click="add()">+新增</button>
         </div>
         <div class="tables">
             <!--table-striped隔行变色-->

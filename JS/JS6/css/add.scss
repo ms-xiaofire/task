@@ -1,0 +1,54 @@
+
+main {
+  margin: 2rem;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  .head {
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #c7c7c7;
+  }
+  .content {
+    padding: 1rem;
+    background: #fff;
+    overflow: hidden;
+    .title {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      div {
+        input {
+          width: 100%;
+        }
+      }
+    }
+    .tables {
+      margin-top: 2rem;
+      table {
+        font-size: 1rem;
+        width: 100%;
+        thead {
+          border-bottom: 1px solid #c7c7c7;
+        }
+      }
+    }
+    .operation {
+      padding: 2rem 0.5rem 0;
+      button {
+        height: 1.5rem;
+      }
+      .online {
+        background: #5cb85c;
+      }
+      .cancel {
+        float: right;
+      }
+    }
+  }
+}

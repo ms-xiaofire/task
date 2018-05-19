@@ -1,0 +1,67 @@
+
+<main ng-controller="addCtrl">
+    <div class="head">新增Article</div>
+    <form class="content">
+        <div class="title">
+            <span class="col-md-2">标题名称</span>
+            <div class="col-md-8">
+                <input type="text">
+            </div>
+        </div>
+        <div class="title">
+            <span class="col-md-2">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
+            <div class="col-md-8">
+                <select>
+                    <option>请选择</option>
+                    <option>找首页banner</option>
+                    <option>找职位banner</option>
+                    <option>找精英banner</option>
+                    <option>找行业大图</option>
+                </select>
+            </div>
+        </div>
+        <div class="title">
+            <span class="col-md-2">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
+            <div class="col-md-8">
+                <input type="text">
+            </div>
+        </div>
+        <div class="title">
+            <span class="col-md-2">跳转链接</span>
+            <div class="col-md-8">
+                <input type="text">
+            </div>
+        </div>
+        <div class="title">
+            <span class="col-md-2">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
+            <div class="col-md-8">
+                <button>选择文件</button>
+            </div>
+        </div>
+        <div class="tables">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>图片名</th>
+                        <th>文件大小</th>
+                        <th>进度</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="operation">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <button class="online">立即上线</button>
+                <button class="online">存为草稿</button>
+                <button ng-click="cancel()" class="cancel">取消</button>
+            </div>
+        </div>
+    </form>
+</main>

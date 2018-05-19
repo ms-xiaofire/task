@@ -65,4 +65,16 @@ angular.module('App')
                     ])
                 }
             })
+            //新增页面
+            .state('list.add', {
+                url: '/add',
+                controller: 'addCtrl',
+                templateUrl: 'html/add.html',
+                resolve: {
+                    loadMyFile: _lazyLoad([
+                        'css/add.css',
+                        'controller/add.js'
+                    ])
+                }
+            })
     });
