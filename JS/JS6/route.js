@@ -67,7 +67,7 @@ angular.module('App')
             })
             //新增页面
             .state('list.add', {
-                url: '/add',
+                url: '/add?id',
                 controller: 'addCtrl',
                 templateUrl: 'html/add.html',
                 resolve: {

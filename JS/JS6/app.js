@@ -1,7 +1,7 @@
 
 
 //入口模块
-angular.module("App", ['ui.router', 'ngMessages', 'oc.lazyLoad', 'ui.bootstrap']);
+angular.module("App", ['ui.router', 'ngMessages', 'oc.lazyLoad', 'ui.bootstrap', 'angularFileUpload']);
     /*.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $ocLazyLoadProvider) {
         //封装懒加载
         var _lazyLoad = function (loaded) {

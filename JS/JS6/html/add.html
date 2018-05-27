@@ -1,67 +1,110 @@
 
-<main ng-controller="addCtrl">
-    <div class="head">新增Article</div>
+<div ng-controller="addCtrl" class="addMain">
+    <div class="head">{{head}}</div>
     <form class="content">
-        <div class="title">
-            <span class="col-md-2">标题名称</span>
-            <div class="col-md-8">
-                <input type="text">
+        <span class="col-md-4">标题名称</span>
+        <div class="col-md-8">
+            <input type="text" ng-model="title">
+        </div>
+        <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
+        <div class="col-md-8">
+            <select ng-options="t.value as t.name for t in typeData" ng-model="type">
+                <option value="">请选择</option>
+            </select>
+            <select ng-options="i.value as i.name for i in industryData" ng-model="industry" ng-show="type === 3">
+                <option value="">请选择</option>
+            </select>
+        </div>
+        <span class="col-md-4">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
+        <div class="col-md-8">
+            <input type="text" ng-model="content">
+        </div>
+        <span class="col-md-4">跳转链接</span>
+        <div class="col-md-8">
+            <input type="text" ng-model="url">
+        </div>
+        <span class="col-md-4">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
+        <div class="col-md-8">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="btn btn-primary" for="file2">选择文件</label>
+                    <input id="file2"
+                           style="display: none"
+                           type="file"
+                           nv-file-select
+                           uploader="uploader"
+                           multiple
+                    >
+                    <img alt="配图预览" class="img-responsive" ng-src="{{imageSrc1}}">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive padding-0">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>图片名</th>
+                            <th>文件大小</th>
+                            <th>进度</th>
+                            <th>操作</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in uploader.queue">
+                            <td>{{item.file.name}}</td>
+                            <td>{{item.file.size/1024/1024|number: 2}}MB</td>
+                            <td ng-show="uploader.isHTML5">
+                                <div class="progress">
+                                    <div class="progress-bar"
+                                         role="progressbar"
+                                         ng-style="{'width':item.progress+'%'}"></div>
+                                </div>
+                            </td>
+                            <td>
+                        <span ng-show="item.isSuccess">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </span>
+                                <span ng-show="item.isCancel">
+                            <i class="glyphicon glyphicon-ban-circle"></i>
+                        </span>
+                                <span ng-show="item.isError">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </span>
+                            </td>
+                            <td nowrap>
+                                <button type="button"
+                                        class="btn btn-success btn-xs"
+                                        ng-click="item.upload()"
+                                        ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                    <span class="glyphicon glyphicon-upload"></span>
+                                    上传
+                                </button>
+                                <!--<button type="button"-->
+                                <!--class="btn btn-warning btn-xs"-->
+                                <!--ng-click="item.cancel()"-->
+                                <!--ng-disabled="!item.isUploading">-->
+                                <!--<span class="glyphicon glyphicon-ban-circle"></span>-->
+                                <!--取消-->
+                                <!--</button>-->
+                                <button type="button"
+                                        class="btn btn-danger btn-xs"
+                                        ng-click="item.remove()">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                    删除
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="title">
-            <span class="col-md-2">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
-            <div class="col-md-8">
-                <select>
-                    <option>请选择</option>
-                    <option>找首页banner</option>
-                    <option>找职位banner</option>
-                    <option>找精英banner</option>
-                    <option>找行业大图</option>
-                </select>
-            </div>
-        </div>
-        <div class="title">
-            <span class="col-md-2">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
-            <div class="col-md-8">
-                <input type="text">
-            </div>
-        </div>
-        <div class="title">
-            <span class="col-md-2">跳转链接</span>
-            <div class="col-md-8">
-                <input type="text">
-            </div>
-        </div>
-        <div class="title">
-            <span class="col-md-2">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
-            <div class="col-md-8">
-                <button>选择文件</button>
-            </div>
-        </div>
-        <div class="tables">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>图片名</th>
-                        <th>文件大小</th>
-                        <th>进度</th>
-                        <th>状态</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-        <div class="operation">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <button class="online">立即上线</button>
-                <button class="online">存为草稿</button>
-                <button ng-click="cancel()" class="cancel">取消</button>
-            </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <button class="online" ng-click="online()">立即上线</button>
+            <button class="online" ng-click="draft()">存为草稿</button>
+            <button ng-click="cancel()" class="cancel">取消</button>
         </div>
     </form>
-</main>
+</div>

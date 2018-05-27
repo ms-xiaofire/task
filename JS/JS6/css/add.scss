@@ -1,5 +1,5 @@
 
-main {
+.addMain {
   margin: 2rem;
   border: 1px solid #c7c7c7;
   border-radius: 5px;
@@ -13,42 +13,36 @@ main {
     padding: 1rem;
     background: #fff;
     overflow: hidden;
-    .title {
-      padding: 0.5rem 0;
-      display: flex;
-      align-items: center;
-      span {
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
-      }
-      div {
-        input {
-          width: 100%;
-        }
-      }
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 0.5rem 0;
     }
-    .tables {
-      margin-top: 2rem;
-      table {
-        font-size: 1rem;
+    div {
+      margin: 0.5rem 0;
+      input {
         width: 100%;
-        thead {
-          border-bottom: 1px solid #c7c7c7;
-        }
       }
     }
-    .operation {
-      padding: 2rem 0.5rem 0;
-      button {
-        height: 1.5rem;
+    table {
+      font-size: 1rem;
+      width: 100%;
+      thead {
+        border-bottom: 1px solid #c7c7c7;
       }
-      .online {
-        background: #5cb85c;
-      }
-      .cancel {
-        float: right;
-      }
+    }
+    button {
+      margin: 1rem 0;
+    }
+    .online {
+      background: #5cb85c;
+    }
+    .cancel {
+      float: right;
+    }
+    .progress-bar {
+      margin: 0;
     }
   }
 }

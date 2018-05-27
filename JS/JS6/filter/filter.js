@@ -24,4 +24,14 @@ angular.module('App')
             return "上线";
         }
     }
+})
+.filter('changeAfk', function () {
+    return function (status) {
+        if(status === 1){
+            return "上线";
+        }
+        if(status === 2){
+            return "下线";
+        }
+    }
 });

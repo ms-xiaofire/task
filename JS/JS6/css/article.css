@@ -1,4 +1,4 @@
-main {
+.artMain {
   padding: 2rem;
   /*.pages {
     margin-top: 1rem;
@@ -40,76 +40,78 @@ main {
       }
     }
   }*/ }
-  main .options {
+  .artMain .options {
     width: 100%;
     padding: 1rem 0;
     border: 1px solid #c7c7c7;
     border-radius: 3px;
     background: #fff; }
     @media (min-width: 992px) {
-      main .options .container {
+      .artMain .options .container {
         width: auto; } }
     @media (min-width: 768px) {
-      main .options .container {
+      .artMain .options .container {
         width: auto; } }
-    main .options select {
+    .artMain .options select {
       width: 100%; }
-    main .options .to {
+    .artMain .options .to {
       font-weight: bold; }
-    main .options .type {
+    .artMain .options .type {
       margin: 2.5rem 0; }
-    main .options .operation {
+    .artMain .options .operation {
       float: right; }
-      main .options .operation button {
+      .artMain .options .operation button {
         padding: 0.5rem 1rem;
         border: none;
         border-radius: 5px;
         color: #fff; }
-      main .options .operation .clear {
+      .artMain .options .operation .clear {
         background: #ac2925; }
-      main .options .operation .search {
+      .artMain .options .operation .search {
         background: #5cb85c; }
-  main .article {
+  .artMain .article {
     margin-top: 2rem;
     border: 1px solid #c7c7c7;
     border-radius: 3px;
     background: #fff; }
-    main .article .title {
+    .artMain .article .title {
       padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: #f8f8f8; }
-      main .article .title p {
+      .artMain .article .title p {
         margin: 0; }
-      main .article .title button {
+      .artMain .article .title button {
         padding: 0.5rem 1rem;
         background: #5cb85c;
         border: none;
         border-radius: 5px;
         color: #fff; }
-    main .article .tables {
+    .artMain .article .tables {
       width: auto;
       margin: 1rem;
       background: #fff; }
-      main .article .tables table thead {
+      .artMain .article .tables table thead {
         border: 1px solid #e7e7e7; }
-        main .article .tables table thead tr th {
+        .artMain .article .tables table thead tr th {
           text-align: center; }
-        main .article .tables table thead tr td {
+      .artMain .article .tables table tbody {
+        border: 1px solid #e7e7e7; }
+        .artMain .article .tables table tbody td {
           vertical-align: middle;
           text-align: center; }
-          main .article .tables table thead tr td img {
+          .artMain .article .tables table tbody td img {
             width: 50px;
             height: 50px; }
-          main .article .tables table thead tr td div {
+          .artMain .article .tables table tbody td div {
             display: flex;
             justify-content: space-between; }
-            main .article .tables table thead tr td div a {
+            .artMain .article .tables table tbody td div a {
               cursor: pointer; }
-            main .article .tables table thead tr td div a:hover {
+            .artMain .article .tables table tbody td div a:hover {
               text-decoration: none; }
-  main .Pagination {
+  .artMain .Pagination {
     float: right; }
 
 /*# sourceMappingURL=article.css.map */

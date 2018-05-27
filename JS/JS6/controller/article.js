@@ -2,8 +2,17 @@
 //article列表控制器
 angular.module('App')
 .controller('artCtrl', ['$scope', '$http', '$state', function ($scope, $http, $state, $stateParams) {
-    $scope.searchParams = $stateParams;
 
+    $scope.typeData = [
+        {name: '首页banner', value: 0},
+        {name: '精英banner', value: 1},
+        {name: '职业banner', value: 2},
+        {name: '行业大图', value: 3}
+    ];
+    $scope.statusData = [
+        {name: '草稿', value: 1},
+        {name: '上线', value: 2}
+    ];
     //get article列表
     $http({
         method: 'GET',
@@ -12,7 +21,6 @@ angular.module('App')
         //请求成功执行的代码
     }).then(function successCallback(response) {
         if(response.data.code===0){
-            console.log(response);
             //article列表
             $scope.lists = response.data.data.articleList;
             $scope.total = response.data.data.total;
@@ -86,13 +94,44 @@ angular.module('App')
         })
     };
     //清空
-    // $scope.clear = function () {
-    //
-    // };
+    $scope.clear = function () {
+        $scope.params.startAt = '';
+        $scope.params.endAt = '';
+    };
 
     //新增页面
     $scope.add = function () {
-        $state.go('list.add');
+        $state.go('list.add', {id: 1});
+    };
+    //上线下线
+    $scope.afk = function (id, status) {
+        id = this.lis.id;
+        status = this.lis.status;
+        console.log(id);
+        console.log(status);
+        // $http({
+        //     method: 'PUT',
+        //     url: '/carrots-admin-ajax/a/u/article/status'
+        //     //请求成功执行的代码
+        // }).then(function successCallback() {
+        //     $state.reload('list.article');
+        // })
+    };
+    //编辑
+    $scope.compile = function (id) {
+        id = this.lis.id;
+        $state.go('list.add', {id: id});
+    };
+    //删除
+    $scope.delete = function (id) {
+        id = this.lis.id;
+        $http({
+            method: 'delete',
+            url: '/carrots-admin-ajax/a/u/article/'+id
+            //请求成功执行的代码
+        }).then(function successCallback() {
+            $state.reload('list.article');
+        })
     }
 }]);
 
