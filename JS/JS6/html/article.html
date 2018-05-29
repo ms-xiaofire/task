@@ -12,9 +12,9 @@
                             <input type="text"
                                    class="form-control"
                                    uib-datepicker-popup="{{format}}"
-                                   ng-model="params.startAt"
+                                   ng-model="startAt"
                                    is-open="popup1.opened"
-                                   datepicker-options="dateOptions"
+                                   datepicker-options="dateOptions1"
                                    ng-required="true"
                                    close-text="Close"
                                    alt-input-formats="altInputFormats"
@@ -34,9 +34,9 @@
                             <input type="text"
                                    class="form-control"
                                    uib-datepicker-popup
-                                   ng-model="params.endAt"
+                                   ng-model="endAt"
                                    is-open="popup2.opened"
-                                   datepicker-options="dateOptions"
+                                   datepicker-options="dateOptions2"
                                    ng-required="true"
                                    close-text="Close"
                             />

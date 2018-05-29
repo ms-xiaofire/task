@@ -24,7 +24,6 @@ angular.module('App')
 
     uploader.onSuccessItem = function(data,fileItem) {
         $scope.imageSrc1 = fileItem.data.url;
-        console.log($scope.imageSrc1);
     };
 
     $scope.id=$stateParams.id;
@@ -36,14 +35,8 @@ angular.module('App')
         $scope.head = "新增Article";
         //立即上线
         $scope.online = function () {
-            $scope.param.title = $scope.title;
-            $scope.param.type = $scope.type;
-            $scope.param.industry = $scope.industry;
-            $scope.param.content = $scope.content;
-            $scope.param.url = $scope.url;
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 2;
-            console.log($scope.param);
 
             $http({
                 method: 'POST',
@@ -52,22 +45,17 @@ angular.module('App')
             }).then(function (data) {
                 if(data.status === 200){
                     $state.go('list.article');
+                    bootbox.alert("新增成功!");
                 }else {
-                    alert(data.message);
+                    bootbox.alert(data.message);
                 }
             })
         };
 
         //存为草稿
         $scope.draft = function () {
-            $scope.param.title = $scope.title;
-            $scope.param.type = $scope.type;
-            $scope.param.industry = $scope.industry;
-            $scope.param.content = $scope.content;
-            $scope.param.url = $scope.url;
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 1;
-            console.log($scope.param);
 
             $http({
                 method: 'POST',
@@ -76,8 +64,9 @@ angular.module('App')
             }).then(function (data) {
                 if(data.status === 200){
                     $state.go('list.article');
+                    bootbox.alert("新增成功!");
                 }else {
-                    alert(data.message);
+                    bootbox.alert(data.message);
                 }
             })
         }
@@ -93,14 +82,15 @@ angular.module('App')
         }).then(function (response) {
             console.log(response);
             if(response.data.code === 0){
+
                 $scope.param = response.data.data.article;
-                $scope.title = $scope.param.title;
-                $scope.type = $scope.param.type;
-                console.log($scope.type);
-                $scope.content = $scope.param.content;
-                $scope.url = $scope.param.url;
+                // $scope.title = $scope.param.title;
+                // $scope.type = $scope.param.type;
+                // console.log($scope.type);
+                // $scope.content = $scope.param.content;
+                // $scope.url = $scope.param.url;
                 $scope.imageSrc1 = $scope.param.img;
-                $scope.industry = response.data.data.article.industry;
+                // $scope.industry = response.data.data.article.industry;
             }
         }, function (response) {
             console.log(response);
@@ -108,11 +98,6 @@ angular.module('App')
 
         //立即上线
         $scope.online = function () {
-            $scope.param.title = $scope.title;
-            $scope.param.type = $scope.type;
-            $scope.param.industry = $scope.industry;
-            $scope.param.content = $scope.content;
-            $scope.param.url = $scope.url;
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 2;
             $scope.param.createAt = 1;
@@ -120,37 +105,35 @@ angular.module('App')
 
             $http({
                 method: 'PUT',
-                url: '/carrots-admin-ajax/a/u/article'+id,
+                url: '/carrots-admin-ajax/a/u/article/'+id,
                 params: $scope.param
             }).then(function (data) {
                 if(data.status === 200){
                     $state.go('list.article');
+                    bootbox.alert("编辑成功!")
                 }else {
-                    alert(data.message);
+                    bootbox.alert(data.message);
                 }
             })
         };
 
         //存为草稿
         $scope.draft = function () {
-            $scope.param.title = $scope.title;
-            $scope.param.type = $scope.type;
-            $scope.param.industry = $scope.industry;
-            $scope.param.content = $scope.content;
-            $scope.param.url = $scope.url;
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 1;
+            $scope.param.createAt = 1;
             console.log($scope.param);
 
             $http({
                 method: 'PUT',
-                url: '/carrots-admin-ajax/a/u/article'+id,
+                url: '/carrots-admin-ajax/a/u/article/'+id,
                 params: $scope.param
             }).then(function (data) {
                 if(data.status === 200){
                     $state.go('list.article');
+                    bootbox.alert("编辑成功!")
                 }else {
-                    alert(data.message);
+                    bootbox.alert(data.message);
                 }
             })
         }

@@ -55,6 +55,15 @@ angular.module('App')
     //手动输入日期的格式
     $scope.altInputFormats = ['yyyy/M!/d!'];
 
+    //设置可选日期范围
+    $scope.dateOptions1 = {
+        maxDate: new Date()
+    };
+    $scope.dateOptions2 = {
+        minDate: $scope.startAt,
+        maxDate: new Date()
+    };
+
     $scope.popup1 = {
         opened: false
     };
@@ -76,7 +85,12 @@ angular.module('App')
             $scope.params.startAt = $scope.params.startAt.valueOf();
         }
         if($scope.params.endAt){
-            $scope.params.endAt = $scope.params.endAt.valueOf();
+            // $scope.params.endAt = $scope.params.endAt.valueOf();
+            if($scope.params.startAt !== $scope.params.endAt){
+                $scope.params.endAt = $scope.params.endAt.valueOf();
+            }else {
+                $scope.params.endAt = $scope.params.startAt.valueOf()+86399000;
+            }
         }
 
         $http({
@@ -125,13 +139,20 @@ angular.module('App')
     //删除
     $scope.delete = function (id) {
         id = this.lis.id;
-        $http({
-            method: 'delete',
-            url: '/carrots-admin-ajax/a/u/article/'+id
-            //请求成功执行的代码
-        }).then(function successCallback() {
-            $state.reload('list.article');
-        })
+        bootbox.setLocale("zn_CN");
+        bootbox.confirm("确定删除?", function (result) {
+            if(result){
+                $http({
+                    method: 'delete',
+                    url: '/carrots-admin-ajax/a/u/article/'+id
+                    //请求成功执行的代码
+                }).then(function successCallback() {
+                    $state.reload('list.article');
+                })
+            }else {
+                return;
+            }
+        });
     }
 }]);
 

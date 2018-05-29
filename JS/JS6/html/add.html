@@ -4,24 +4,24 @@
     <form class="content">
         <span class="col-md-4">标题名称</span>
         <div class="col-md-8">
-            <input type="text" ng-model="title">
+            <input type="text" ng-model="param.title">
         </div>
         <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
         <div class="col-md-8">
-            <select ng-options="t.value as t.name for t in typeData" ng-model="type">
+            <select ng-options="t.value as t.name for t in typeData" ng-model="param.type">
                 <option value="">请选择</option>
             </select>
-            <select ng-options="i.value as i.name for i in industryData" ng-model="industry" ng-show="type === 3">
+            <select ng-options="i.value as i.name for i in industryData" ng-model="param.industry" ng-show="param.type === 3">
                 <option value="">请选择</option>
             </select>
         </div>
         <span class="col-md-4">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
         <div class="col-md-8">
-            <input type="text" ng-model="content">
+            <input type="text" ng-model="param.content">
         </div>
         <span class="col-md-4">跳转链接</span>
         <div class="col-md-8">
-            <input type="text" ng-model="url">
+            <input type="text" ng-model="param.url">
         </div>
         <span class="col-md-4">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
         <div class="col-md-8">
