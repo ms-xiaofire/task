@@ -1,6 +1,6 @@
 //后台页面侧边栏控制器
 angular.module('App')
-    .controller('listCtrl', function ($scope) {
+    .controller('listCtrl', function ($scope, $http, $state) {
         $(function(){
             // nav收缩展开
             $('.nav-item>a').on('click',function(){
@@ -32,4 +32,24 @@ angular.module('App')
                 e.stopPropagation();
             });
         });
+        
+        //退出
+        $scope.off = function () {
+            bootbox.confirm("确定要退出登录吗?", function (result) {
+                if(result){
+                    $http({
+                        method: 'post',
+                        url: '/carrots-admin-ajax/a/logout'
+                    }).then(function (response) {
+                        if(response.data.code === 0){
+                            $state.go('login');
+                        }
+                    },function (response) {
+                        console.log(response);
+                    })
+                }else {
+                    return
+                }
+            })
+        }
     });

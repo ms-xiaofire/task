@@ -16,8 +16,7 @@ angular.module('App')
     //get article列表
     $http({
         method: 'GET',
-        url: '/carrots-admin-ajax/a/article/search',
-        params: $scope.params
+        url: '/carrots-admin-ajax/a/article/search'
         //请求成功执行的代码
     }).then(function successCallback(response) {
         if(response.data.code===0){
@@ -77,40 +76,36 @@ angular.module('App')
         $scope.popup2.opened = true;
     };
 
-    $scope.params = {};
+    $scope.param = {};
     //搜索
     $scope.search = function () {
 
-        if($scope.params.startAt){
-            $scope.params.startAt = $scope.params.startAt.valueOf();
+        if($scope.param.startAt){
+            $scope.param.startAt = $scope.param.startAt.valueOf();
         }
-        if($scope.params.endAt){
-            // $scope.params.endAt = $scope.params.endAt.valueOf();
-            if($scope.params.startAt !== $scope.params.endAt){
-                $scope.params.endAt = $scope.params.endAt.valueOf();
-            }else {
-                $scope.params.endAt = $scope.params.startAt.valueOf()+86399000;
-            }
+        if($scope.param.endAt){
+            $scope.param.endAt = $scope.param.endAt.valueOf();
+            // if($scope.params.startAt !== $scope.params.endAt){
+            //     $scope.params.endAt = $scope.params.endAt.valueOf();
+            // }else {
+            //     $scope.params.endAt = $scope.params.startAt.valueOf()+86399000;
+            // }
         }
 
         $http({
             method: 'GET',
             url: '/carrots-admin-ajax/a/article/search',
-            params: {
-                type: $scope.params.type,
-                status: $scope.params.status,
-                startAt: $scope.params.startAt,
-                endAt: $scope.params.endAt
-            }
+            params: $scope.param
             //请求成功执行的代码
         }).then(function successCallback(response) {
             $scope.lists = response.data.data.articleList;
+            $scope.total = response.data.data.total;
         })
     };
     //清空
     $scope.clear = function () {
-        $scope.params.startAt = '';
-        $scope.params.endAt = '';
+        $scope.param = '';
+        console.log($scope.param);
     };
 
     //新增页面
@@ -121,15 +116,45 @@ angular.module('App')
     $scope.afk = function (id, status) {
         id = this.lis.id;
         status = this.lis.status;
-        console.log(id);
-        console.log(status);
-        // $http({
-        //     method: 'PUT',
-        //     url: '/carrots-admin-ajax/a/u/article/status'
-        //     //请求成功执行的代码
-        // }).then(function successCallback() {
-        //     $state.reload('list.article');
-        // })
+        if(status === 1){
+            bootbox.confirm("上线后该图片将在轮播banner中展示,是否执行上线操作?", function (result) {
+                if(result){
+                    $http({
+                        method: 'PUT',
+                        url: '/carrots-admin-ajax/a/u/article/status?id='+id+'&status=2'
+                    }).then(function (data) {
+                        if(data.data.code === 0){
+                            bootbox.alert("上线成功!");
+                            $state.reload('list.article');
+                        }else {
+                            alert(data.data.message);
+                        }
+                    })
+                }else {
+                    return
+                }
+            })
+        }else {
+            if(status === 2){
+                bootbox.confirm("下线后该图片将不再展示在轮播banner中,是否执行下线操作?", function (result) {
+                    if(result){
+                        $http({
+                            method: 'PUT',
+                            url: '/carrots-admin-ajax/a/u/article/status?id='+id+'&status=1'
+                        }).then(function (data) {
+                            if(data.data.code === 0){
+                                bootbox.alert("下线成功!");
+                                $state.reload('list.article');
+                            }else {
+                                console.log(data);
+                            }
+                        })
+                    }else {
+                        return
+                    }
+                })
+            }
+        }
     };
     //编辑
     $scope.compile = function (id) {
@@ -139,7 +164,6 @@ angular.module('App')
     //删除
     $scope.delete = function (id) {
         id = this.lis.id;
-        bootbox.setLocale("zn_CN");
         bootbox.confirm("确定删除?", function (result) {
             if(result){
                 $http({
@@ -153,6 +177,6 @@ angular.module('App')
                 return;
             }
         });
-    }
+    };
 }]);
 

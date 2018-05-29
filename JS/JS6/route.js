@@ -60,7 +60,9 @@ angular.module('App')
                 templateUrl: 'html/article.html',
                 resolve: {
                     loadMyFile: _lazyLoad([
+                        'component/bootstrap-datepicker/bootstrap-datepicker.css',
                         'css/article.css',
+                        'component/bootstrap-datepicker/bootstrap-datepicker.min.js',
                         'controller/article.js'
                     ])
                 }

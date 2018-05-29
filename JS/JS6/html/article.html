@@ -12,12 +12,13 @@
                             <input type="text"
                                    class="form-control"
                                    uib-datepicker-popup="{{format}}"
-                                   ng-model="startAt"
+                                   ng-model="param.startAt"
                                    is-open="popup1.opened"
                                    datepicker-options="dateOptions1"
                                    ng-required="true"
                                    close-text="Close"
                                    alt-input-formats="altInputFormats"
+                                   readonly="readonly"
                             />
                             <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="open1()">
@@ -34,11 +35,12 @@
                             <input type="text"
                                    class="form-control"
                                    uib-datepicker-popup
-                                   ng-model="endAt"
+                                   ng-model="param.endAt"
                                    is-open="popup2.opened"
                                    datepicker-options="dateOptions2"
                                    ng-required="true"
                                    close-text="Close"
+                                   readonly="readonly"
                             />
                             <span class="input-group-btn">
                                    <button type="button" class="btn btn-default" ng-click="open2()">
@@ -51,7 +53,7 @@
                 <div class="col-md-4">
                     <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
                     <div class="col-md-8">
-                        <select ng-options="t.value as t.name for t in typeData" ng-model="params.type">
+                        <select ng-options="t.value as t.name for t in typeData" ng-model="param.type">
                             <option value="">全部</option>
                         </select>
                     </div>
@@ -61,7 +63,7 @@
                 <div class="type col-md-4">
                     <span class="col-md-4">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</span>
                     <div class="col-md-8">
-                        <select ng-options="s.value as s.name for s in statusData" ng-model="params.status">
+                        <select ng-options="s.value as s.name for s in statusData" ng-model="param.status">
                             <option value="">全部</option>
                         </select>
                     </div>
@@ -122,7 +124,11 @@
     </div>
     <div class="Pagination">
         <ul uib-pagination
-            total-items="bigTotalItems"
+            first-text="首页"
+            last-text="末页"
+            previous-text="上一页"
+            next-text="下一页"
+            total-items="total"
             ng-model="bigCurrentPage"
             max-size="maxSize"
             class="pagination-sm"

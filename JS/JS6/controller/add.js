@@ -2,6 +2,7 @@
 angular.module('App')
 .controller('addCtrl', function ($scope, $state, FileUploader, $http, $stateParams) {
 
+    console.log($scope.param);
     $scope.typeData = [
         {name: '首页banner', value: 0},
         {name: '职位banner', value: 1},
