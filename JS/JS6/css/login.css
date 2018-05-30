@@ -1,5 +1,4 @@
-body {
-  font-size: 62.5%;
+main .desk {
   background: url("../images/picture.png") center no-repeat;
   background-size: 100% 100%;
   height: 100vh;
@@ -7,17 +6,17 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden; }
-  body main .bgr {
+  main .desk .bgr {
     width: 20rem;
     background: #c7c7c7;
     padding: 1rem 2rem 0.5rem;
     box-sizing: content-box; }
-    body main .bgr .head {
+    main .desk .bgr .head {
       text-align: center;
       margin: 0 0 2rem;
       font-size: 1.2rem;
       color: #29bde0; }
-    body main .bgr .unames {
+    main .desk .bgr .unames {
       width: 100%;
       height: 3rem;
       margin: 1rem 0 0;
@@ -25,30 +24,30 @@ body {
       background: white;
       display: flex;
       align-items: center; }
-      body main .bgr .unames img {
+      main .desk .bgr .unames img {
         margin: 0 0.5rem;
         padding-right: 0.5rem;
         border-right: 1px solid #c7c7c7;
         transform: scale(0.8); }
-      body main .bgr .unames input {
+      main .desk .bgr .unames input {
         height: 2rem;
         margin-left: 0.5rem;
         border: none;
         font-size: 1.2rem;
         color: black; }
-      body main .bgr .unames input:focus {
+      main .desk .bgr .unames input:focus {
         outline: none; }
-    body main .bgr .error {
+    main .desk .bgr .error {
       width: 100%;
       height: 1rem;
       margin-left: 3rem; }
-      body main .bgr .error div {
+      main .desk .bgr .error div {
         color: red; }
-    body main .bgr #hint {
+    main .desk .bgr #hint {
       height: 1rem;
       color: red;
       margin: 0 0 0.3rem 3rem; }
-    body main .bgr #login {
+    main .desk .bgr #login {
       width: 100%;
       height: 3rem;
       line-height: 3rem;
@@ -58,9 +57,9 @@ body {
       border: none;
       border-radius: 5px;
       cursor: pointer; }
-    body main .bgr #login:hover {
+    main .desk .bgr #login:hover {
       color: black; }
-    body main .bgr #login:focus {
+    main .desk .bgr #login:focus {
       outline: none; }
 
 /*# sourceMappingURL=login.css.map */

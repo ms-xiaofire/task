@@ -53,7 +53,7 @@
                 <div class="col-md-4">
                     <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
                     <div class="col-md-8">
-                        <select ng-options="t.value as t.name for t in typeData" ng-model="param.type">
+                        <select ng-options="t.value as t.name for t in typeData" ng-model="param.type" class="form-control">
                             <option value="">全部</option>
                         </select>
                     </div>
@@ -63,7 +63,7 @@
                 <div class="type col-md-4">
                     <span class="col-md-4">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</span>
                     <div class="col-md-8">
-                        <select ng-options="s.value as s.name for s in statusData" ng-model="param.status">
+                        <select ng-options="s.value as s.name for s in statusData" ng-model="param.status" class="form-control">
                             <option value="">全部</option>
                         </select>
                     </div>

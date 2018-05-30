@@ -1,27 +1,43 @@
 
 <div ng-controller="addCtrl" class="addMain">
     <div class="head">{{head}}</div>
-    <form class="content">
+    <form class="content" name="myForm">
         <span class="col-md-4">标题名称</span>
         <div class="col-md-8">
-            <input type="text" ng-model="param.title">
+            <input type="text"
+                   ng-model="param.title"
+                   class="form-control"
+                   required>
         </div>
         <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
         <div class="col-md-8">
-            <select ng-options="t.value as t.name for t in typeData" ng-model="param.type">
+            <select ng-options="t.value as t.name for t in typeData"
+                    ng-model="param.type"
+                    class="form-control"
+                    required>
                 <option value="">请选择</option>
             </select>
-            <select ng-options="i.value as i.name for i in industryData" ng-model="param.industry" ng-show="param.type === 3">
+            <select ng-options="i.value as i.name for i in industryData"
+                    ng-model="param.industry"
+                    ng-if="param.type === 3"
+                    class="form-control"
+                    required>
                 <option value="">请选择</option>
             </select>
         </div>
         <span class="col-md-4">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
         <div class="col-md-8">
-            <input type="text" ng-model="param.content">
+            <input type="text"
+                   ng-model="param.content"
+                   class="form-control"
+                   required>
         </div>
         <span class="col-md-4">跳转链接</span>
         <div class="col-md-8">
-            <input type="text" ng-model="param.url">
+            <input type="text"
+                   ng-model="param.url"
+                   class="form-control"
+                   required>
         </div>
         <span class="col-md-4">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
         <div class="col-md-8">
@@ -102,9 +118,18 @@
         </div>
         <div class="col-md-4"></div>
         <div class="col-md-8">
-            <button class="online" ng-click="online()" ng-disabled="param">立即上线</button>
-            <button class="online" ng-click="draft()">存为草稿</button>
-            <button ng-click="cancel()" class="cancel">取消</button>
+            <button type="button"
+                    class="btn btn-success"
+                    ng-click="online()"
+                    ng-disabled="!myForm.$valid||imageSrc1==undefined"
+                    disabled="disabled">立即上线</button>
+            <button type="button"
+                    class="btn btn-success"
+                    ng-click="draft()"
+                    ng-disabled="!myForm.$valid||imageSrc1==undefined"
+                    disabled="disabled">存为草稿</button>
+            <!--ng-disabled="!param.title||param.type==undefined||!param.content||!param.url||imageSrc1==undefined"-->
+            <button ng-click="cancel()" class="btn btn-default">取消</button>
         </div>
     </form>
 </div>

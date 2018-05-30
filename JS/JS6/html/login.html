@@ -1,39 +1,41 @@
 
 <main ng-controller="logCtrl">
-    <div class="bgr">
-        <form name="loginForm" novalidate ng-submit="myLogin()">
-            <p class="head">后台登录</p>
-            <div class="unames">
-                <img src="images/name.png">
-                <input type="text"
-                       name="unames"
-                       ng-model="params.name"
-                       ng-minlength="3"
-                       ng-maxlength="10"
-                       placeholder="请输入用户名" required>
-            </div>
-            <div class="error" ng-messages="loginForm.unames.$error">
-                <!--<div ng-message="required">用户名不能为空</div>-->
-                <div ng-message="minlength">用户名长度至少为3</div>
-                <div ng-message="maxlength">用户名长度不能超过10</div>
-            </div>
-            <div class="unames">
-                <img src="images/password.png">
-                <input type="password"
-                       name="upwd"
-                       ng-model="params.pwd"
-                       ng-minlength="6"
-                       ng-maxlength="16"
-                       placeholder="请输入密码" required>
-            </div>
-            <div class="error" ng-messages="loginForm.upwd.$error">
-                <!--<div ng-message="required">密码不能为空</div>-->
-                <div ng-message="minlength">密码长度至少为6位</div>
-                <div ng-message="maxlength">密码长度不能超过16位</div>
-            </div>
-            <p id="hint">{{_test}}</p>
-            <button id="login" type="submit" value="登录">登录</button>
-        </form>
+    <div class="desk">
+        <div class="bgr">
+            <form name="loginForm" novalidate ng-submit="myLogin()">
+                <p class="head">后台登录</p>
+                <div class="unames">
+                    <img src="images/name.png">
+                    <input type="text"
+                           name="unames"
+                           ng-model="param.name"
+                           ng-minlength="3"
+                           ng-maxlength="10"
+                           placeholder="请输入用户名" required>
+                </div>
+                <div class="error" ng-messages="loginForm.unames.$error">
+                    <!--<div ng-message="required">用户名不能为空</div>-->
+                    <div ng-message="minlength">用户名长度至少为3</div>
+                    <div ng-message="maxlength">用户名长度不能超过10</div>
+                </div>
+                <div class="unames">
+                    <img src="images/password.png">
+                    <input type="password"
+                           name="upwd"
+                           ng-model="param.pwd"
+                           ng-minlength="6"
+                           ng-maxlength="16"
+                           placeholder="请输入密码" required>
+                </div>
+                <div class="error" ng-messages="loginForm.upwd.$error">
+                    <!--<div ng-message="required">密码不能为空</div>-->
+                    <div ng-message="minlength">密码长度至少为6位</div>
+                    <div ng-message="maxlength">密码长度不能超过16位</div>
+                </div>
+                <p id="hint">{{_test}}</p>
+                <button id="login" type="submit" value="登录">登录</button>
+            </form>
+        </div>
     </div>
 </main>
 

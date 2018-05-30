@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title> exp </title>
-    <meta charset="utf-8" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <script>
-        function traversal(){
-            var json = [
-                { "id": "1", "name": "jalen", "description": "懒的掉渣", "sex": "暂未男性", "parentId": "父id=1" },
-                { "id": "2", "name": "ryan", "description": "好人，神人", "sex": "标准男性", "parentId": "父id=2"}
-                ];
-            var str = "";
-            for (var i in json) {
-                for (var key in json[i]) {
-                    str += json[i][key] + "|";
-                } }
-                document.form.outputTxt.value = str;
-        }
-    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
 </head>
-<body>
-<form name="form">
-    <a href="#" onclick="traversal();">Click</a>
-    <hr/>
-    <input name="outputTxt" value="" type="text" style="width:800px;height:100px;line-height:100px;">
-</form>
+<body ng-app="App">
+<main ng-controller="myCtrl">
+
+    <!--<input type="text" ng-model="test">-->
+    <!--{{!test}}-->
+    <!--<button ng-disabled="!test">提交</button>-->
+    <form>
+        <input ng-blur="blur()" onblur="bl()">
+    </form>
+
+</main>
+
+<script src="angular.min/angular.min.js"></script>
+<script>
+    angular.module('App', [])
+        .controller('myCtrl', function ($scope) {
+            $scope.blur=function () {
+                console.log("ng-blur")
+            };
+            bl=function () {
+                console.log("onblur");
+            }
+        })
+</script>
 </body>
 </html>
