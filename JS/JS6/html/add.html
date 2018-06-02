@@ -27,10 +27,13 @@
         </div>
         <span class="col-md-4">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
         <div class="col-md-8">
-            <input type="text"
-                   ng-model="param.content"
-                   class="form-control"
-                   required>
+            <div id="wangEditor">
+                <p>请输入说明...</p>
+            </div>
+            <!--<input type="text"-->
+                   <!--ng-model="param.content"-->
+                   <!--class="form-control"-->
+                   <!--required>-->
         </div>
         <span class="col-md-4">跳转链接</span>
         <div class="col-md-8">
@@ -128,7 +131,6 @@
                     ng-click="draft()"
                     ng-disabled="!myForm.$valid||imageSrc1==undefined"
                     disabled="disabled">存为草稿</button>
-            <!--ng-disabled="!param.title||param.type==undefined||!param.content||!param.url||imageSrc1==undefined"-->
             <button ng-click="cancel()" class="btn btn-default">取消</button>
         </div>
     </form>

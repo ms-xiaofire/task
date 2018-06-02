@@ -18,7 +18,6 @@
                                    ng-required="true"
                                    close-text="Close"
                                    alt-input-formats="altInputFormats"
-                                   readonly="readonly"
                             />
                             <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="open1()">
@@ -40,7 +39,6 @@
                                    datepicker-options="dateOptions2"
                                    ng-required="true"
                                    close-text="Close"
-                                   readonly="readonly"
                             />
                             <span class="input-group-btn">
                                    <button type="button" class="btn btn-default" ng-click="open2()">
@@ -70,10 +68,18 @@
                 </div>
             </div>
             <div class="row">
+                <div class="type col-md-4">
+                    <span class="col-md-4">测&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;试</span>
+                    <div class="col-md-8">
+                        <input ng-model="test22" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
                     <div class="operation">
                         <button class="clear" ng-click="clear()">清空</button>
-                        <button class="search" ng-click="search()">搜索</button>
+                        <button class="search" ng-click="search()" ui-sref="list.article({test:param})">搜索</button>
                     </div>
                 </div>
             </div>
@@ -129,11 +135,11 @@
             previous-text="上一页"
             next-text="下一页"
             total-items="total"
-            ng-model="bigCurrentPage"
+            ng-model="param.bigCurrentPage"
             max-size="maxSize"
             class="pagination-sm"
             boundary-links="true"
             rotate="false"
-            ng-change="page(bigCurrentPage)"></ul>
+            ng-change="page(param.bigCurrentPage)"></ul>
     </div>
 </div>

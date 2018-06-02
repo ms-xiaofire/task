@@ -45,7 +45,6 @@ angular.module('App')
             //后台欢迎页面
             .state('list.welcome', {
                 url: '/welcome',
-                controller: 'welCtrl',
                 templateUrl: 'html/welcome.html',
                 resolve: {
                     loadMyFile: _lazyLoad([
@@ -55,8 +54,15 @@ angular.module('App')
             })
             //article列表页面
             .state('list.article', {
-                url: '/article',
+                url: '/article?page&type&status&startAt&endAt',
                 controller: 'artCtrl',
+                params: {
+                    'startAt': null,
+                    'endAt': null,
+                    'type': null,
+                    'status': null,
+                    'page': null
+                },
                 templateUrl: 'html/article.html',
                 resolve: {
                     loadMyFile: _lazyLoad([
@@ -75,6 +81,7 @@ angular.module('App')
                 resolve: {
                     loadMyFile: _lazyLoad([
                         'css/add.css',
+                        '//unpkg.com/wangeditor/release/wangEditor.min.js',
                         'controller/add.js'
                     ])
                 }

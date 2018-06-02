@@ -18,6 +18,12 @@ angular.module('App')
         {name: '游戏', value: 6}
     ];
 
+    //wangEditor富文本编辑器
+    var E = window.wangEditor;
+    var editor = new E('#wangEditor');
+    // 或者 var editor = new E( document.getElementById('editor') )
+    editor.create();
+
     //上传图片
     var uploader = $scope.uploader = new FileUploader();
     uploader.url = '/carrots-admin-ajax/a/u/img/task';
@@ -84,13 +90,7 @@ angular.module('App')
             if(response.data.code === 0){
 
                 $scope.param = response.data.data.article;
-                // $scope.title = $scope.param.title;
-                // $scope.type = $scope.param.type;
-                // console.log($scope.type);
-                // $scope.content = $scope.param.content;
-                // $scope.url = $scope.param.url;
                 $scope.imageSrc1 = $scope.param.img;
-                // $scope.industry = response.data.data.article.industry;
             }
         }, function (response) {
             console.log(response);

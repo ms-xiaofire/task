@@ -1,7 +1,18 @@
 
 //article列表控制器
 angular.module('App')
-.controller('artCtrl', ['$scope', '$http', '$state', function ($scope, $http, $state, $stateParams) {
+.controller('artCtrl', function ($scope, $http, $state, $stateParams) {
+
+    // function test12() {
+    //         var date = new Date($stateParams.startAt);
+    //         Y = date.getFullYear() + '-';
+    //         M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    //         D = date.getDate() + ' ';
+    //         return Y+M+D;
+    // }
+    // console.log(test12());
+
+    $scope.param = {};
 
     $scope.typeData = [
         {name: '首页banner', value: 0},
@@ -13,40 +24,6 @@ angular.module('App')
         {name: '草稿', value: 1},
         {name: '上线', value: 2}
     ];
-    //get article列表
-    $http({
-        method: 'GET',
-        url: '/carrots-admin-ajax/a/article/search'
-        //请求成功执行的代码
-    }).then(function successCallback(response) {
-        if(response.data.code===0){
-            //article列表
-            $scope.lists = response.data.data.articleList;
-            $scope.total = response.data.data.total;
-            //分页
-            $scope.totalItems = 64;
-            $scope.currentPage = 4;
-
-            $scope.maxSize = 5;
-            $scope.bigTotalItems = $scope.total;
-            $scope.bigCurrentPage = 1;
-
-            $scope.page = function(page) {
-                $scope.bigCurrentPage = page;
-                $http({
-                    method: 'GET',
-                    params: {page:$scope.bigCurrentPage},
-                    url: '/carrots-admin-ajax/a/article/search'
-                    //请求成功执行的代码
-                }).then(function successCallback(response) {
-                    $scope.lists = response.data.data.articleList;
-                })
-            };
-        }
-        // 请求失败执行的代码
-    },function errorCallback(response) {
-        console.log(response);
-    });
 
     //日期插件
     //格式化日期
@@ -76,31 +53,90 @@ angular.module('App')
         $scope.popup2.opened = true;
     };
 
-    $scope.param = {};
+    //get article列表
+    $http({
+        method: 'GET',
+        url: '/carrots-admin-ajax/a/article/search',
+        params: {
+            startAt: $stateParams.startAt,
+            endAt: $stateParams.endAt,
+            type: $stateParams.type,
+            status: $stateParams.status,
+            page: $stateParams.page
+        }
+        //请求成功执行的代码
+    }).then(function successCallback(response) {
+        if(response.data.code===0){
+            //article列表
+            $scope.lists = response.data.data.articleList;
+            $scope.total = response.data.data.total;
+            //分页
+            $scope.totalItems = 64;
+            $scope.currentPage = 4;
+
+            $scope.maxSize = 5;
+            $scope.bigTotalItems = $scope.total;
+            $scope.param.bigCurrentPage = 1;
+
+            // $scope.param.type = $scope.typeData[null].value;
+            // if($stateParams.type){
+            //     $scope.param.type = $stateParams.type;
+            // }
+
+            if($stateParams.startAt){
+                var date = new Date(parseInt($stateParams.startAt));
+                Y = date.getFullYear() + '/';
+                M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '/';
+                D = date.getDate();
+                $scope.param.startAt = Y+M+D;
+            }
+
+            $scope.page = function(page) {
+                $scope.param.bigCurrentPage = page;
+                $http({
+                    method: 'GET',
+                    params: {
+                        page:$scope.param.bigCurrentPage
+                    },
+                    url: '/carrots-admin-ajax/a/article/search'
+                    //请求成功执行的代码
+                }).then(function successCallback(response) {
+                    $scope.lists = response.data.data.articleList;
+                })
+            };
+        }
+        // 请求失败执行的代码
+    },function errorCallback(response) {
+        console.log(response);
+    });
+
+
     //搜索
     $scope.search = function () {
-
         if($scope.param.startAt){
             $scope.param.startAt = $scope.param.startAt.valueOf();
         }
         if($scope.param.endAt){
             $scope.param.endAt = $scope.param.endAt.valueOf();
-            // if($scope.params.startAt !== $scope.params.endAt){
-            //     $scope.params.endAt = $scope.params.endAt.valueOf();
-            // }else {
-            //     $scope.params.endAt = $scope.params.startAt.valueOf()+86399000;
-            // }
         }
-
-        $http({
-            method: 'GET',
-            url: '/carrots-admin-ajax/a/article/search',
-            params: $scope.param
-            //请求成功执行的代码
-        }).then(function successCallback(response) {
-            $scope.lists = response.data.data.articleList;
-            $scope.total = response.data.data.total;
-        })
+        $state.go('list.article', {
+            startAt: $scope.param.startAt,
+            endAt: $scope.param.endAt,
+            type: $scope.param.type,
+            status: $scope.param.status,
+            page: $scope.param.bigCurrentPage
+        });
+        // if($scope.param.startAt){
+        //     $scope.param.startAt = $scope.param.startAt.valueOf();
+        // }
+        // if($scope.param.endAt){
+        //     $scope.param.endAt = $scope.param.endAt.valueOf();
+        //     // if($scope.params.startAt !== $scope.params.endAt){
+        //     //     $scope.params.endAt = $scope.params.endAt.valueOf();
+        //     // }else {
+        //     //     $scope.params.endAt = $scope.params.startAt.valueOf()+86399000;
+        //     // }
+        // }
     };
     //清空
     $scope.clear = function () {
@@ -178,5 +214,5 @@ angular.module('App')
             }
         });
     };
-}]);
+});
 

@@ -5,10 +5,10 @@ angular.module('App')
             return "找首位banner";
         }
         if(type===1){
-            return "找职位banner";
+            return "找精英banner";
         }
         if(type===2){
-            return "找精英banner";
+            return "找职位banner";
         }
         if(type===3){
             return "行业大图";
