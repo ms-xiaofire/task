@@ -86,7 +86,6 @@ angular.module('App')
             method: 'GET',
             url: '/carrots-admin-ajax/a/article/'+id
         }).then(function (response) {
-            console.log(response);
             if(response.data.code === 0){
 
                 $scope.param = response.data.data.article;
@@ -101,7 +100,6 @@ angular.module('App')
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 2;
             $scope.param.createAt = 1;
-            console.log($scope.param);
 
             $http({
                 method: 'PUT',

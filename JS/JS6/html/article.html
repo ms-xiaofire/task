@@ -10,8 +10,9 @@
                     <div class="col-md-8">
                         <p class="input-group">
                             <input type="text"
+                                   id="testDate1"
                                    class="form-control"
-                                   uib-datepicker-popup="{{format}}"
+                                   uib-datepicker-popup="{{format1}}"
                                    ng-model="param.startAt"
                                    is-open="popup1.opened"
                                    datepicker-options="dateOptions1"
@@ -32,8 +33,9 @@
                     <div class="col-md-8">
                         <p class="input-group">
                             <input type="text"
+                                   id="testDate2"
                                    class="form-control"
-                                   uib-datepicker-popup
+                                   uib-datepicker-popup="{{format2}}"
                                    ng-model="param.endAt"
                                    is-open="popup2.opened"
                                    datepicker-options="dateOptions2"
@@ -64,14 +66,6 @@
                         <select ng-options="s.value as s.name for s in statusData" ng-model="param.status" class="form-control">
                             <option value="">全部</option>
                         </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="type col-md-4">
-                    <span class="col-md-4">测&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;试</span>
-                    <div class="col-md-8">
-                        <input ng-model="test22" class="form-control">
                     </div>
                 </div>
             </div>
