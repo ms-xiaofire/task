@@ -93,22 +93,17 @@ angular.module('App')
             if($stateParams.type){
                 $scope.param.type = parseInt($stateParams.type);
             }
+            //跳页后渲染status
             if($stateParams.status){
                 $scope.param.status = parseInt($stateParams.status);
             }
-
-            $scope.page = function(page) {
-                $scope.param.bigCurrentPage = page;
-                $http({
-                    method: 'GET',
-                    params: {
-                        page:$scope.param.bigCurrentPage
-                    },
-                    url: '/carrots-admin-ajax/a/article/search'
-                    //请求成功执行的代码
-                }).then(function successCallback(response) {
-                    $scope.lists = response.data.data.articleList;
-                })
+            //跳页后渲染页数
+            if($stateParams.page){
+                $scope.param.bigCurrentPage = $stateParams.page;
+            }
+            //翻页
+            $scope.page = function() {
+                $state.go('list.article', {page: $scope.param.bigCurrentPage});
             };
         }
         // 请求失败执行的代码

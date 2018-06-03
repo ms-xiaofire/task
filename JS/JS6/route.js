@@ -69,7 +69,8 @@ angular.module('App')
                         'component/bootstrap-datepicker/bootstrap-datepicker.css',
                         'css/article.css',
                         'component/bootstrap-datepicker/bootstrap-datepicker.min.js',
-                        'controller/article.js'
+                        'controller/article.js',
+                        'filter/filter.js'
                     ])
                 }
             })
