@@ -28,7 +28,6 @@ angular.module('App')
         maxDate: new Date()
     };
     $scope.dateOptions2 = {
-        minDate: $scope.startAt,
         maxDate: new Date()
     };
     $scope.popup1 = {
@@ -82,7 +81,7 @@ angular.module('App')
                 // $('#testDate1').datepicker('setDate', new Date(Y1+M1+D1));
             }
             if($stateParams.endAt){
-                var date2 = new Date(parseInt($stateParams.endAt));
+                var date2 = new Date(parseInt($stateParams.endAt)-86399999);
                 Y2 = date2.getFullYear() + '/';
                 M2 = (date2.getMonth()+1 < 10 ? '0'+(date2.getMonth()+1) : date2.getMonth()+1) + '/';
                 D2 = date2.getDate();
@@ -118,9 +117,9 @@ angular.module('App')
             $scope.param.startAt = $scope.param.startAt.valueOf();
         }
         if($scope.param.endAt){
-            $scope.param.endAt = $scope.param.endAt.valueOf();
+            $scope.param.endAt = $scope.param.endAt.valueOf()+86399999;
         }
-        if($scope.param.endAt-$scope.param.startAt>0||$scope.param.endAt==null||$scope.param.startAt==null){
+        if($scope.param.endAt-$scope.param.startAt>=0||$scope.param.endAt==null||$scope.param.startAt==null){
             $state.go('list.article', {
                 startAt: $scope.param.startAt,
                 endAt: $scope.param.endAt,
@@ -129,7 +128,7 @@ angular.module('App')
                 page: $scope.param.bigCurrentPage
             });
         }else {
-            bootbox.alert('截至时间必须大于开始时间!');
+            bootbox.alert('截至时间必须大于或等于开始时间!');
             $scope.param.startAt='';
             $scope.param.endAt = '';
         }

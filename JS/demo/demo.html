@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-    </style>
 </head>
 <body ng-app="App">
-<main ng-controller="myCtrl">
+<div ng-controller="demoCtrl">
+    <div id="div1">
+        <!--<p>请输入说明...</p>-->
+    </div>
+    <div id="div2">
+        <p>请输入说明...</p>
+    </div>
+</div>
 
-    <!--<input type="text" ng-model="test">-->
-    <!--{{!test}}-->
-    <!--<button ng-disabled="!test">提交</button>-->
-    <form>
-        <input ng-blur="blur()" onblur="bl()">
-    </form>
-
-</main>
+<div id="div3">
+    <p>第二个编辑器</p>
+</div>
 
 <script src="angular.min/angular.min.js"></script>
+<script src="wangEditor/wangEditor.min.js"></script>
 <script>
     angular.module('App', [])
-        .controller('myCtrl', function ($scope) {
-            $scope.blur=function () {
-                console.log("ng-blur")
-            };
-            bl=function () {
-                console.log("onblur");
-            }
+        .controller('demoCtrl', function () {
+
+            //wangEditor富文本编辑器
+            var E = window.wangEditor;
+            var editor1 = new E('#div1','#div2');
+            // 或者 var editor = new E( document.getElementById('editor'))
+            editor1.create();
+
+            var editor2 = new E('#div3');
+            editor2.create();
         })
 </script>
 </body>
