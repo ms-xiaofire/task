@@ -2,15 +2,15 @@
 <div class="addMain">
     <div class="head">{{head}}</div>
     <form class="content" name="myForm">
-        <span class="col-md-4">标题名称</span>
-        <div class="col-md-8">
+        <span class="col-md-3">标题名称</span>
+        <div class="col-md-9">
             <input type="text"
                    ng-model="param.title"
                    class="form-control"
                    required>
         </div>
-        <span class="col-md-4">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
-        <div class="col-md-8">
+        <span class="col-md-3">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
+        <div class="col-md-9">
             <select ng-options="t.value as t.name for t in typeData"
                     ng-model="param.type"
                     class="form-control"
@@ -25,23 +25,23 @@
                 <option value="">请选择</option>
             </select>
         </div>
-        <span class="col-md-4">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
-        <div class="col-md-8">
+        <span class="col-md-3">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
+        <div class="col-md-9">
             <div id="wEditor" ng-model="param.content"></div>
             <!--<input type="text"-->
                    <!--ng-model="param.content"-->
                    <!--class="form-control"-->
                    <!--required>-->
         </div>
-        <span class="col-md-4">跳转链接</span>
-        <div class="col-md-8">
+        <span class="col-md-3">跳转链接</span>
+        <div class="col-md-9">
             <input type="text"
                    ng-model="param.url"
                    class="form-control"
                    required>
         </div>
-        <span class="col-md-4">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
-        <div class="col-md-8">
+        <span class="col-md-3">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
+        <div class="col-md-9">
             <div class="col-md-12">
                 <div class="form-group">
                     <label class="btn btn-primary" for="file2">选择文件</label>
@@ -117,8 +117,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-8">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
             <button type="button"
                     class="btn btn-success"
                     ng-click="online()"
