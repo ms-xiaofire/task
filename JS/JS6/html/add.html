@@ -1,5 +1,5 @@
 
-<div ng-controller="addCtrl" class="addMain">
+<div class="addMain">
     <div class="head">{{head}}</div>
     <form class="content" name="myForm">
         <span class="col-md-4">标题名称</span>
@@ -27,9 +27,7 @@
         </div>
         <span class="col-md-4">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
         <div class="col-md-8">
-            <div id="wangEditor">
-                <p>请输入说明...</p>
-            </div>
+            <div id="wEditor" ng-model="param.content"></div>
             <!--<input type="text"-->
                    <!--ng-model="param.content"-->
                    <!--class="form-control"-->

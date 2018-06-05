@@ -125,7 +125,7 @@ angular.module('App')
                 endAt: $scope.param.endAt,
                 type: $scope.param.type,
                 status: $scope.param.status,
-                page: $scope.param.bigCurrentPage
+                page: 1
             });
         }else {
             bootbox.alert('截至时间必须大于或等于开始时间!');
@@ -136,6 +136,12 @@ angular.module('App')
     //清空
     $scope.clear = function () {
         $scope.param = '';
+        // $state.go(
+        //     $state.current,
+        //     $scope.param.type=0,
+        //     $scope.param.status=0,
+        //     {reload:true}
+        //     )
     };
 
     //新增页面

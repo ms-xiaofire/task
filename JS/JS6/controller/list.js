@@ -15,8 +15,6 @@ angular.module('App')
                         $(this).next('ul').slideUp(300);
                         $('.nav-item.nav-show').removeClass('nav-show');
                     }
-                    //阻止冒泡事件
-                    e.stopPropagation();
                 }
             });
             //nav-mini切换
@@ -28,11 +26,9 @@ angular.module('App')
                 }else{
                     $('.nav').removeClass('nav-mini');
                 }
-                //阻止冒泡事件
-                e.stopPropagation();
             });
         });
-        
+
         //退出
         $scope.off = function () {
             bootbox.confirm("确定要退出登录吗?", function (result) {

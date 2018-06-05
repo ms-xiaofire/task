@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div {
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body ng-app="App">
 <div ng-controller="demoCtrl">
@@ -12,17 +17,22 @@
     <div id="div2">
         <p>请输入说明...</p>
     </div>
+
+    <div id="div3">
+        <p>第二个编辑器</p>
+    </div>
+
+    <button id="btn1" ng-click="btn1()">获取html</button>
+    <button id="btn2" ng-click="btn2()">获取text</button>
 </div>
 
-<div id="div3">
-    <p>第二个编辑器</p>
-</div>
+
 
 <script src="angular.min/angular.min.js"></script>
 <script src="wangEditor/wangEditor.min.js"></script>
 <script>
     angular.module('App', [])
-        .controller('demoCtrl', function () {
+        .controller('demoCtrl', function ($scope) {
 
             //wangEditor富文本编辑器
             var E = window.wangEditor;
@@ -32,6 +42,10 @@
 
             var editor2 = new E('#div3');
             editor2.create();
+
+            $scope.btn1 = function () {
+                console.log(editor2.txt.html());
+            }
         })
 </script>
 </body>

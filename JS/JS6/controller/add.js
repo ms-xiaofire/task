@@ -1,6 +1,6 @@
 
 angular.module('App')
-.controller('addCtrl', function ($scope, $state, FileUploader, $http, $stateParams) {
+.controller('addCtrl', function ($scope, $state, FileUploader, $http, $stateParams,) {
 
     $scope.typeData = [
         {name: '首页banner', value: 0},
@@ -20,9 +20,10 @@ angular.module('App')
 
     //wangEditor富文本编辑器
     var E = window.wangEditor;
-    var editor = new E('#wangEditor');
+    var editor = new E('#wEditor');
     // 或者 var editor = new E( document.getElementById('editor') )
     editor.create();
+
 
     //上传图片
     var uploader = $scope.uploader = new FileUploader();
@@ -43,6 +44,7 @@ angular.module('App')
         $scope.online = function () {
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 2;
+            $scope.param.content = editor.txt.html();
 
             $http({
                 method: 'POST',
@@ -62,6 +64,7 @@ angular.module('App')
         $scope.draft = function () {
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 1;
+            $scope.param.content = editor.txt.html();
 
             $http({
                 method: 'POST',
@@ -87,9 +90,10 @@ angular.module('App')
             url: '/carrots-admin-ajax/a/article/'+id
         }).then(function (response) {
             if(response.data.code === 0){
-
                 $scope.param = response.data.data.article;
                 $scope.imageSrc1 = $scope.param.img;
+                console.log($scope.param.content);
+                editor.txt.html($scope.param.content);
             }
         }, function (response) {
             console.log(response);
@@ -100,6 +104,7 @@ angular.module('App')
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 2;
             $scope.param.createAt = 1;
+            $scope.param.content = editor.txt.html();
 
             $http({
                 method: 'PUT',
@@ -119,8 +124,9 @@ angular.module('App')
         $scope.draft = function () {
             $scope.param.img = $scope.imageSrc1;
             $scope.param.status = 1;
-            $scope.param.createAt = 1;
-            console.log($scope.param);
+            $scope.param.createAt = new Date().valueOf();
+            console.log($scope.param.createAt);
+            $scope.param.content = editor.txt.html();
 
             $http({
                 method: 'PUT',

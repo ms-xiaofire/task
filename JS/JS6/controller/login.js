@@ -1,6 +1,8 @@
 //登录页面控制器
 angular.module('App')
     .controller('logCtrl', function ($scope, $state, $http) {
+        console.log("登录页");
+
         $scope.param = {};
         $scope.myLogin = function () {
             //请求登录
