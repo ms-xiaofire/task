@@ -13,11 +13,13 @@
                            ng-maxlength="10"
                            placeholder="请输入用户名" required>
                 </div>
-                <div class="error" ng-messages="loginForm.unames.$error">
-                    <!--<div ng-message="required">用户名不能为空</div>-->
-                    <div ng-message="minlength">用户名长度至少为3</div>
-                    <div ng-message="maxlength">用户名长度不能超过10</div>
+                <!--帐号输入非法时错误信息提示内容-->
+                <div class="error" ng-messages="loginForm.unames.$error" ng-if="loginForm.unames.$touched">
+                    <span ng-message="minlength">用户名太短</span>
+                    <span ng-message="maxlength">用户名太长</span>
+                    <span ng-message="required">用户名必填</span>
                 </div>
+
                 <div class="unames">
                     <img src="images/password.png">
                     <input type="password"
@@ -27,13 +29,15 @@
                            ng-maxlength="16"
                            placeholder="请输入密码" required>
                 </div>
-                <div class="error" ng-messages="loginForm.upwd.$error">
-                    <!--<div ng-message="required">密码不能为空</div>-->
-                    <div ng-message="minlength">密码长度至少为6位</div>
-                    <div ng-message="maxlength">密码长度不能超过16位</div>
+                <!--密码输入非法时错误信息提示内容-->
+                <div class="error" ng-messages="loginForm.upwd.$error" ng-if="loginForm.upwd.$touched">
+                    <span ng-message="minlength">用户名太短</span>
+                    <span ng-message="maxlength">用户名太长</span>
+                    <span ng-message="required">密码必填</span>
                 </div>
+
                 <p id="hint">{{_test}}</p>
-                <button id="login" type="submit" value="登录">登录</button>
+                <button id="login" type="submit" value="登录" ng-disabled="loginForm.$invalid">登录</button>
             </form>
         </div>
     </div>

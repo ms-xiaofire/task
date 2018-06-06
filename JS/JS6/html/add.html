@@ -5,15 +5,23 @@
         <span class="col-md-3">标题名称</span>
         <div class="col-md-9">
             <input type="text"
+                   name="title"
                    ng-model="param.title"
                    class="form-control"
                    required>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-9 error">
+            <div ng-messages="myForm.title.$error" ng-if="myForm.title.$touched">
+                <span ng-message="required">请输入标题</span>
+            </div>
         </div>
         <span class="col-md-3">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
         <div class="col-md-9">
             <select ng-options="t.value as t.name for t in typeData"
                     ng-model="param.type"
                     class="form-control"
+                    name="type1"
                     required>
                 <option value="">请选择</option>
             </select>
@@ -21,9 +29,19 @@
                     ng-model="param.industry"
                     ng-if="param.type === 3"
                     class="form-control"
+                    name="type2"
                     required>
                 <option value="">请选择</option>
             </select>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-9 error">
+            <div ng-messages="myForm.type1.$error" ng-if="myForm.type1.$touched">
+                <span ng-message="required">请选择类型</span>
+            </div>
+            <div ng-messages="myForm.type2.$error" ng-if="myForm.type2.$touched">
+                <span ng-message="required">请选择子类型</span>
+            </div>
         </div>
         <span class="col-md-3">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</span>
         <div class="col-md-9">
@@ -35,10 +53,17 @@
         </div>
         <span class="col-md-3">跳转链接</span>
         <div class="col-md-9">
-            <input type="text"
+            <input type="url"
                    ng-model="param.url"
                    class="form-control"
+                   name="url"
                    required>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-9 error">
+            <div ng-messages="myForm.url.$error" ng-if="myForm.url.$touched">
+                <span ng-message="required">请输入跳转链接</span>
+            </div>
         </div>
         <span class="col-md-3">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</span>
         <div class="col-md-9">

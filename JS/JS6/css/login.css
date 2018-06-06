@@ -41,7 +41,7 @@ main .desk {
       width: 100%;
       height: 1rem;
       margin-left: 3rem; }
-      main .desk .bgr .error div {
+      main .desk .bgr .error span {
         color: red; }
     main .desk .bgr #hint {
       height: 1rem;

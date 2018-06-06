@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="ifApp">
+<div ng-controller="ifCtrl">
+    <input type="text" ng-model="test">
+    <p ng-if="test">测试</p>
+</div>
+
+<script src="angular.min/angular.min.js"></script>
+<script>
+    angular.module('ifApp', [])
+        .controller('ifCtrl', function ($scope) {
+            console.log($scope.test);
+        })
+</script>
+</body>
+</html>

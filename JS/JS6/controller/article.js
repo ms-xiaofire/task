@@ -136,12 +136,10 @@ angular.module('App')
     //清空
     $scope.clear = function () {
         $scope.param = '';
-        // $state.go(
-        //     $state.current,
-        //     $scope.param.type=0,
-        //     $scope.param.status=0,
-        //     {reload:true}
-        //     )
+        $state.go(
+            'list.article',
+            $scope.params = $scope.param
+            )
     };
 
     //新增页面
