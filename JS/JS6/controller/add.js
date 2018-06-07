@@ -37,9 +37,6 @@ angular.module('App')
     uploader.onCompleteItem = function() {
         return;
     };
-    // $scope.item.remove = function () {
-    //     $scope.imageSrc1 = '';
-    // };
 
     $scope.id=$stateParams.id;
 
