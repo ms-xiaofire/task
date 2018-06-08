@@ -19,7 +19,6 @@ main .desk {
     main .desk .bgr .unames {
       width: 100%;
       height: 3rem;
-      margin: 1rem 0 0;
       padding: 0.5rem 0;
       background: white;
       display: flex;
@@ -39,7 +38,7 @@ main .desk {
         outline: none; }
     main .desk .bgr .error {
       width: 100%;
-      height: 1rem;
+      height: 2rem;
       margin-left: 3rem; }
       main .desk .bgr .error span {
         color: red; }

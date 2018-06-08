@@ -79,6 +79,10 @@
         }
         tbody {
           border: 1px solid #e7e7e7;
+          .titleLength {
+            max-width: 160px;
+            word-wrap: break-word;
+          }
           td {
             vertical-align: middle;
             text-align: center;

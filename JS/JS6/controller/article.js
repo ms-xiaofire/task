@@ -135,7 +135,10 @@ angular.module('App')
     };
     //清空
     $scope.clear = function () {
-        $scope.param = '';
+        $scope.param.type = '';
+        $scope.param.status = '';
+        $scope.param.startAt = '';
+        $scope.param.endAt = '';
         $state.go(
             'list.article',
             $scope.params = $scope.param

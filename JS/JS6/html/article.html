@@ -103,7 +103,7 @@
                 <tbody>
                 <tr ng-repeat="lis in lists">
                     <td>{{$index+1}}</td>
-                    <td>{{lis.title}}</td>
+                    <td class="titleLength">{{lis.title}}</td>
                     <td><img ng-src={{lis.img}} class="test1"></td>
                     <td>{{lis.type|changeType}}</td>
                     <td>{{lis.createAt|date:"yyyy-MM-dd"}}</td>

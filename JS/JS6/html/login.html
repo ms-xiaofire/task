@@ -14,6 +14,7 @@
                            placeholder="请输入用户名" required>
                 </div>
                 <!--帐号输入非法时错误信息提示内容-->
+                <div class="error" ng-if="!loginForm.unames.$touched"></div>
                 <div class="error" ng-messages="loginForm.unames.$error" ng-if="loginForm.unames.$touched">
                     <span ng-message="minlength">用户名太短</span>
                     <span ng-message="maxlength">用户名太长</span>
@@ -30,9 +31,10 @@
                            placeholder="请输入密码" required>
                 </div>
                 <!--密码输入非法时错误信息提示内容-->
+                <div class="error" ng-if="!loginForm.upwd.$touched"></div>
                 <div class="error" ng-messages="loginForm.upwd.$error" ng-if="loginForm.upwd.$touched">
-                    <span ng-message="minlength">用户名太短</span>
-                    <span ng-message="maxlength">用户名太长</span>
+                    <span ng-message="minlength">密码太短</span>
+                    <span ng-message="maxlength">密码太长</span>
                     <span ng-message="required">密码必填</span>
                 </div>
 

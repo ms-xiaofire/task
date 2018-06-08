@@ -29,13 +29,16 @@ angular.module('App')
     //上传图片
     var uploader = $scope.uploader = new FileUploader();
     uploader.url = '/carrots-admin-ajax/a/u/img/task';
+    uploader.queueLimit = 1;
+    uploader.queue = [];
 
     uploader.onSuccessItem = function(data,fileItem) {
         $scope.imageSrc1 = fileItem.data.url;
     };
+
     //删除图片
-    uploader.onCompleteItem = function() {
-        return;
+    $scope.remove1 = function () {
+        $scope.imageSrc1 = undefined;
     };
 
     $scope.id=$stateParams.id;
@@ -56,7 +59,7 @@ angular.module('App')
                 url: '/carrots-admin-ajax/a/u/article',
                 params: $scope.param
             }).then(function (data) {
-                if(data.status === 200){
+                if(data.data.code === 0){
                     $state.go('list.article');
                     bootbox.alert("新增成功!");
                 }else {
@@ -76,7 +79,7 @@ angular.module('App')
                 url: '/carrots-admin-ajax/a/u/article',
                 params: $scope.param
             }).then(function (data) {
-                if(data.status === 200){
+                if(data.data.code === 0){
                     $state.go('list.article');
                     bootbox.alert("新增成功!");
                 }else {
@@ -93,14 +96,14 @@ angular.module('App')
         $http({
             method: 'GET',
             url: '/carrots-admin-ajax/a/article/'+id
-        }).then(function (response) {
-            if(response.data.code === 0){
-                $scope.param = response.data.data.article;
+        }).then(function (data) {
+            if(data.data.code === 0){
+                $scope.param = data.data.data.article;
                 $scope.imageSrc1 = $scope.param.img;
                 editor.txt.html($scope.param.content);
+            }else {
+                bootbox.alert(data.data.message);
             }
-        }, function (response) {
-            console.log(response);
         });
 
         //立即上线
@@ -115,7 +118,7 @@ angular.module('App')
                 url: '/carrots-admin-ajax/a/u/article/'+id,
                 params: $scope.param
             }).then(function (data) {
-                if(data.status === 200){
+                if(data.data.code === 0){
                     $state.go('list.article');
                     bootbox.alert("编辑成功!")
                 }else {

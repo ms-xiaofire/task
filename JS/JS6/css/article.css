@@ -98,6 +98,9 @@
           text-align: center; }
       .artMain .article .tables table tbody {
         border: 1px solid #e7e7e7; }
+        .artMain .article .tables table tbody .titleLength {
+          max-width: 160px;
+          word-wrap: break-word; }
         .artMain .article .tables table tbody td {
           vertical-align: middle;
           text-align: center; }

@@ -77,9 +77,8 @@
                            type="file"
                            nv-file-select
                            uploader="uploader"
-                           multiple
                     >
-                    <img alt="配图预览" class="img-responsive" ng-src="{{imageSrc1}}">
+                    <img alt="配图预览" class="img-responsive" src="{{imageSrc1}}">
                 </div>
             </div>
             <div class="col-md-12">
@@ -106,15 +105,15 @@
                                 </div>
                             </td>
                             <td>
-                        <span ng-show="item.isSuccess">
-                            <i class="glyphicon glyphicon-ok"></i>
-                        </span>
+                                <span ng-show="item.isSuccess">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </span>
                                 <span ng-show="item.isCancel">
-                            <i class="glyphicon glyphicon-ban-circle"></i>
-                        </span>
+                                    <i class="glyphicon glyphicon-ban-circle"></i>
+                                </span>
                                 <span ng-show="item.isError">
-                            <i class="glyphicon glyphicon-remove"></i>
-                        </span>
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </span>
                             </td>
                             <td nowrap>
                                 <button type="button"
@@ -133,7 +132,7 @@
                                 <!--</button>-->
                                 <button type="button"
                                         class="btn btn-danger btn-xs"
-                                        ng-click="item.remove()">
+                                        ng-click="item.remove();remove1()">
                                     <span class="glyphicon glyphicon-trash"></span>
                                     删除
                                 </button>
