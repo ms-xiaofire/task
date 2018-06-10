@@ -1,11 +1,20 @@
 angular.module('App')
-.constant('myConstantType', [
-    {type: '0', name: '首页banner'},
-    {type: '1', name: '职位banner'},
-    {type: '2', name: '精英banner'},
-    {type: '3', name: '行业大图'}
-])
-.constant('myConstantStatus', [
-    {status: '1', name: '草稿'},
-    {status: '2', name: '上线'}
-]);
+    .constant('myConstantType', [
+        {value: 0, name: '首页banner'},
+        {value: 1, name: '职位banner'},
+        {value: 2, name: '精英banner'},
+        {value: 3, name: '行业大图'}
+    ])
+    .constant('myConstantStatus', [
+        {value: 1, name: '草稿'},
+        {value: 2, name: '上线'}
+    ])
+    .constant('myIndustryData', [
+        {name: '移动互联网', value: 0},
+        {name: '电子商务', value: 1},
+        {name: '企业服务', value: 2},
+        {name: 'O2O', value: 3},
+        {name: '教育', value: 4},
+        {name: '金融', value: 5},
+        {name: '游戏', value: 6}
+    ]);

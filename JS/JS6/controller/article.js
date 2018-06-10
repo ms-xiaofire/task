@@ -1,20 +1,13 @@
 
 //article列表控制器
 angular.module('App')
-.controller('artCtrl', function ($scope, $http, $state, $stateParams) {
+.controller('artCtrl', function ($scope, $http, $state, $stateParams, myConstantType, myConstantStatus) {
 
     $scope.param = {};
 
-    $scope.typeData = [
-        {name: '首页banner', value: 0},
-        {name: '精英banner', value: 1},
-        {name: '职业banner', value: 2},
-        {name: '行业大图', value: 3}
-    ];
-    $scope.statusData = [
-        {name: '草稿', value: 1},
-        {name: '上线', value: 2}
-    ];
+    $scope.typeData = myConstantType;
+
+    $scope.statusData = myConstantStatus;
 
     //日期插件
     //格式化日期
@@ -44,9 +37,6 @@ angular.module('App')
     };
 
     //分页
-    $scope.totalItems = 64;
-    $scope.currentPage = 4;
-
     $scope.maxSize = 5;
     $scope.bigTotalItems = $scope.total;
     $scope.param.bigCurrentPage = 1;
@@ -77,7 +67,7 @@ angular.module('App')
                 Y1 = date1.getFullYear() + '/';
                 M1 = (date1.getMonth()+1 < 10 ? '0'+(date1.getMonth()+1) : date1.getMonth()+1) + '/';
                 D1 = date1.getDate();
-                $scope.param.startAt = new Date(Y1+M1+D1);
+                $scope.param.startAt = new Date(date1);
                 // $('#testDate1').datepicker('setDate', new Date(Y1+M1+D1));
             }
             if($stateParams.endAt){
@@ -85,11 +75,12 @@ angular.module('App')
                 Y2 = date2.getFullYear() + '/';
                 M2 = (date2.getMonth()+1 < 10 ? '0'+(date2.getMonth()+1) : date2.getMonth()+1) + '/';
                 D2 = date2.getDate();
-                $scope.param.endAt = new Date(Y2+M2+D2);
+                $scope.param.endAt = new Date(date2);
                 // $('#testDate2').datepicker('setDate', new Date(Y2+M2+D2));
             }
             //跳页后渲染type
             if($stateParams.type){
+                console.log($stateParams.type);
                 $scope.param.type = parseInt($stateParams.type);
             }
             //跳页后渲染status
@@ -135,19 +126,16 @@ angular.module('App')
     };
     //清空
     $scope.clear = function () {
-        $scope.param.type = '';
-        $scope.param.status = '';
-        $scope.param.startAt = '';
-        $scope.param.endAt = '';
-        $state.go(
-            'list.article',
-            $scope.params = $scope.param
-            )
+        angular.forEach($scope.param, function (data,index,array) {
+            array[index] = '';
+        });
+        console.log($scope.param);
+        $state.go('list.article', $scope.params = $scope.param)
     };
 
     //新增页面
     $scope.add = function () {
-        $state.go('list.add', {id: 1});
+        $state.go('list.add');
     };
     //上线下线
     $scope.afk = function (id, status) {

@@ -1,3 +1,6 @@
+.bootbox {
+  z-index: 10001; }
+
 .addMain {
   margin: 2rem;
   border: 1px solid #c7c7c7;

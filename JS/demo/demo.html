@@ -38,63 +38,63 @@
             var E = window.wangEditor;
 
             //编辑区和菜单区分离
-            var editor1 = new E('#div1');
-            editor1.create();
+            // var editor1 = new E('#div1','#div2');
+            // editor1.create();
 
             //第二个编辑器
             var editor2 = new E('#div3');
             //显示"本地上传" tab
-            // //base64格式保存图片
+            //base64格式保存图片
             // editor2.customConfig.uploadImgShowBase64 = true;
             // //服务器保存图片
-            // editor2.customConfig.uploadImgServer = '/upload';
+            editor2.customConfig.uploadImgServer = '/upload';
 
             // // 隐藏“网络图片”tab
             // editor2.customConfig.showLinkImg = false;
 
-            // //自定义菜单配置
-            // editor2.customConfig.menus = [
-            //     'head',
-            //     'bold',
-            //     'fontSize',
-            //     'fontName'
-            // ];
+            //自定义菜单配置
+            editor2.customConfig.menus = [
+                'head',
+                'bold',
+                'fontSize',
+                'fontName'
+            ];
 
             //debug模式
             // editor2.customConfig.debug = true;
             // editor2.customConfig.debug = location.href.indexOf('wangeditor_debug_mode=1')>0;
 
-            // //onchange
-            // editor2.customConfig.onchange = function (html) {
-            //     console.log(html);
-            // };
+            //onchange
+            editor2.customConfig.onchange = function (html) {
+                console.log(html);
+            };
 
             editor2.create();
 
-            // //追加内容
-            // editor2.txt.append('<p>追加的内容</p>');
+            //追加内容
+            editor2.txt.append('<p>追加的内容</p>');
 
-            // //清除编辑区内容
-            // $scope.btn3 = function () {
-            //     editor2.txt.clear();
-            // };
+            //清除编辑区内容
+            $scope.btn3 = function () {
+                editor2.txt.clear();
+            };
 
-            // //获取html内容
-            // $scope.btn1 = function () {
-            //     alert(editor2.txt.html());
-            // };
-            // //获取text内容
-            // $scope.btn2 = function () {
-            //     alert(editor2.txt.text());
-            // };
+            //获取html内容
+            $scope.btn1 = function () {
+                alert(editor2.txt.html());
+            };
+            //获取text内容
+            $scope.btn2 = function () {
+                alert(editor2.txt.text());
+            };
 
-            // //获取JSON内容
-            // $scope.btn4 = function () {
-            //     var json = editor2.txt.getJSON();
-            //     var jsonStr = JSON.stringify(json);
-            //     console.log(json);
-            //     console.log(jsonStr);
-            // };
+            //获取JSON内容
+            $scope.btn4 = function () {
+                var json = editor2.txt.getJSON();
+                var jsonStr = JSON.stringify(json);
+                console.log(json);
+                console.log(jsonStr);
+            };
 
         })
 </script>
