@@ -44,7 +44,7 @@ angular.module('App')
                                 sessionStorage.clear();
                             }
                         },function (response) {
-                            console.log(response);
+                            console.log(response);page
                         })
                     }else {
                         return

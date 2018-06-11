@@ -1,7 +1,15 @@
 
 angular.module('App')
-.controller('addCtrl', function ($scope, $state, FileUploader, $http, $stateParams, myConstantType, myIndustryData) {
-
+.controller('addCtrl', function (
+    $scope,
+    $state,
+    FileUploader,
+    $http,
+    $stateParams,
+    myConstantType,
+    myIndustryData,
+    ArticleManagementService
+) {
     $scope.typeData = myConstantType;
     $scope.industryData = myIndustryData;
 
@@ -29,7 +37,6 @@ angular.module('App')
     };
 
     $scope.id=$stateParams.id;
-    console.log($scope.id);
 
     $scope.param = {};
 
@@ -38,18 +45,29 @@ angular.module('App')
         $scope.head = "编辑Article";
         id = $scope.id;
 
-        $http({
-            method: 'GET',
-            url: '/carrots-admin-ajax/a/article/'+id
-        }).then(function (data) {
-            if(data.data.code === 0){
-                $scope.param = data.data.data.article;
-                $scope.imageSrc1 = $scope.param.img;
-                editor.txt.html($scope.param.content);
-            }else {
-                bootbox.alert(data.data.message);
-            }
-        });
+        ArticleManagementService.getArticleList(id)
+            .then(function (response) {
+                if(response.data.code === 0){
+                    console.log(response);
+                    $scope.param = response.data.data.articleList;
+                    $scope.imageSrc1 = $scope.param.img;
+                    editor.txt.html($scope.param.content);
+                }else {
+                    bootbox.alert(response.data.message);
+                }
+            });
+        // $http({
+        //     method: 'GET',
+        //     url: '/carrots-admin-ajax/a/article/'+id
+        // }).then(function (data) {
+        //     if(data.data.code === 0){
+        //         $scope.param = data.data.data.article;
+        //         $scope.imageSrc1 = $scope.param.img;
+        //         editor.txt.html($scope.param.content);
+        //     }else {
+        //         bootbox.alert(data.data.message);
+        //     }
+        // });
 
         //立即上线
         $scope.online = function () {

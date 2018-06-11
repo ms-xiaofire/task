@@ -1,7 +1,15 @@
 
 //article列表控制器
 angular.module('App')
-.controller('artCtrl', function ($scope, $http, $state, $stateParams, myConstantType, myConstantStatus) {
+.controller('artCtrl', function (
+    $scope,
+    $http,
+    $state,
+    $stateParams,
+    myConstantType,
+    myConstantStatus,
+    ArticleManagementService
+) {
 
     $scope.param = {};
 
@@ -39,68 +47,59 @@ angular.module('App')
     //分页
     $scope.maxSize = 5;
     $scope.bigTotalItems = $scope.total;
-    $scope.param.bigCurrentPage = 1;
+    $scope.param.page = 1;
 
     //get article列表
-    $http({
-        method: 'GET',
-        url: '/carrots-admin-ajax/a/article/search',
-        params: {
-            startAt: $stateParams.startAt,
-            endAt: $stateParams.endAt,
-            type: $stateParams.type,
-            status: $stateParams.status,
-            page: $stateParams.page
-        }
-        //请求成功执行的代码
-    }).then(function successCallback(response) {
-        if(response.data.code===0){
+    //日期
+    if($stateParams.startAt){
+        $scope.param.startAt = $stateParams.startAt;
+    }
+    if($stateParams.endAt){
+        $scope.param.endAt = $stateParams.endAt;
+    }
+    //type
+    if($stateParams.type){
+        $scope.param.type = parseInt($stateParams.type);
+    }
+    //status
+    if($stateParams.status){
+        $scope.param.status = parseInt($stateParams.status);
+    }
+    //页数
+    if($stateParams.page){
+        $scope.param.page = $stateParams.page;
+    }
+    ArticleManagementService.getArticleList($scope.param)
+        .then(function (response) {
+            if(response.data.code===0){
 
-            //article列表
-            $scope.lists = response.data.data.articleList;
-            $scope.total = response.data.data.total;
+                //article列表
+                $scope.lists = response.data.data.articleList;
+                $scope.total = response.data.data.total;
 
-
-            //跳页后渲染日期
-            if($stateParams.startAt){
-                var date1 = new Date(parseInt($stateParams.startAt));
-                Y1 = date1.getFullYear() + '/';
-                M1 = (date1.getMonth()+1 < 10 ? '0'+(date1.getMonth()+1) : date1.getMonth()+1) + '/';
-                D1 = date1.getDate();
-                $scope.param.startAt = new Date(date1);
-                // $('#testDate1').datepicker('setDate', new Date(Y1+M1+D1));
+                //跳页后渲染日期
+                if($stateParams.startAt){
+                    var date1 = new Date(parseInt($stateParams.startAt));
+                    Y1 = date1.getFullYear() + '/';
+                    M1 = (date1.getMonth()+1 < 10 ? '0'+(date1.getMonth()+1) : date1.getMonth()+1) + '/';
+                    D1 = date1.getDate();
+                    $scope.param.startAt = new Date(date1);
+                    // $('#testDate1').datepicker('setDate', new Date(Y1+M1+D1));
+                }
+                if($stateParams.endAt){
+                    var date2 = new Date(parseInt($stateParams.endAt)-86399999);
+                    Y2 = date2.getFullYear() + '/';
+                    M2 = (date2.getMonth()+1 < 10 ? '0'+(date2.getMonth()+1) : date2.getMonth()+1) + '/';
+                    D2 = date2.getDate();
+                    $scope.param.endAt = new Date(date2);
+                    // $('#testDate2').datepicker('setDate', new Date(Y2+M2+D2));
+                }
+                //翻页
+                $scope.page = function() {
+                    $state.go('list.article', {page: $scope.param.page});
+                };
             }
-            if($stateParams.endAt){
-                var date2 = new Date(parseInt($stateParams.endAt)-86399999);
-                Y2 = date2.getFullYear() + '/';
-                M2 = (date2.getMonth()+1 < 10 ? '0'+(date2.getMonth()+1) : date2.getMonth()+1) + '/';
-                D2 = date2.getDate();
-                $scope.param.endAt = new Date(date2);
-                // $('#testDate2').datepicker('setDate', new Date(Y2+M2+D2));
-            }
-            //跳页后渲染type
-            if($stateParams.type){
-                console.log($stateParams.type);
-                $scope.param.type = parseInt($stateParams.type);
-            }
-            //跳页后渲染status
-            if($stateParams.status){
-                $scope.param.status = parseInt($stateParams.status);
-            }
-            //跳页后渲染页数
-            if($stateParams.page){
-                $scope.param.bigCurrentPage = $stateParams.page;
-            }
-            //翻页
-            $scope.page = function() {
-                $state.go('list.article', {page: $scope.param.bigCurrentPage});
-            };
-        }
-        // 请求失败执行的代码
-    },function errorCallback(response) {
-        console.log(response);
-    });
-
+        });
 
     //搜索
     $scope.search = function () {
@@ -111,13 +110,8 @@ angular.module('App')
             $scope.param.endAt = $scope.param.endAt.valueOf()+86399999;
         }
         if($scope.param.endAt-$scope.param.startAt>=0||$scope.param.endAt==null||$scope.param.startAt==null){
-            $state.go('list.article', {
-                startAt: $scope.param.startAt,
-                endAt: $scope.param.endAt,
-                type: $scope.param.type,
-                status: $scope.param.status,
-                page: 1
-            });
+            $scope.param.page = 1;
+            $state.go('list.article', $scope.param);
         }else {
             bootbox.alert('截至时间必须大于或等于开始时间!');
             $scope.param.startAt='';
@@ -129,7 +123,6 @@ angular.module('App')
         angular.forEach($scope.param, function (data,index,array) {
             array[index] = '';
         });
-        console.log($scope.param);
         $state.go('list.article', $scope.params = $scope.param)
     };
 
@@ -144,17 +137,15 @@ angular.module('App')
         if(status === 1){
             bootbox.confirm("上线后该图片将在轮播banner中展示,是否执行上线操作?", function (result) {
                 if(result){
-                    $http({
-                        method: 'PUT',
-                        url: '/carrots-admin-ajax/a/u/article/status?id='+id+'&status=2'
-                    }).then(function (data) {
-                        if(data.data.code === 0){
-                            bootbox.alert("上线成功!");
-                            $state.reload('list.article');
-                        }else {
-                            alert(data.data.message);
-                        }
-                    })
+                    ArticleManagementService.changeArticleStatus(id, 2)
+                        .then(function (response) {
+                            if(response.data.code === 0){
+                                bootbox.alert("上线成功!");
+                                $state.reload('list.article');
+                            }else {
+                                bootbox.alert(response.data.message);
+                            }
+                        })
                 }else {
                     return
                 }
@@ -163,17 +154,15 @@ angular.module('App')
             if(status === 2){
                 bootbox.confirm("下线后该图片将不再展示在轮播banner中,是否执行下线操作?", function (result) {
                     if(result){
-                        $http({
-                            method: 'PUT',
-                            url: '/carrots-admin-ajax/a/u/article/status?id='+id+'&status=1'
-                        }).then(function (data) {
-                            if(data.data.code === 0){
-                                bootbox.alert("下线成功!");
-                                $state.reload('list.article');
-                            }else {
-                                console.log(data);
-                            }
-                        })
+                        ArticleManagementService.changeArticleStatus(id, 1)
+                            .then(function (response) {
+                                if(response.data.code === 0){
+                                    bootbox.alert("下线成功!");
+                                    $state.reload('list.article');
+                                }else {
+                                    bootbox.alert(response.data.message);
+                                }
+                            })
                     }else {
                         return
                     }
@@ -191,13 +180,10 @@ angular.module('App')
         id = this.lis.id;
         bootbox.confirm("确定删除?", function (result) {
             if(result){
-                $http({
-                    method: 'delete',
-                    url: '/carrots-admin-ajax/a/u/article/'+id
-                    //请求成功执行的代码
-                }).then(function successCallback() {
-                    $state.reload('list.article');
-                })
+                ArticleManagementService.delArticle(id)
+                    .then(function successCallback() {
+                        $state.reload('list.article');
+                    })
             }else {
                 return;
             }
