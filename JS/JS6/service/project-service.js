@@ -7,7 +7,7 @@ angular.module('App')
             },
             //新增
             addArticle: function (params) {
-                return $http.post(pathProject.addArticle_url, params);
+                return $http.post(pathProject.addArticle_url, $.param(params));
             },
             //删除
             delArticle: function (id) {
@@ -19,7 +19,7 @@ angular.module('App')
             },
             //编辑
             ediArticle: function (id, params) {
-                return $http.put(pathProject.editArticle_url(id), params);
+                return $http.put(pathProject.editArticle_url(id), $.param(params));
             },
             //修改article上架下架
             changeArticleStatus: function (id, status) {

@@ -16,7 +16,7 @@ angular.module('App')
             },
             //编辑article
             editArticle_url: function (id) {
-                return "/carrots-admin-ajax/a/article/"+id;
+                return "/carrots-admin-ajax/a/u/article/"+id;
             },
             //修改article的上架下架
             changeArticleStatus_url: function (id, status) {
