@@ -1,6 +1,6 @@
 //后台页面侧边栏控制器
 angular.module('App')
-    .controller('listCtrl', function ($scope, $http, $state) {
+    .controller('listCtrl', function ($scope, $http, $state, ArticleManagementService) {
         var log_in = JSON.parse(sessionStorage.getItem('log-in'));
         if(log_in === 1){
             $(function(){
@@ -35,17 +35,15 @@ angular.module('App')
             $scope.off = function () {
                 bootbox.confirm("确定要退出登录吗?", function (result) {
                     if(result){
-                        $http({
-                            method: 'post',
-                            url: '/carrots-admin-ajax/a/logout'
-                        }).then(function (response) {
-                            if(response.data.code === 0){
-                                $state.go('login');
-                                sessionStorage.clear();
-                            }
-                        },function (response) {
-                            console.log(response);page
-                        })
+                        ArticleManagementService.outLogin()
+                            .then(function (response) {
+                                if(response.data.code === 0){
+                                    $state.go('login');
+                                    sessionStorage.clear();
+                                }else {
+                                    bootbox.alert(response.data.message);
+                                }
+                            })
                     }else {
                         return
                     }

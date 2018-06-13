@@ -1,6 +1,14 @@
 angular.module('App')
     .factory('ArticleManagementService', function ($http, pathProject) {
         return {
+            //登录
+            myLogin: function (params) {
+                return $http.post(pathProject.myLogin_url, $.param(params));
+            },
+            //退出
+            outLogin: function() {
+                return $http.post(pathProject.outLogin_url);
+            },
             //获取
             getArticleList: function (params) {
                 return $http.get(pathProject.getArticleList_url, {params: params});

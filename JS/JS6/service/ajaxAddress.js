@@ -1,6 +1,10 @@
 angular.module('App')
     .factory('pathProject', function () {
         return {
+            //登录
+            myLogin_url: "/carrots-admin-ajax/a/login",
+            //退出
+            outLogin_url: "/carrots-admin-ajax/a/logout",
             //article管理
             //article列表接口
             getArticleList_url: "/carrots-admin-ajax/a/article/search",

@@ -16,6 +16,22 @@ angular.module('App')
     //wangEditor富文本编辑器
     var E = window.wangEditor;
     var editor = new E('#wEditor');
+    //编辑器自定义菜单
+    editor.customConfig.menus = [
+        'head',
+        'bold',
+        'fontName',
+        'italic',
+        'underline',
+        'foreColor',
+        'backColor',
+        'link',
+        'list',
+        'justify',
+        'image',
+        'video',
+        'code'
+    ];
     //编辑器上传图片
     editor.customConfig.uploadImgShowBase64 = true;
     editor.create();

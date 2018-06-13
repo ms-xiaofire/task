@@ -1,4 +1,4 @@
-main .desk {
+main .login_bg {
   background: url("../images/picture.png") center no-repeat;
   background-size: 100% 100%;
   height: 100vh;
@@ -6,47 +6,47 @@ main .desk {
   align-items: center;
   justify-content: center;
   overflow: hidden; }
-  main .desk .bgr {
+  main .login_bg .login_box {
     width: 20rem;
     background: #c7c7c7;
     padding: 1rem 2rem 0.5rem;
     box-sizing: content-box; }
-    main .desk .bgr .head {
+    main .login_bg .login_box .head {
       text-align: center;
       margin: 0 0 2rem;
       font-size: 1.2rem;
       color: #29bde0; }
-    main .desk .bgr .unames {
+    main .login_bg .login_box .userName {
       width: 100%;
       height: 3rem;
       padding: 0.5rem 0;
       background: white;
       display: flex;
       align-items: center; }
-      main .desk .bgr .unames img {
+      main .login_bg .login_box .userName img {
         margin: 0 0.5rem;
         padding-right: 0.5rem;
         border-right: 1px solid #c7c7c7;
         transform: scale(0.8); }
-      main .desk .bgr .unames input {
+      main .login_bg .login_box .userName input {
         height: 2rem;
         margin-left: 0.5rem;
         border: none;
         font-size: 1.2rem;
         color: black; }
-      main .desk .bgr .unames input:focus {
+      main .login_bg .login_box .userName input:focus {
         outline: none; }
-    main .desk .bgr .error {
+    main .login_bg .login_box .error {
       width: 100%;
       height: 2rem;
       margin-left: 3rem; }
-      main .desk .bgr .error span {
+      main .login_bg .login_box .error span {
         color: red; }
-    main .desk .bgr #hint {
+    main .login_bg .login_box #hint {
       height: 1rem;
       color: red;
       margin: 0 0 0.3rem 3rem; }
-    main .desk .bgr #login {
+    main .login_bg .login_box #login {
       width: 100%;
       height: 3rem;
       line-height: 3rem;
@@ -56,9 +56,9 @@ main .desk {
       border: none;
       border-radius: 5px;
       cursor: pointer; }
-    main .desk .bgr #login:hover {
+    main .login_bg .login_box #login:hover {
       color: black; }
-    main .desk .bgr #login:focus {
+    main .login_bg .login_box #login:focus {
       outline: none; }
 
 /*# sourceMappingURL=login.css.map */

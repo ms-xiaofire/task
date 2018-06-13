@@ -1,37 +1,19 @@
 angular.module('App')
 .filter('changeType', function () {
+    var changeType = ['首页Banner', '找精英Banner', '找职位Banner', '行业大图'];
     return function (type) {
-        if(type===0){
-            return "找首位banner";
-        }
-        if(type===1){
-            return "找精英banner";
-        }
-        if(type===2){
-            return "找职位banner";
-        }
-        if(type===3){
-            return "行业大图";
-        }
+        return type = changeType[type];
     }
 })
 .filter('changeStatus', function () {
+    var changeStatus = ['草稿', '上线'];
     return function (status) {
-        if(status === 1){
-            return "草稿";
-        }
-        if(status === 2){
-            return "上线";
-        }
+        return status = changeStatus[status - 1];
     }
 })
 .filter('changeAfk', function () {
+    var changeAfk = ['上线', '下线'];
     return function (status) {
-        if(status === 1){
-            return "上线";
-        }
-        if(status === 2){
-            return "下线";
-        }
+        return status = changeAfk[status - 1];
     }
 });

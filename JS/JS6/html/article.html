@@ -12,16 +12,16 @@
                             <input type="text"
                                    id="testDate1"
                                    class="form-control"
-                                   uib-datepicker-popup="{{format1}}"
+                                   uib-datepicker-popup="{{formatStart}}"
                                    ng-model="param.startAt"
-                                   is-open="popup1.opened"
-                                   datepicker-options="dateOptions1"
+                                   is-open="popupStart.opened"
+                                   datepicker-options="dateOptions"
                                    ng-required="true"
                                    close-text="Close"
                                    alt-input-formats="altInputFormats"
                             />
                             <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open1()">
+                            <button type="button" class="btn btn-default" ng-click="openStart()">
                                 <i class="glyphicon glyphicon-calendar"></i>
                             </button>
                             </span>
@@ -33,17 +33,17 @@
                     <div class="col-md-8">
                         <p class="input-group">
                             <input type="text"
-                                   id="testDate2"
+                                   id="testDateEnd"
                                    class="form-control"
-                                   uib-datepicker-popup="{{format2}}"
+                                   uib-datepicker-popup="{{formatEnd}}"
                                    ng-model="param.endAt"
-                                   is-open="popup2.opened"
-                                   datepicker-options="dateOptions2"
+                                   is-open="popupEnd.opened"
+                                   datepicker-options="dateOptions"
                                    ng-required="true"
                                    close-text="Close"
                             />
                             <span class="input-group-btn">
-                                   <button type="button" class="btn btn-default" ng-click="open2()">
+                                   <button type="button" class="btn btn-default" ng-click="openEnd()">
                                        <i class="glyphicon glyphicon-calendar"></i>
                                    </button>
                             </span>
@@ -73,7 +73,7 @@
                 <div class="col-md-12">
                     <div class="operation">
                         <button class="clear" ng-click="clear()">清空</button>
-                        <button class="search" ng-click="search()" ui-sref="list.article({test:param})">搜索</button>
+                        <button class="search" ng-click="search()">搜索</button>
                     </div>
                 </div>
             </div>
@@ -103,8 +103,8 @@
                 <tbody>
                 <tr ng-repeat="lis in lists">
                     <td>{{$index+1}}</td>
-                    <td class="titleLength3/">{{lis.title}}</td>
-                    <td><img ng-src={{lis.img}} class="test1"></td>
+                    <td class="titleLength">{{lis.title}}</td>
+                    <td><img ng-src={{lis.img}} class="artPicture"></td>
                     <td>{{lis.type|changeType}}</td>
                     <td>{{lis.createAt|date:"yyyy-MM-dd"}}</td>
                     <td>{{lis.updateAt|date:'yyyy-MM-dd'}}</td>

@@ -21,7 +21,7 @@
             <select ng-options="t.value as t.name for t in typeData"
                     ng-model="param.type"
                     class="form-control"
-                    name="type1"
+                    name="typeParent"
                     required>
                 <option value="">请选择</option>
             </select>
@@ -29,17 +29,17 @@
                     ng-model="param.industry"
                     ng-if="param.type === 3"
                     class="form-control"
-                    name="type2"
+                    name="typeSun"
                     required>
                 <option value="">请选择</option>
             </select>
         </div>
         <div class="col-md-3"></div>
         <div class="col-md-9 error">
-            <div ng-messages="myForm.type1.$error" ng-if="myForm.type1.$touched">
+            <div ng-messages="myForm.typeParent.$error" ng-if="myForm.typeParent.$touched">
                 <span ng-message="required">请选择类型</span>
             </div>
-            <div ng-messages="myForm.type2.$error" ng-if="myForm.type2.$touched">
+            <div ng-messages="myForm.typeSun.$error" ng-if="myForm.typeSun.$touched">
                 <span ng-message="required">请选择子类型</span>
             </div>
         </div>
@@ -67,8 +67,8 @@
         <div class="col-md-9">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label class="btn btn-primary" for="file2">选择文件</label>
-                    <input id="file2"
+                    <label class="btn btn-primary" for="filePicture">选择文件</label>
+                    <input id="filePicture"
                            style="display: none"
                            type="file"
                            nv-file-select

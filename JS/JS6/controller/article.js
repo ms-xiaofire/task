@@ -19,29 +19,26 @@ angular.module('App')
 
     //日期插件
     //格式化日期
-    $scope.format1 = 'yyyy/MM/dd';
-    $scope.format2 = 'yyyy/MM/dd';
+    $scope.formatStart = 'yyyy/MM/dd';
+    $scope.formatEnd = 'yyyy/MM/dd';
     //手动输入日期的格式
     $scope.altInputFormats = ['yyyy/M!/d!'];
 
     //设置可选日期范围
-    $scope.dateOptions1 = {
+    $scope.dateOptions = {
         maxDate: new Date()
     };
-    $scope.dateOptions2 = {
-        maxDate: new Date()
-    };
-    $scope.popup1 = {
+    $scope.popupStart = {
         opened: false
     };
-    $scope.open1 = function () {
-        $scope.popup1.opened = true;
+    $scope.openStart = function () {
+        $scope.popupStart.opened = true;
     };
-    $scope.popup2 = {
+    $scope.popupEnd = {
         opened: false
     };
-    $scope.open2 = function () {
-        $scope.popup2.opened = true;
+    $scope.openEnd = function () {
+        $scope.popupEnd.opened = true;
     };
 
     //分页
@@ -69,6 +66,7 @@ angular.module('App')
     if($stateParams.page){
         $scope.param.page = $stateParams.page;
     }
+
     ArticleManagementService.getArticleList($scope.param)
         .then(function (response) {
             if(response.data.code===0){
@@ -92,7 +90,7 @@ angular.module('App')
                     M2 = (date2.getMonth()+1 < 10 ? '0'+(date2.getMonth()+1) : date2.getMonth()+1) + '/';
                     D2 = date2.getDate();
                     $scope.param.endAt = new Date(date2);
-                    // $('#testDate2').datepicker('setDate', new Date(Y2+M2+D2));
+                    // $('#testDateEnd').datepicker('setDate', new Date(Y2+M2+D2));
                 }
                 //翻页
                 $scope.page = function() {
@@ -184,8 +182,6 @@ angular.module('App')
                     .then(function successCallback() {
                         $state.reload('list.article');
                     })
-            }else {
-                return;
             }
         });
     };

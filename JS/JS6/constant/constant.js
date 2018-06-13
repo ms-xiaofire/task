@@ -1,8 +1,8 @@
 angular.module('App')
     .constant('myConstantType', [
-        {value: 0, name: '首页banner'},
-        {value: 1, name: '职位banner'},
-        {value: 2, name: '精英banner'},
+        {value: 0, name: '首页Banner'},
+        {value: 1, name: '精英Banner'},
+        {value: 2, name: '职位Banner'},
         {value: 3, name: '行业大图'}
     ])
     .constant('myConstantStatus', [

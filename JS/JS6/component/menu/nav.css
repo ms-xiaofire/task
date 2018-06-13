@@ -27,7 +27,7 @@ a{text-decoration:none;}
 .nav-more::after{content: "\e621";}
 /*---------------------*/
 .nav-show .nav-more{transform:rotate(90deg);}
-.nav-show,.nav-item>a:hover{color: #FFF;background:rgba(0,0,0,.1);}
+.nav-show,.nav-item>a:hover{color: #FFF;background:lightblue;}
 .nav-show>a:before,.nav-item>a:hover:before{opacity:1;}
 .nav-item li:hover a{color: #FFF;background: rgba(0, 0, 0,.1);}
 
