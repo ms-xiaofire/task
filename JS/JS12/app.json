@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/task/task",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/profession/profession"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#eeeeee",
+    "navigationBarTitleText": "风姓部落",
+    "navigationBarTextStyle":"black"
+  }
+}

@@ -59,7 +59,6 @@ angular.module('App')
                 params: {
                     'startAt': null,
                     'endAt': null,
-
                     'type': null,
                     'status': null,
                     'page': null

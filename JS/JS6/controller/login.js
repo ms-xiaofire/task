@@ -7,7 +7,6 @@ angular.module('App')
             //请求登录
             ArticleManagementService.myLogin($scope.param)
                 .then(function (response) {
-                    console.log(response);
                     if(response.data.code === 0){
                         $state.go('list');
                         sessionStorage.setItem('log-in', 1);

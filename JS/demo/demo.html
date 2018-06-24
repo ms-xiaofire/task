@@ -1,102 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="demoApp">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
     <style>
-        div {
-            margin-top: 2rem;
+        .menu-list:hover {
+            background: lightblue;
+        }
+        .menu-child-list:hover {
+            background: lightblue;
+        }
+        .listhide {
+            display: none;
+        }
+        .listshow {
+            display: block;
+        }
+        .atcolor {
+            background-color: lightblue;
         }
     </style>
 </head>
-<body ng-app="App">
+<body>
 <div ng-controller="demoCtrl">
-    <div id="div1"></div>
-    <div id="div2">
-        <p>请输入说明...</p>
+    <div class="list-group">
+        <div ng-repeat="item in sidedata">
+            <label class="menu-list list-group-item" ng-init="index=$index" ng-click="flick(index)">
+                <div class="glyphicon glyphicon-wrench"></div>
+                <span>{{item.x}}</span>
+            </label>
+            <div class="listhide" ng-class="{listshow:atflick==index}">
+                <div class="menu-child-list"
+                     ng-class="{atcolor:atlight==x}"
+                     ng-repeat="x in item.y"
+                     ng-click="clickstate(x)">
+                    <span>{{x}}</span>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div id="div3">
-        <p>第二个编辑器</p>
-    </div>
-
-    <button id="btn1" ng-click="btn1()">获取html</button>
-    <button id="btn2" ng-click="btn2()">获取text</button>
-    <button id="btn3" ng-click="btn3()">删除内容</button>
-    <button id="btn4" ng-click="btn4()">获取JSON内容</button>
 </div>
 
-
-
 <script src="angular.min/angular.min.js"></script>
-<script src="wangEditor/wangEditor.min.js"></script>
-<script>
-    angular.module('App', [])
-        .controller('demoCtrl', function ($scope) {
-
-            //wangEditor富文本编辑器
-            var E = window.wangEditor;
-
-            //编辑区和菜单区分离
-            // var editor1 = new E('#div1','#div2');
-            // editor1.create();
-
-            //第二个编辑器
-            var editor2 = new E('#div3');
-            //显示"本地上传" tab
-            //base64格式保存图片
-            // editor2.customConfig.uploadImgShowBase64 = true;
-            // //服务器保存图片
-            editor2.customConfig.uploadImgServer = '/upload';
-
-            // // 隐藏“网络图片”tab
-            // editor2.customConfig.showLinkImg = false;
-
-            //自定义菜单配置
-            editor2.customConfig.menus = [
-                'head',
-                'bold',
-                'fontSize',
-                'fontName'
-            ];
-
-            //debug模式
-            // editor2.customConfig.debug = true;
-            // editor2.customConfig.debug = location.href.indexOf('wangeditor_debug_mode=1')>0;
-
-            //onchange
-            editor2.customConfig.onchange = function (html) {
-                console.log(html);
-            };
-
-            editor2.create();
-
-            //追加内容
-            editor2.txt.append('<p>追加的内容</p>');
-
-            //清除编辑区内容
-            $scope.btn3 = function () {
-                editor2.txt.clear();
-            };
-
-            //获取html内容
-            $scope.btn1 = function () {
-                alert(editor2.txt.html());
-            };
-            //获取text内容
-            $scope.btn2 = function () {
-                alert(editor2.txt.text());
-            };
-
-            //获取JSON内容
-            $scope.btn4 = function () {
-                var json = editor2.txt.getJSON();
-                var jsonStr = JSON.stringify(json);
-                console.log(json);
-                console.log(jsonStr);
-            };
-
-        })
-</script>
+<script src="jquery/jquery-3.3.1.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<script src="factory.js"></script>
 </body>
 </html>

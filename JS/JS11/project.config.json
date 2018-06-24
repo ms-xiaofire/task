@@ -1,0 +1,11 @@
+{
+	"miniprogramRoot": "./miniprogram",
+	"pluginRoot": "./plugin",
+	"compileType": "miniprogram",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wxacbda639cb0306ec",
+	"projectname": "JS11",
+	"condition": {}
+}

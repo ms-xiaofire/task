@@ -1,0 +1,49 @@
+<!--选择职业页面!-->
+<view class='main'>
+  <view class='title test'>
+    <text>最适合你的职业推荐</text>
+  </view>
+  <view class='list test'>
+    <picker bindchange='educationChange' value='{{index}}' range='{{education}}'>
+      <view class='picker'>
+        <text decode='{{true}}'>学&emsp;&emsp;历 : {{education[index]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='list test'>
+    <picker bindchange='sexChange' value='{{sexIndex}}' range='{{sex}}'>
+      <view class='picker'>
+        <text decode='{{true}}'>性&emsp;&emsp;别 : {{sex[sexIndex]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='list test'>
+    <picker bindchange='ageChange' value='{{ageIndex}}' range='{{age}}'>
+      <view class='picker'>
+        <text decode='{{true}}'>年&emsp;&emsp;龄 : {{age[ageIndex]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='list test'>
+    <picker bindchange='baseChange' value='{{baseIndex}}' range='{{base}}'>
+      <view class='picker'>
+        <text decode='{{true}}'>基&emsp;&emsp;础 : {{base[baseIndex]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='list test'>
+    <picker bindchange='proChange' value='{{proIndex}}' range='{{pro}}'>
+      <view class='picker'>
+        <text decode='{{true}}'>专&emsp;&emsp;业 : {{pro[proIndex]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='list test'>
+    <picker bindchange='logicChange' value='{{logicIndex}}' range='{{logic}}'>
+      <view class='picker'>
+        <text decode='{{true}}'>逻&emsp;&emsp;辑 : {{logic[logicIndex]}}</text>
+      </view>
+    </picker>
+  </view>
+</view>
+<button class='check' bindtap='checkTap'>选好了,点击查看</button>
