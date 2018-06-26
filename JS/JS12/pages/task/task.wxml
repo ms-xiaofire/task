@@ -4,44 +4,44 @@
     <text>最适合你的职业推荐</text>
   </view>
   <view class='list test'>
-    <picker bindchange='educationChange' value='{{index}}' range='{{education}}'>
+    <picker bindchange='educationChange' value='{{eduIndex}}' range='{{objectEdu}}' range-key="{{'name'}}">
       <view class='picker'>
-        <text decode='{{true}}'>学&emsp;&emsp;历 : {{education[index]}}</text>
+        <text decode='{{true}}'>学&emsp;&emsp;历 : {{objectEdu[eduIndex].name}}</text>
       </view>
     </picker>
   </view>
   <view class='list test'>
-    <picker bindchange='sexChange' value='{{sexIndex}}' range='{{sex}}'>
+    <picker bindchange='sexChange' value='{{sexIndex}}' range='{{objectSex}}' range-key="{{'name'}}">
       <view class='picker'>
-        <text decode='{{true}}'>性&emsp;&emsp;别 : {{sex[sexIndex]}}</text>
+        <text decode='{{true}}'>性&emsp;&emsp;别 : {{objectSex[sexIndex].name}}</text>
       </view>
     </picker>
   </view>
   <view class='list test'>
-    <picker bindchange='ageChange' value='{{ageIndex}}' range='{{age}}'>
+    <picker bindchange='ageChange' value='{{ageIndex}}' range='{{objectAge}}' range-key="{{'name'}}">
       <view class='picker'>
-        <text decode='{{true}}'>年&emsp;&emsp;龄 : {{age[ageIndex]}}</text>
+        <text decode='{{true}}'>年&emsp;&emsp;龄 : {{objectAge[ageIndex].name}}</text>
       </view>
     </picker>
   </view>
   <view class='list test'>
-    <picker bindchange='baseChange' value='{{baseIndex}}' range='{{base}}'>
+    <picker bindchange='baseChange' value='{{baseIndex}}' range='{{objectBase}}' range-key="{{'name'}}">
       <view class='picker'>
-        <text decode='{{true}}'>基&emsp;&emsp;础 : {{base[baseIndex]}}</text>
+        <text decode='{{true}}'>基&emsp;&emsp;础 : {{objectBase[baseIndex].name}}</text>
       </view>
     </picker>
   </view>
   <view class='list test'>
-    <picker bindchange='proChange' value='{{proIndex}}' range='{{pro}}'>
+    <picker bindchange='proChange' value='{{proIndex}}' range='{{objectPro}}' range-key="{{'name'}}">
       <view class='picker'>
-        <text decode='{{true}}'>专&emsp;&emsp;业 : {{pro[proIndex]}}</text>
+        <text decode='{{true}}'>专&emsp;&emsp;业 : {{objectPro[proIndex].name}}</text>
       </view>
     </picker>
   </view>
   <view class='list test'>
-    <picker bindchange='logicChange' value='{{logicIndex}}' range='{{logic}}'>
+    <picker bindchange='logicChange' value='{{logicIndex}}' range='{{objectLogic}}' range-key="{{'name'}}">
       <view class='picker'>
-        <text decode='{{true}}'>逻&emsp;&emsp;辑 : {{logic[logicIndex]}}</text>
+        <text decode='{{true}}'>逻&emsp;&emsp;辑 : {{objectLogic[logicIndex].name}}</text>
       </view>
     </picker>
   </view>

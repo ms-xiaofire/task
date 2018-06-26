@@ -5,17 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    var show = wx.getStorageSync('show');
+    var [a, b, c] = show;
     wx.request({
       url: 'http://www.jnshu.com/a/occupation/list',
       success: function (res) {
-        console.log(res.data)
+        console.log(res);
+        for (let i = 0; i < 3; i++) {
+          res.data.data.occupations[show[i] - 1].salary = JSON.parse(res.data.data.occupations[show[i] - 1].salary);
+        }
+        that.setData({
+          occupations1: res.data.data.occupations[a-1],
+          occupations2: res.data.data.occupations[b - 1],
+          occupations3: res.data.data.occupations[c - 1]
+        })
       }
     })
   },
