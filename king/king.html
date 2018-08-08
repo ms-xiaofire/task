@@ -10,14 +10,11 @@
 <header class="header">
     <div class="container nav-color">
         <div class="row">
-            <!--<div class="col-md-4 col-sm-2">-->
-                <!--<button type="button" class="king"></button>-->
-            <!--</div>-->
             <div class="col-md-12">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <button type="button" class="king"></button>
+                            <button type="button" id="king" class="king"></button>
                             <button type="button" class="navbar-toggle" data-toggle="collapse"
                                     data-target="#example-navbar-collapse">
                                 <span class="sr-only">切换导航</span>
@@ -103,15 +100,66 @@
                     </div>
                     <p>拥有创新能力</p>
                 </div>
-                <div class="line">
+                <div class="col-md-12 line">
                     <img src="images/line.png">
                     <p class="color-aqua">从兴趣到成就</p>
                     <p class="author color-aqua"><strong>让孩子从程序使用者变为创作者</strong></p>
                 </div>
-                <div class="col-md-4 col-sm-12"></div>
-                <div class="col-md-4 col-sm-12"></div>
-                <div class="col-md-4 col-sm-12"></div>
-                <div class="game-bottom">
+                <div class="col-md-4">
+                    <div class="scratch">
+                        <div class="scratch-head">
+                            <img src="images/scratch.png">
+                        </div>
+                        <div class="scratch-body">
+                            <img src="images/game1.png">
+                            <div class="explain">
+                                <p>作品1</p>
+                                <p class="explain-body">过马路</p>
+                                <div class="explain-footer">
+                                    <img src="images/photo.png">
+                                    <span>郑明源</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="scratch">
+                        <div class="scratch-head">
+                            <img src="images/scratch.png">
+                        </div>
+                        <div class="scratch-body">
+                            <img src="images/game2.png">
+                            <div class="explain">
+                                <p>作品2</p>
+                                <p class="explain-body">埃及艳后的演出</p>
+                                <div class="explain-footer">
+                                    <img src="images/photo.png">
+                                    <span>郑明源</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="scratch">
+                        <div class="scratch-head">
+                            <img src="images/scratch.png">
+                        </div>
+                        <div class="scratch-body">
+                            <img src="images/game3.png">
+                            <div class="explain">
+                                <p>作品3</p>
+                                <p class="explain-body">flyBird游戏</p>
+                                <div class="explain-footer">
+                                    <img src="images/photo.png">
+                                    <span>郑明源</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 game-bottom">
                     <span>联系我们：固定电话 0000-4567890</span>
                     <span>张老师 0123456789</span>
                     <span>李老师 0123457789</span>
@@ -300,7 +348,7 @@
                     <div class="col-md-3">
                         <div class="science-box">
                             <img src="images/ai.png" class="science-img">
-                            <p class="science-head">其他只能硬件</p>
+                            <p class="science-head">其他智能硬件</p>
                             <p>激光键盘</p>
                             <p>联想看家机器人</p>
                             <p>无线激光投影键盘</p>
@@ -347,13 +395,19 @@
         <div class="row">
             <div class="padding-30">
                 <div class="col-md-4">
-                    <img src="images/room1.png" class="room">
+                    <div class="room">
+                        <img src="images/room1.png">
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/room2.png" class="room">
+                    <div class="room">
+                        <img src="images/room2.png">
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/room3.png" class="room">
+                    <div class="room">
+                        <img src="images/room3.png">
+                    </div>
                 </div>
             </div>
         </div>
@@ -385,6 +439,28 @@
         </div>
     </div>
 </footer>
+<div class="suspend">
+    <a class="online">
+        <img src="images/message.png">
+        <span>在线咨询</span>
+    </a>
+    <a class="connect">
+        <img src="images/phone.png">
+        <span>联系我们</span>
+        <div class="connect-box">
+            <div class="connect-left">
+                <p>固话：0000-23456178</p>
+                <p>张老师：12345617891</p>
+                <p>李老师：12345617891</p>
+            </div>
+            <div class="connect-right"></div>
+        </div>
+    </a>
+    <a href="#" class="top">
+        <img src="images/top.png">
+        <span>返回顶部</span>
+    </a>
+</div>
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="./js/king.js"></script>

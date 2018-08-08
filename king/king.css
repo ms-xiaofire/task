@@ -17,7 +17,10 @@ body {
 .header {
   width: 100%;
   height: 66px;
-  background-color: #ccbecf; }
+  background-color: #ccbecf;
+  position: fixed;
+  top: 0;
+  z-index: 10001; }
 
 .king {
   width: 184px;
@@ -50,10 +53,29 @@ body {
 
 .main {
   padding: 10px 0 20px;
-  background-color: #d2ebe9; }
+  background-color: #d2ebe9;
+  margin-top: 66px; }
 
 .carousel-indicators li {
   border-radius: 0; }
+
+.carousel-control.right {
+  background-image: none; }
+
+.carousel-control.left {
+  background-image: none; }
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+  margin-right: -40%; }
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+  margin-left: -40%; }
+
+.carousel-indicators .active {
+  background-color: #1a1a1a; }
+
+.carousel-indicators li {
+  border: 1px solid #1a1a1a; }
 
 .pencil {
   text-align: center;
@@ -85,6 +107,41 @@ body {
 .author {
   font-size: 16px; }
 
+.scratch {
+  margin: 30px auto 50px;
+  max-width: 300px; }
+
+.scratch-head {
+  text-align: center; }
+  .scratch-head img {
+    margin-bottom: -15px;
+    z-index: 10000;
+    position: relative; }
+
+.scratch-body {
+  overflow: hidden;
+  border-radius: 10px; }
+  .scratch-body img {
+    width: 100%;
+    cursor: pointer; }
+
+.explain {
+  padding: 10px 30px;
+  background-color: #d2ebe9; }
+  .explain p {
+    margin: 0; }
+  .explain img {
+    width: auto; }
+
+.explain-body {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 5px 0 !important; }
+
+.explain-footer {
+  display: flex;
+  align-items: center; }
+
 .game-bottom {
   text-align: center;
   padding: 10px 20%;
@@ -98,7 +155,7 @@ body {
   margin-left: 100px; }
 
 .internet-right {
-  max-width: 200px;
+  max-width: 280px;
   text-align: right;
   margin-right: 100px; }
 
@@ -157,7 +214,7 @@ body {
     margin-top: -50px; }
 
 .fun {
-  height: 300px;
+  height: 250px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -165,7 +222,8 @@ body {
   background-color: #d2ebe9;
   margin-bottom: 50px; }
   .fun img {
-    width: 50%; }
+    width: 50%;
+    height: 100%; }
 
 .fun-left {
   width: 50%;
@@ -225,7 +283,9 @@ body {
   margin: 50px 0 30px; }
 
 .room {
-  width: 100%; }
+  overflow: hidden; }
+  .room img {
+    width: 100%; }
 
 .map {
   width: 100%;
@@ -248,6 +308,63 @@ body {
     width: 131px;
     margin: 0 auto; }
 
+.suspend {
+  width: 50px;
+  height: 300px;
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  margin-top: -150px; }
+  .suspend a {
+    width: 50px;
+    height: 50px;
+    background-color: #1f9d92;
+    border-radius: 50%;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none; }
+    .suspend a img {
+      width: 50%; }
+    .suspend a span {
+      width: 55%;
+      color: #fff;
+      display: none; }
+
+.suspend a:hover img {
+  display: none; }
+
+.suspend a:hover span {
+  display: block; }
+
+.connect-box {
+  position: absolute;
+  right: 70px;
+  display: flex;
+  align-items: center;
+  visibility: hidden; }
+
+.connect:hover .connect-box {
+  visibility: inherit; }
+
+.connect-left {
+  width: 200px;
+  background-color: #fff;
+  padding: 15px 30px;
+  color: #9c9c9c;
+  text-align: center; }
+  .connect-left p {
+    margin: 0; }
+
+.connect-right {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 10px solid #fff;
+  border-bottom: 8px solid transparent; }
+
 @media screen and (max-width: 991px) {
   .internet-left {
     margin: 0 auto; }
@@ -262,11 +379,27 @@ body {
     margin: 0 auto; }
 
   .footer-right {
-    text-align: left; }
+    text-align: left;
+    padding: 0 30px;
+    margin: 20px 0; }
 
   .footer-right p {
     margin: 0;
-    text-align: center; } }
+    text-align: center; }
+
+  .school-box {
+    margin: 30px auto 50px;
+    width: 400px; }
+
+  .room {
+    max-width: 270px;
+    margin: 20px auto; } }
+@media screen and (max-width: 767px) {
+  .school-box {
+    width: 300px; }
+
+  .school-box img {
+    height: 200px; } }
 @media screen and (min-width: 768px) {
   .navbar-nav {
     float: right; } }
