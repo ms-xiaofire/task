@@ -70,7 +70,7 @@ angular.module('App')
     ArticleManagementService.getArticleList($scope.param)
         .then(function (response) {
             if(response.data.code===0){
-
+                console.log(response);
                 //article列表
                 $scope.lists = response.data.data.articleList;
                 $scope.total = response.data.data.total;
@@ -104,6 +104,7 @@ angular.module('App')
         if($scope.param.startAt){
             $scope.param.startAt = $scope.param.startAt.valueOf();
         }
+        console.log($scope.param.startAt);
         if($scope.param.endAt){
             $scope.param.endAt = $scope.param.endAt.valueOf()+86399999;
         }

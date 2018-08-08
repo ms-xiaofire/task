@@ -7,22 +7,186 @@
 <body>
 
 <script>
-    var myArray = new Array();
-    myArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-    console.log(myArray);
-
-    Array.prototype.shuffle = function () {
-        var input = this;
-        for (var i = input.length - 1;i>=0;i--){
-            var randomIndex = Math.floor(Math.random() * (i + 1));
-            var itemAtIndex = input[randomIndex];
-            input[randomIndex] = input[i];
-            input[i] = itemAtIndex;
+    /*//作用域
+    var a = [];
+    // for(var i=1; i<11; i++) {
+    //     a[i] = function () {
+    //         console.log(i);
+    //     }
+    // }
+    for(let j=1; j<11; j++) {
+        a[j] = function () {
+            console.log(j);
         }
-        return input;
-    };
+    }
+    console.log(a[6]());*/
 
-    console.log(myArray.shuffle());
+    /*//块级作用域
+    function fn1() {
+        let n = 5;
+        if(true) {
+            let n = 10;
+        }
+        console.log(n);
+    }
+    fn1();*/
+
+    /*//暂时性死区
+    if(true) {
+        // tmp = 'abc';
+        // console.log(tmp);
+        let tmp;
+        console.log(tmp);
+        tmp = 123;
+        console.log(tmp);
+    }*/
+
+    /*//const常量和作用域
+    const max = 10;
+    console.log(max);
+   /!* max = 5;*!/
+    if(true) {
+        const max = 20;
+        console.log(max);
+    }
+    console.log(max);*/
+
+   /* //windows对象
+    var a = 1;
+    console.log(window.a);
+    let b = 1;
+    console.log(window.b);*/
+
+    /*//数组解构赋值
+    let [a, b, c] = [1, 2, 3];
+    console.log(a, b, c);*/
+
+    /*//模式匹配
+    let [foo, [[bar], baz]] = [1, [[2], 3]];
+    console.log(foo, bar, baz);
+    let [x, , y] = [1, 2, 3];
+    console.log(x, y);
+    let [a, b, ...c] = ['a'];
+    console.log(a, b, c);*/
+
+    /*//不完全解构
+    let [x, y] = [1, 2, 3];
+    console.log(x, y);*/
+
+    /*//默认值
+    let [x, y = 2] = [1];
+    console.log(x, y);*/
+
+    /*//对象的解构赋值
+    let { foo, bar } = { foo: "aaa", bar: "bbb" };
+    console.log(foo, bar);*/
+
+    /*//嵌套解构
+    let obj = {
+        p: [
+            'Hello',
+            { y: 'World' }
+        ]
+    };
+    let { p, p: [x, { y }] } = obj;
+    console.log(x, y, p);*/
+
+    /*//数组解构
+    let arr = [1, 2, 3];
+    let {0: first, [arr.length - 1]: last} = arr;
+    console.log(first, last);*/
+
+    // //字符串解构赋值
+    // const [a, b, c, d, e] = 'hello';
+    // console.log(a, b, c, d, e);
+
+    /*//length解构赋值
+    let {length: len} = 'hello';
+    console.log(len);*/
+
+    /*//数值和布尔值的解构赋值
+    let {toString: s} = 123;
+    console.log(s === Number.prototype.toString);
+    let {toString: b} = true;
+    console.log(b === Boolean.prototype.toString);*/
+
+    /*//函数参数解构赋值
+    function add([x, y]) {
+        return x + y;
+    }
+    console.log(add([1, 2]));*/
+
+    /*//函数参数使用默认值
+    function move({x=0, y=0} = {}) {
+        return [x, y]
+    }
+    console.log(move({x:3, y:8}));
+    console.log(move({x:3}));
+    console.log(move({}));
+    console.log(move());*/
+
+    /*//变量声明语句
+    let [(a)] = [1];
+    let {x: (c)} = {};
+    let ({x: c}) = {};
+    let {(x: c)} = {};
+    let {(x): c} = {};
+    let { o: ({ p: p }) } = { o: { p: 2 } };*/
+
+    /*//函数参数
+    function f([(z)]) { return z; }
+    function f([z,(x)]) { return x; }*/
+
+    /*//赋值语句的模式
+    ({ p: a }) = { p: 42 };
+    ([a]) = [5];*/
+
+    /*//赋值语句的非模式部分
+    [(b)] = [3];
+    ({ p: (d) } = {});
+    [(parseInt.prop)] = [3];*/
+
+    /*//交换变量的值
+    let x = 1;
+    let y = 2;
+    [x, y] = [y, x];
+    console.log(x, y);
+    // //从函数返回多个值*/
+    // function example1() {
+    //     return [1, 2, 3];
+    // }
+    // let [a, b, c] = example1();
+    // function example2() {
+    //     return {
+    //         foo: 1,
+    //         bar: 2
+    //     };
+    // }
+    // let { foo, bar } = example2();
+    /*!//函数参数的定义
+    function f1([x, y, z]) { ... }
+    f1([1, 2, 3]);
+    function f2({x, y, z}) { ... }
+    f2({z: 3, y: 2, x: 1});*/
+    //提取 JSON 数据
+    /*let jsonData = {
+        id: 42,
+        status: "OK",
+        data: [867, 5309]
+    };
+    let { id, status, data: number } = jsonData;
+    console.log(id, status, number);
+    //遍历map结构*/
+    const map = new Map();
+    map.set('first', 'hello');
+    map.set('second', 'world');
+
+    for (let [key, value] of map) {
+        console.log(key + " is " + value);
+    }
+    //输入模块的指定方法
+    const { SourceMapConsumer, SourceNode } = require("source-map");
+
 </script>
 </body>
 </html>

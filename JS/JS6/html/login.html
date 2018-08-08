@@ -11,7 +11,8 @@
                            ng-model="param.name"
                            ng-minlength="3"
                            ng-maxlength="10"
-                           placeholder="请输入用户名" required>
+                           placeholder="请输入用户名"
+                           required>
                 </div>
                 <!--帐号输入非法时错误信息提示内容-->
                 <div class="error" ng-if="!loginForm.userName.$touched"></div>
@@ -28,7 +29,8 @@
                            ng-model="param.pwd"
                            ng-minlength="6"
                            ng-maxlength="16"
-                           placeholder="请输入密码" required>
+                           placeholder="请输入密码"
+                           required>
                 </div>
                 <!--密码输入非法时错误信息提示内容-->
                 <div class="error" ng-if="!loginForm.userPassword.$touched"></div>

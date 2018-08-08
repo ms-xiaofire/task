@@ -1,0 +1,274 @@
+.color-aqua {
+  color: #1f9d92; }
+
+.text-center {
+  text-align: center !important; }
+
+.marginNone {
+  margin: 0; }
+
+.padding-30 {
+  padding: 30px; }
+
+body {
+  margin: 0;
+  font-size: 62.5%; }
+
+.header {
+  width: 100%;
+  height: 66px;
+  background-color: #ccbecf; }
+
+.king {
+  width: 184px;
+  height: 56px;
+  padding: 0;
+  margin-top: 5px;
+  background: url("./images/head-left.png") center no-repeat;
+  background-size: 184px 56px;
+  border: 0;
+  outline: none; }
+
+.navbar-default {
+  border: none;
+  margin: 0;
+  background-color: #ccbecf; }
+
+.navbar-default .navbar-nav li a {
+  text-align: center;
+  padding: 0 15px;
+  line-height: 66px; }
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #1f9d92; }
+
+.navbar-toggle {
+  margin: 16px 0; }
+
+.nav-color {
+  background-color: #ccbecf; }
+
+.main {
+  padding: 10px 0 20px;
+  background-color: #d2ebe9; }
+
+.carousel-indicators li {
+  border-radius: 0; }
+
+.pencil {
+  text-align: center;
+  margin: 20px 0; }
+  .pencil img {
+    max-width: 100%; }
+
+.game {
+  padding-top: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden; }
+
+.power {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d2ebe9;
+  border-radius: 50%;
+  margin: 30px auto 10px; }
+
+.line {
+  text-align: center; }
+  .line img {
+    margin: 20px 0 40px; }
+
+.author {
+  font-size: 16px; }
+
+.game-bottom {
+  text-align: center;
+  padding: 10px 20%;
+  background-color: #ccbecf; }
+  .game-bottom span {
+    color: #266996;
+    margin-right: 20px; }
+
+.internet-left {
+  max-width: 200px;
+  margin-left: 100px; }
+
+.internet-right {
+  max-width: 200px;
+  text-align: right;
+  margin-right: 100px; }
+
+.internet-head {
+  margin-left: 20px;
+  font-weight: bold; }
+
+.flex {
+  display: flex;
+  margin-bottom: 5px; }
+
+.sBox {
+  min-width: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #1f9d92;
+  margin: 2px 10px 0 0; }
+
+.doctor {
+  max-width: 200px;
+  margin: 0 auto; }
+
+.course {
+  padding: 40px 0 0;
+  background-color: #ccbecf;
+  margin-bottom: 40px; }
+
+.course-head {
+  color: #266996;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.course-box {
+  max-width: 200px;
+  height: 200px;
+  text-align: center; }
+  .course-box img {
+    margin-bottom: 20px; }
+
+.course-left {
+  margin-left: 50px; }
+
+.course-right {
+  margin-right: 50px; }
+
+.lego {
+  font-size: 15px;
+  font-weight: bold; }
+
+.pen {
+  height: 200px;
+  text-align: center; }
+  .pen img {
+    width: 300px;
+    margin-top: -50px; }
+
+.fun {
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #d2ebe9;
+  margin-bottom: 50px; }
+  .fun img {
+    width: 50%; }
+
+.fun-left {
+  width: 50%;
+  padding: 0 30px; }
+
+.fun-head {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #1f9d92; }
+
+.science {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f9d92;
+  text-align: center;
+  margin-bottom: 40px; }
+
+.science-box {
+  width: 200px;
+  margin-bottom: 40px; }
+
+.science-img {
+  width: 100%; }
+
+.science-head {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 15px 0; }
+
+.work {
+  width: 100%; }
+
+.school {
+  padding: 0 30px; }
+
+.school-box {
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 30px 0 50px; }
+  .school-box img {
+    width: 100%;
+    height: 270px; }
+
+.school-body {
+  padding: 30px 30px 10px;
+  background-color: #d2ebe9; }
+
+.school-head {
+  font-size: 15px;
+  color: #1f9d92; }
+
+.lessons {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px 0 30px; }
+
+.room {
+  width: 100%; }
+
+.map {
+  width: 100%;
+  padding: 0 45px;
+  margin: 20px 0 50px; }
+
+.footer {
+  padding: 30px 0;
+  color: #ccc;
+  background-color: #36807f; }
+
+.footer-left {
+  padding: 0 30px; }
+  .footer-left span {
+    color: #fff; }
+
+.footer-right {
+  text-align: center; }
+  .footer-right p {
+    width: 131px;
+    margin: 0 auto; }
+
+@media screen and (max-width: 991px) {
+  .internet-left {
+    margin: 0 auto; }
+
+  .internet-right {
+    margin: 0 auto; }
+
+  .course-box {
+    margin: 0 auto; }
+
+  .science-box {
+    margin: 0 auto; }
+
+  .footer-right {
+    text-align: left; }
+
+  .footer-right p {
+    margin: 0;
+    text-align: center; } }
+@media screen and (min-width: 768px) {
+  .navbar-nav {
+    float: right; } }
+
+/*# sourceMappingURL=king.css.map */
